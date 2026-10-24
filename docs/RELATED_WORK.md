@@ -18,7 +18,7 @@ $9(n-7)!$ when $n\equiv0\pmod3$. The
 [informal statement](INFORMAL_STATEMENT.md) also separates these comparisons
 from the smaller improvements contributed by the new return-order argument.
 
-The two separately submitted finite results compare as follows with the
+The two finite results compare as follows with the
 6 October announcement.
 
 | Alphabet size | Halfar's announced bound | Bound submitted here | Difference |
@@ -28,7 +28,7 @@ The two separately submitted finite results compare as follows with the
 
 This is a comparison with that dated announcement, not a claim to survey
 every later source revision. The native-qualified thirteen-symbol certificate
-discussed in the finite paper is outside these submissions.
+discussed in the finite paper is outside this submission.
 
 The ten-symbol result uses Halfar's chain-piece search, completeness, and
 capacity framework. Our contribution is the stronger certificate and its

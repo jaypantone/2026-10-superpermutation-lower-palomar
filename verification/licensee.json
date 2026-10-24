@@ -38,9 +38,9 @@
   "detector_exit_code": 0,
   "raw_audit_receipt_sha256": "f798a791537aac43bc455eeb5155b52dcdb65647911698265c44162686a5c9f1",
   "current_metadata_declaration": {
-    "recorded_utc": "2026-10-24T15:27:35.178911+00:00",
+    "recorded_utc": "2026-10-24T15:50:59.145614+00:00",
     "path": "formalization.yaml",
-    "sha256": "8f855ba546c89338321a391d21befad220870c7144174bf749dbbc8c77d794aa",
+    "sha256": "bbfe312278aa31dc2d934e50a80d997d2a0a04657566faec9df72fd2a50b8182",
     "declared_spdx_identifier": "Apache-2.0",
     "license_bytes_unchanged": true,
     "scope": "Static comparison of the current declaration with the existing classifier result; the classifier was not rerun."

@@ -245,3 +245,33 @@ theorem exact_gain_one_asymptotic_lower : ExactGainOne := by
   sorry
 
 end SuperpermutationPalomar.LowerAsymptotics
+
+namespace SuperpermutationPalomar.GeneralLower
+
+theorem exact_word_bound : ExactWordBound := by
+  sorry
+
+theorem quadratic_word_bound : QuadraticWordBound := by
+  sorry
+
+end SuperpermutationPalomar.GeneralLower
+
+namespace SuperpermutationPalomar.Lower10
+
+def WordBound : Prop :=
+  ∀ w : List (Fin 10), Covers w → 4033379 ≤ w.length
+
+theorem word_lower_bound : WordBound := by
+  sorry
+
+end SuperpermutationPalomar.Lower10
+
+namespace SuperpermutationPalomar.Lower14
+
+def WordBound : Prop :=
+  ∀ w : List (Fin 14), Covers w → 93891141150 ≤ w.length
+
+theorem word_lower_bound : WordBound := by
+  sorry
+
+end SuperpermutationPalomar.Lower14

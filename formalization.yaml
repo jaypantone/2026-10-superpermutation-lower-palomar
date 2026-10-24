@@ -74,11 +74,11 @@ related_formalizations:
   note: The ten-symbol result uses the credited chain-piece search framework; retained source
     notices record the exact reused modules.
 status:
-  scope: 'Seventeen compared declarations in four separately submitted configurations: two general
-    lower bounds, thirteen asymptotic statements and comparisons, the ten-symbol lower bound 4033379,
-    and the fourteen-symbol lower bound 93891141150. All word bounds apply to arbitrary covering
-    words. The thirteen-symbol bound 6746627228 using native_decide is excluded from every configuration
-    and from the proof closure; its discussion in the companion finite paper is contextual only.'
+  scope: 'Seventeen compared declarations in one submission: two general lower bounds, thirteen
+    asymptotic statements and comparisons, the ten-symbol lower bound 4033379, and the fourteen-symbol
+    lower bound 93891141150. All word bounds apply to arbitrary covering words. The thirteen-symbol
+    bound 6746627228 using native_decide is excluded from the configuration and from the proof
+    closure; its discussion in the companion finite paper is contextual only.'
 automation:
   methods:
   - method: agent

@@ -24,15 +24,15 @@ Large overlaps make a superpermutation short. The cheapest step appends one symb
 
 An efficient pattern of chain lengths need not keep producing new permutations. Repeating the pattern also permutes the symbols; when that permutation returns to its starting point, a rotation class has been repeated. A path through distinct rotation classes therefore has to interrupt the pattern. Counting the resulting losses strengthens the chain estimate. The existing reduction from words to paths then turns that estimate into a lower bound for every covering word.
 
-The exact formula $B(n)$ uses the orders of two such permutations. Replacing those orders by a common quadratic upper bound gives a simpler formula $Q(n)$. The General submission proves
+The exact formula $B(n)$ uses the orders of two such permutations. Replacing those orders by a common quadratic upper bound gives a simpler formula $Q(n)$. The general theorems prove
 
 $$
 S(n)\ge B(n),\qquad S(n)\ge Q(n)\qquad(n\ge8).
 $$
 
-Their complete definitions are given below and independently in [the General Challenge](../Submissions/General/Challenge.lean). The [general paper](../papers/lower/lower-bounds.pdf) develops the chain argument before deriving the formula.
+Their complete definitions are given below and independently in [the Challenge](../Submissions/Challenge.lean). The [general paper](../papers/lower/lower-bounds.pdf) develops the chain argument before deriving the formula.
 
-## What the asymptotic submission proves
+## The asymptotic conclusions
 
 Both formulas satisfy
 
@@ -79,11 +79,11 @@ $$
 
 Here each lower-limit claim means that, for every positive $\varepsilon$, the normalized difference is eventually at least the displayed constant minus $\varepsilon$. The exact-order gains need not converge to those constants: smaller return orders can give larger gains.
 
-## The two finite submissions
+## The two finite refinements
 
-The Ten submission proves $S(10)\ge4\,033\,379$, which is five more than $B(10)=4\,033\,374$. It combines a finite chain-piece certificate with the reduction to arbitrary words. The Fourteen submission proves $S(14)\ge93\,891\,141\,150$, one more than $B(14)=93\,891\,141\,149$, by ruling out equality in the preceding estimate. The [finite paper](../papers/finite/finite-lower-bounds.pdf) gives the two arguments and their provenance.
+The ten-symbol refinement proves $S(10)\ge4\,033\,379$, which is five more than $B(10)=4\,033\,374$. It combines a finite chain-piece certificate with the reduction to arbitrary words. The fourteen-symbol refinement proves $S(14)\ge93\,891\,141\,150$, one more than $B(14)=93\,891\,141\,149$, by ruling out equality in the preceding estimate. The [finite paper](../papers/finite/finite-lower-bounds.pdf) gives the two arguments and their provenance.
 
-The stronger thirteen-symbol finite certificate discussed in that paper is outside the Palomar submissions. Its native-computation assumptions are not used by any selected theorem. The general result at thirteen symbols remains included.
+The stronger thirteen-symbol finite certificate discussed in that paper is outside the Palomar submission. Its native-computation assumptions are not used by any selected theorem. The general result at thirteen symbols remains included.
 
 ## Precise general formulas
 
@@ -131,9 +131,9 @@ The quadratic formula $Q(n)$ replaces both return orders by $k^2/4$. To obtain $
 
 ## Correspondence with the selected Lean statements
 
-The four configurations select seventeen theorems. Each has a separate Challenge and Solution environment. The Asymptotics configuration contains thirteen claims, grouped below; differences between the formulas are taken in the real numbers, without truncating negative differences to zero.
+The single `comparator.json` selects seventeen theorems from one Challenge and Solution pair. They are grouped by mathematical subject below. Differences between the formulas are taken in the real numbers, without truncating negative differences to zero.
 
-| Configuration | Selected theorem names, omitting their common namespace | Mathematical claim |
+| Result family | Selected theorem names, omitting their common namespace | Mathematical claim |
 | --- | --- | --- |
 | General | `exact_word_bound`, `quadratic_word_bound` | The two lower bounds for all $n\ge8$ |
 | Asymptotics | `exact_leading_limit`, `quadratic_leading_limit` | Leading normalized correction tends to $2$ |
@@ -145,4 +145,4 @@ The four configurations select seventeen theorems. Each has a separate Challenge
 | Ten | `word_lower_bound` | $S(10)\ge4\,033\,379$ |
 | Fourteen | `word_lower_bound` | $S(14)\ge93\,891\,141\,150$ |
 
-The suffixes `zero`, `one`, and `two` refer to $n-1$ modulo three, so they correspond respectively to alphabet sizes $n\equiv1,2,0\pmod3$. The complete names and statements appear in the [General](../Submissions/General/Challenge.lean), [Asymptotics](../Submissions/Asymptotics/Challenge.lean), [Ten](../Submissions/Ten/Challenge.lean), and [Fourteen](../Submissions/Fourteen/Challenge.lean) Challenges. All four configurations permit only `propext`, `Quot.sound`, and `Classical.choice`.
+The suffixes `zero`, `one`, and `two` refer to $n-1$ modulo three, so they correspond respectively to alphabet sizes $n\equiv1,2,0\pmod3$. The complete names and statements appear in the [single Challenge](../Submissions/Challenge.lean). The configuration permits only `propext`, `Quot.sound`, and `Classical.choice`.

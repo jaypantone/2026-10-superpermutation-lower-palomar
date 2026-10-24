@@ -5,9 +5,9 @@ generated entirely by AI systems under Jay Pantone's direction. The inherited
 mathematical work and software retain their original credits. Independent AI
 review is not human peer review.
 
-This is a separate Palomar submission candidate for Jay Pantone's general lower
-bounds, their asymptotics, and the finite improvements at ten and fourteen
-symbols. It is derived from the frozen results repository at commit
+This repository presents general lower bounds for superpermutations, their
+asymptotics, and the finite improvements at ten and fourteen symbols in one
+Palomar submission. It is derived from the frozen results repository at commit
 `c9ccb6a0d9ddd1007fdce6efab50807ec47464b9`. The mathematical statements are unchanged.
 
 Let S(n) be the shortest length of a word containing every permutation of n
@@ -18,7 +18,7 @@ compare them with the preceding general formula and with the Fritsch-Halfar
 all-size formula; they do not compare with separately searched finite bounds.
 
 More precisely, let B(n) be the exact-order formula here and H(n) the
-Fritsch-Halfar general formula defined in the asymptotic Challenge. The proved
+Fritsch-Halfar general formula defined in the Challenge. The proved
 limits give:
 
 | Residue of n modulo 3 | Asymptotic gain B(n) − H(n) |
@@ -39,24 +39,21 @@ contains the construction results.
 
 ## The statements to inspect
 
-Each submission has a self-contained `Challenge.lean` importing only Mathlib.
-It contains the complete definitions and target theorem statements, with
-`by sorry` placeholders. Its corresponding `Solution.lean` provides proofs under the same names,
-without importing that challenge. Comparator
-checks the two separate environments.
+All seventeen selected claims are in one self-contained
+[Challenge](Submissions/Challenge.lean), which imports only Mathlib. It contains
+the complete definitions and theorem statements, with `by sorry` placeholders.
+The matching [Solution](Submissions/Solution.lean) provides proofs under the
+same names without importing the Challenge. Comparator checks the two
+environments together in one submission.
 
-The asymptotic submission uses the namespace `SuperpermutationPalomar` for its
-independently repeated definitions. Its solution repeats exactly the same
-definitions and applies the original theorems by definitional equality. This
-keeps Lean’s local generation of pattern matchers identical in the two
-environments; it introduces no assumption or definition hole.
+The proof library remains organized into four result families:
 
-| Submission | Claims | Independent statement | Proof environment |
-| --- | ---: | --- | --- |
-| General | 2 | [Challenge](Submissions/General/Challenge.lean) | [Solution](Submissions/General/Solution.lean) |
-| Asymptotics | 13 | [Challenge](Submissions/Asymptotics/Challenge.lean) | [Solution](Submissions/Asymptotics/Solution.lean) |
-| Ten | 1 | [Challenge](Submissions/Ten/Challenge.lean) | [Solution](Submissions/Ten/Solution.lean) |
-| Fourteen | 1 | [Challenge](Submissions/Fourteen/Challenge.lean) | [Solution](Submissions/Fourteen/Solution.lean) |
+| Result family | Claims | Proof module |
+| --- | ---: | --- |
+| General lower bounds | 2 | [General](Submissions/General/Solution.lean) |
+| Asymptotic statements and comparisons | 13 | [Asymptotics](Submissions/Asymptotics/Solution.lean) |
+| Ten-symbol refinement | 1 | [Ten](Submissions/Ten/Solution.lean) |
+| Fourteen-symbol refinement | 1 | [Fourteen](Submissions/Fourteen/Solution.lean) |
 
 The finite claims are S(10) >= 4,033,379 and S(14) >= 93,891,141,150.
 There is no path, search, or normalization hypothesis on the words in these
@@ -81,8 +78,7 @@ of its `H20Native` proof or certificate family is in this repository's proof
 closure. The general theorem still applies at thirteen symbols, as it does at
 every n >= 8, with its own standard-axiom bound.
 
-All 279 modules in this migrated proof compile with the pinned Lean 4.35.0.
-The axiom audit reports only `propext`, `Classical.choice`, and `Quot.sound`
+The project pins Lean 4.35.0. The axiom audit reports only `propext`, `Classical.choice`, and `Quot.sound`
 for all seventeen selected declarations. A Palomar submission candidate is
 not a Palomar registration; the additional verification checks are recorded below.
 
@@ -93,29 +89,30 @@ The project pins Lean 4.35.0 and a fixed Mathlib revision. The
 compilation alone does not establish Comparator agreement or independent kernel
 replay.
 
-The local macOS diagnostics give the following results. These runs use the
-explicitly unsandboxed diagnostic mode and are not the protected Palomar workflow.
+Before consolidation into one submission, local macOS diagnostics checked
+each result family separately, with the results below. Those runs used the
+explicitly unsandboxed diagnostic mode and were not the protected Palomar workflow.
 
-| Submission | Statement and axiom comparison | Fresh Lean replay | NanoDa replay |
+| Result family | Statement and axiom comparison | Fresh Lean replay | NanoDa replay |
 | --- | --- | --- | --- |
 | General | Passed | Passed | Passed |
 | Asymptotics | Passed | Passed | Passed |
 | Ten | Passed | Passed | Passed |
 | Fourteen | Passed | Passed | Passed |
 
-Ten's fresh Lean and NanoDa replays completed in a later run with an explicit
-longer deadline. The complete protected Linux Palomar workflow remains unrun
-for all four configurations. Since those checks, eleven module comments have been edited; all
-proof code remains unchanged. The [comment-edit record](verification/comment-edits.json)
-binds those edits to the checked sources.
+The historical checks remain recorded with their source and configuration
+hashes. Eleven subsequent module-comment edits preserve all proof code; the
+[comment-edit record](verification/comment-edits.json) identifies them. The
+[verification record](verification.json) distinguishes those completed checks
+from the checks of the combined statement and solution environments. The
+combined Solution uses four direct aliases to put the general and finite
+word bounds under the same definitions as the asymptotic claims.
 
-The four entries are selected by [the general configuration](comparator.json),
-[the asymptotic configuration](comparator-asymptotics.json),
-[the ten-symbol configuration](comparator-ten.json), and
-[the fourteen-symbol configuration](comparator-fourteen.json). All permit only
-Lean's three standard axioms and enable NanoDa. The
-[Palomar guide](docs/PALOMAR.md) distinguishes local diagnostics from the full
-protected verification workflow and explains the remaining publication steps.
+The single [Comparator configuration](comparator.json) selects all seventeen
+claims, permits only Lean's three standard axioms, and enables NanoDa.
+Palomar's complete protected workflow has not yet run. The
+[Palomar guide](docs/PALOMAR.md) explains how to submit this one entry and
+distinguishes local diagnostics from protected verification.
 
 To rebuild the two papers with an installed TeX engine, run
 `python3 -B tools/build_papers.py lower finite`. Intermediate files are temporary.
@@ -130,7 +127,7 @@ is included.
 finite certificates and the fourteen-symbol compatibility argument. Its
 [TeX source](papers/finite/finite-lower-bounds.tex) is included. That paper also
 discusses the native-qualified thirteen-symbol result as context; that result
-is outside all four submission configurations in this repository.
+is outside the submission and its proof library.
 
 The ten-symbol proof uses Jakub Halfar's window-search framework and kernel
 certificate method. The provenance and upstream notices are retained in

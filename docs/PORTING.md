@@ -3,8 +3,17 @@
 The mathematical results come from the frozen October 2026 development at
 `c9ccb6a0d9ddd1007fdce6efab50807ec47464b9`. This repository retains the exact
 270-module dependency closure of the general bounds, asymptotics, and finite
-results at ten and fourteen symbols. Each of the four submissions now has an
-independent Challenge containing its full definitions and theorem statements.
+results at ten and fourteen symbols. A single independent Challenge now
+contains the full definitions and all seventeen theorem statements. The
+combined Solution imports the four thematic proof modules and uses one set
+of formulas in the `SuperpermutationPalomar` namespace. The two general
+word bounds and the ten- and fourteen-symbol bounds have direct proof
+aliases in that namespace. Each applies its original theorem by definitional
+equality, checked by Lean. Their mathematical content and the underlying
+proof bodies are unchanged. The existing thirteen asymptotic declarations
+retain their names. These four new aliases received fresh Lean compilation
+and statement/axiom comparison; the historical NanoDa checks concern their
+underlying proofs, not the newly named aliases.
 
 The port uses Lean 4.35's module system, public imports, and exposed public
 declarations. Fourteen inherited modules use Lean's

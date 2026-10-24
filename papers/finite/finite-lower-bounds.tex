@@ -496,17 +496,17 @@ integers, $S(14)\ge B(14)+1$, as required.
 
 \section{The formal statements and their assumptions}
 The Palomar version of the accompanying repository submits the ten- and
-fourteen-symbol bounds. Its independent statement files define coverage
+fourteen-symbol bounds. Its independent statement file defines coverage
 directly: every list of $n$ distinct letters from \texttt{Fin n} must
-occur as a contiguous factor of the word. They impose no restriction on
+occur as a contiguous factor of the word. It imposes no restriction on
 repeated occurrences, the order of first occurrences, or the decomposition
 of the word.
 
-The entry points, relative to the repository root, are
-\nolinkurl{Submissions/Ten/Challenge.lean} and
-\nolinkurl{Submissions/Fourteen/Challenge.lean}. Each imports only Mathlib
-and has a corresponding \nolinkurl{Solution.lean} environment proving
-the same declaration. The common \nolinkurl{AxiomCheck.lean} reports the
+The entry point, relative to the repository root, is
+\nolinkurl{Submissions/Challenge.lean}. It imports only Mathlib and
+also states the general bounds and their asymptotic consequences. The
+corresponding \nolinkurl{Submissions/Solution.lean} environment proves
+all selected declarations. The file \nolinkurl{AxiomCheck.lean} reports the
 assumptions. Both bounds use only \texttt{propext},
 \nolinkurl{Classical.choice}, and \nolinkurl{Quot.sound}.
 

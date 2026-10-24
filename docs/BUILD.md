@@ -26,16 +26,18 @@ budget is also distinct from total process memory.
 
 ## Verification
 
-The `comparator*.json` files select the exact submitted claims. Each Challenge
-and Solution pair declares the same names in separate environments; do not
-import both into one module. `AxiomCheck.lean` reports the assumptions of the
+The single `comparator.json` selects all seventeen submitted claims. The
+Challenge and Solution declare the same names in separate environments; do
+not import both into one module. `AxiomCheck.lean` reports the assumptions of the
 selected theorems.
 
-All four configurations passed local statement and axiom comparison, fresh
-Lean export replay, and NanoDa replay. Subsequent edits to eleven module
-comments leave all proof code unchanged; their before/after hashes are
-recorded separately. All seventeen selected declarations use only the
-three standard axioms.
+Before consolidation, all four result families passed local statement and
+axiom comparison, fresh Lean export replay, and NanoDa replay in separate
+configurations. Subsequent edits to eleven module comments leave all proof
+code unchanged; their before/after hashes are recorded separately. The
+verification record identifies the checks performed after combining the
+claims into one Challenge and Solution. All seventeen selected declarations
+use only the three standard axioms.
 
 A successful Lake build checks the Lean proofs. Comparator additionally
 compares the independent statements and checks their axioms; NanoDa provides
@@ -57,4 +59,4 @@ check.
 
 The recorded lower-bound checks used these local tools, with an extended
 kernel deadline for the ten-symbol certificate. The verification record
-retains the actual limits and outcomes for each configuration.
+retains the actual limits and outcomes of those historical checks.

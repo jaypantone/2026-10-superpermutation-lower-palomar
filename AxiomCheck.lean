@@ -1,14 +1,11 @@
 module
 
-public import Submissions.General.Solution
-public import Submissions.Asymptotics.Solution
-public import Submissions.Ten.Solution
-public import Submissions.Fourteen.Solution
+public import Submissions.Solution
 
-/-! Standard-axiom audit for all submitted lower-bound declarations. -/
+/-! Standard-axiom audit of all seventeen submitted claims. -/
 
-#print axioms SuperpermutationResults.GeneralLower.exact_word_bound
-#print axioms SuperpermutationResults.GeneralLower.quadratic_word_bound
+#print axioms SuperpermutationPalomar.GeneralLower.exact_word_bound
+#print axioms SuperpermutationPalomar.GeneralLower.quadratic_word_bound
 #print axioms SuperpermutationPalomar.LowerAsymptotics.exact_leading_limit
 #print axioms SuperpermutationPalomar.LowerAsymptotics.quadratic_leading_limit
 #print axioms SuperpermutationPalomar.LowerAsymptotics.word_lower_bound_two_sub_epsilon
@@ -22,5 +19,5 @@ public import Submissions.Fourteen.Solution
 #print axioms SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_one_limit
 #print axioms SuperpermutationPalomar.LowerAsymptotics.exact_gain_zero_asymptotic_lower
 #print axioms SuperpermutationPalomar.LowerAsymptotics.exact_gain_one_asymptotic_lower
-#print axioms SuperpermutationResults.Lower10.word_lower_bound
-#print axioms SuperpermutationResults.Lower14.word_lower_bound
+#print axioms SuperpermutationPalomar.Lower10.word_lower_bound
+#print axioms SuperpermutationPalomar.Lower14.word_lower_bound

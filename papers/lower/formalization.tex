@@ -6,22 +6,21 @@ is the assertion that every list $p$ of length $K$ with distinct entries
 has a prefix $u$ and a suffix $v$ with $w=upv$. Thus the final statements
 refer directly to covering words, with no path or chain hypothesis.
 
-The two statements in
-\nolinkurl{Submissions/General/Challenge.lean}
+The two general statements in
+\nolinkurl{Submissions/Challenge.lean}
 are Theorem~\ref{thm:main} with the exact and quadratic return orders.
 Their formulas include the initial rows $8\le K\le12$.
 Their declaration names are \nolinkurl{exact_word_bound} and
 \nolinkurl{quadratic_word_bound}, in the namespace
-\nolinkurl{SuperpermutationResults.GeneralLower}.
-The challenge imports only Mathlib. Its solution environment imports
-proved declarations with the same names; the internal bridge between
-the displayed formulas and the proof's formulas is checked by reflexivity.
+\nolinkurl{SuperpermutationPalomar.GeneralLower}.
+The challenge imports only Mathlib. The solution applies the original
+theorems to these statements, with Lean checking that their definitions
+agree.
 The Lean formula uses the natural-number ceiling. The correction in
 \eqref{eq:bound} is positive in every stated application, so this
 agrees with the ordinary ceiling used here.
 
-The challenge in \nolinkurl{Submissions/Asymptotics/Challenge.lean}
-states thirteen consequences. The correspondence
+The same challenge states thirteen asymptotic consequences. The correspondence
 with the paper is recorded below. Names in the second column are the
 suffixes of declarations in
 \nolinkurl{SuperpermutationPalomar.LowerAsymptotics}.
@@ -62,7 +61,7 @@ normalized difference is eventually at least the stated constant minus
 that epsilon. They do not assert convergence. The finite strict-improvement
 thresholds in Proposition~\ref{prop:gains} have the ordinary proof in
 Appendix~\ref{app:numerical}; they are not separate claims in this
-asymptotic challenge.
+submission.
 
 Every declaration just listed, and both general word bounds, has a proof
 using only \nolinkurl{propext}, \nolinkurl{Classical.choice}, and

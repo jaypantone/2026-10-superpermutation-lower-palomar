@@ -1,0 +1,15 @@
+import Lake.Check.Axioms
+import Lake.Check.Compare
+
+def main (args : List String) : IO Unit := do
+  let [challengePath, solutionPath] := args
+    | throw <| IO.userError "Expected two export paths"
+  let challenge <- LeanExport.parseStream <| .ofHandle (<- IO.FS.Handle.mk challengePath .read)
+  let solution <- LeanExport.parseStream <| .ofHandle (<- IO.FS.Handle.mk solutionPath .read)
+  let theoremNames : Array Lean.Name := #["SuperpermutationPalomar.GeneralLower.exact_word_bound", "SuperpermutationPalomar.GeneralLower.quadratic_word_bound", "SuperpermutationPalomar.LowerAsymptotics.exact_leading_limit", "SuperpermutationPalomar.LowerAsymptotics.quadratic_leading_limit", "SuperpermutationPalomar.LowerAsymptotics.word_lower_bound_two_sub_epsilon", "SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_zero", "SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_one", "SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_two", "SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_zero", "SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_one", "SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_two", "SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_zero_limit", "SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_one_limit", "SuperpermutationPalomar.LowerAsymptotics.exact_gain_zero_asymptotic_lower", "SuperpermutationPalomar.LowerAsymptotics.exact_gain_one_asymptotic_lower", "SuperpermutationPalomar.Lower10.word_lower_bound", "SuperpermutationPalomar.Lower14.word_lower_bound"].map String.toName
+  let legalAxioms : Array Lean.Name := #["propext", "Quot.sound", "Classical.choice"].map String.toName
+  let primitives : Array Lean.Name := #["Nat.add", "Nat.sub", "Nat.mul", "Nat.pow", "Nat.gcd", "Nat.div", "Nat.mod", "Nat.beq", "Nat.ble", "Nat.land", "Nat.lor", "Nat.xor", "Nat.shiftLeft", "Nat.shiftRight", "String.ofList", "Char.ofNat", "List", "eagerReduce", "Nat", "String", "String.mk", "Char", "optParam", "autoParam", "semiOutParam", "outParam"].map String.toName
+  IO.ofExcept <| Lake.Check.compareAt challenge solution
+    (theoremNames ++ legalAxioms) #[] primitives
+  IO.ofExcept <| Lake.Check.checkAxioms solution theoremNames #[] legalAxioms
+  IO.println "PASS: all 17 statements match; only the three standard axioms. No kernel replay performed."

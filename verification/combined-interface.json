@@ -1,0 +1,365 @@
+{
+  "status": "PASS",
+  "recorded_utc": "2026-10-24T15:48:34.492391+00:00",
+  "configuration_sha256": "604118035d0f432ab4db7c66d57d466d43ad12ad695958a27b56792cd513a260",
+  "checked_original_build_receipt_sha256": "4d0031d10406d4b8cff1db9bf28936e98d30cad7e1276d192bee0ca243f62ba8",
+  "retained_lean_sources_unchanged": 274,
+  "compiler_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+  "steps": [
+    {
+      "step": "compile-submissions-challenge",
+      "exit_code": 0,
+      "log_sha256": "4757618e5204f97432a0c8f78db0bc04b1d25c033c747dd2dd3eb4e35df64826",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 4,
+          "successful_samples": 4,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 1062928,
+        "seconds": 3.148,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 66639,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "compile-submissions-solution",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 4,
+          "successful_samples": 4,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 1176848,
+        "seconds": 3.142,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 66663,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "compile-axiomcheck",
+      "exit_code": 0,
+      "log_sha256": "127256018003628012b719b72ee1316b210e7a0d4cd9a10f5ef59b1be8889704",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 4,
+          "successful_samples": 4,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 1336496,
+        "seconds": 3.152,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 66687,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "export-challenge",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 4,
+          "successful_samples": 4,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 2164896,
+        "seconds": 3.144,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 66710,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "export-solution",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 35,
+          "successful_samples": 35,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 3483456,
+        "seconds": 35.183,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 66767,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "compile-comparison-tool",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 2,
+          "successful_samples": 2,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 224,
+        "seconds": 1.084,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 67116,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "link-comparison-tool",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 2,
+          "successful_samples": 2,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 224,
+        "seconds": 1.092,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 67127,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    },
+    {
+      "step": "statement-and-axiom-comparison",
+      "exit_code": 0,
+      "log_sha256": "7a87a37d1c197cb596c54f6b305e5f9429cc41ae719a73342e7cb753192c7a6b",
+      "resource_guard": {
+        "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+        "launched": true,
+        "rss_limit_kib": 6291456,
+        "recommended_lean_memory_mib": 4096,
+        "timeout_limit_seconds": 120,
+        "poll_sleep_seconds": 1,
+        "host_probe_timeout_seconds": 2,
+        "required_host_pressure_level": 1,
+        "minimum_host_reported_free_percent": 25,
+        "host_memory": {
+          "attempted_samples": 21,
+          "successful_samples": 21,
+          "initial": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "last": {
+            "pressure_level": 1,
+            "reported_free_percent": 84
+          },
+          "minimum_reported_free_percent": 84,
+          "maximum_pressure_level_observed": 1
+        },
+        "limitations": "Sampled process RSS and host signals; not an OS hard memory cap or control of other jobs.",
+        "peak_sampled_rss_kib": 512256,
+        "seconds": 20.725,
+        "stop_reason": null,
+        "cleanup": [
+          {
+            "pgid": 67141,
+            "method": "already-inactive",
+            "signaled_pids": [],
+            "result": "no-live-members"
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Combined interface compilation and official statement/axiom comparison; historical proof kernel checks are retained, not rerun.",
+  "challenge_export": {
+    "sha256": "a540e1d8d9f9b16c3fa69ea6078e81105628fc4432dea1151b99c3ce8caf3fb9",
+    "bytes": 31995932
+  },
+  "solution_export": {
+    "sha256": "1382697cb8b23b9d5db116948854c6c451a7984c4140f11f30dbc4003fc7472d",
+    "bytes": 318781391
+  },
+  "finished_utc": "2026-10-24T15:49:45.354707+00:00",
+  "new_source_sha256": {
+    "Submissions/Challenge.lean": "57e1a1580016f940ebdc8f093d7f09b37d97df03977df037621c3186ea79a5d6",
+    "Submissions/Solution.lean": "a83a036ab0d8b5a20e85980e455107ca57e70d33b5e5e01f9ec3730cc3e652e1",
+    "AxiomCheck.lean": "00d1c9b8c7108f2c814fce7e08cd348a26ed977162fa86afc3c5e5db4a5e234a"
+  },
+  "check_driver_sha256": "cce226eab328dd47b21a1d6db0115fdaf6b0beb2bc7b63b489fcf0103a256756",
+  "comparison_driver_sha256": "146d6b7107ea36f8f49f0e4e5346362f613cb2fb83872492ae582467aaac3e34",
+  "official_compare_source_sha256": "0281630a33b8f08a9f3f40f229cd843c02441a0cd4d8a6d8548dc2bb8ded4c68",
+  "official_axioms_source_sha256": "261fa54494a6a17c23b8588d788ab1080e5c39af2143948f8e140cfa295560d1"
+}
