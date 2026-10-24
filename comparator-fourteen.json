@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Submissions.Fourteen.Challenge",
+  "solution_module": "Submissions.Fourteen.Solution",
+  "theorem_names": [
+    "SuperpermutationResults.Lower14.word_lower_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

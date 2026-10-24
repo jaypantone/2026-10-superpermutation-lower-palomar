@@ -1,0 +1,2418 @@
+{
+  "source_repository": "https://github.com/jaypantone/2026-10-superpermutation-bounds",
+  "source_commit": "c9ccb6a0d9ddd1007fdce6efab50807ec47464b9",
+  "migration": "The 270 inherited modules recover their exact original bytes after reversing the documented Lean module/public-import/expose-public-section directives, module-local privateInPublic compatibility options, their explanatory comments and added blank lines, and the explicit Mathlib.Data.List.Nodup import added in proofs/LowerBounds/SWord.lean. No inherited theorem statement or proof body was edited.",
+  "roots": [
+    "SuperpermutationResults.GeneralLower.Solution",
+    "SuperpermutationResults.LowerAsymptotics.Solution",
+    "SuperpermutationResults.Lower10.Solution",
+    "SuperpermutationResults.Lower14.Solution"
+  ],
+  "modules": [
+    {
+      "module": "SuperpermutationResults.Definitions",
+      "path": "SuperpermutationResults/Definitions.lean",
+      "original_sha256": "0ad3cb9d029873d4e67427841d6a7a4261a9dbe53dedd0297996ca3425a48d86",
+      "imports": []
+    },
+    {
+      "module": "SuperpermutationResults.GeneralLower.Challenge",
+      "path": "SuperpermutationResults/GeneralLower/Challenge.lean",
+      "original_sha256": "7761dd548d86f8b3c80012907b8532f76cdbfbeae4b532752be465e70b449859",
+      "imports": [
+        "SuperpermutationResults.Definitions"
+      ]
+    },
+    {
+      "module": "Challenge",
+      "path": "proofs/Challenge.lean",
+      "original_sha256": "559e5613aa4e211e806f7a2104d79f3223e83e8116a9434ecb490e13b0ad3968",
+      "imports": []
+    },
+    {
+      "module": "LowerChallenge",
+      "path": "proofs/LowerChallenge.lean",
+      "original_sha256": "9bc9823190a93da0d70d0efcbb9a3ef32c24b2044cedf848b3d0a54009f2d2cd",
+      "imports": [
+        "Challenge"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.Definitions",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/Definitions.lean",
+      "original_sha256": "be1a0ff4484e0d36c153bf223f5d8907877e9d2457228d09eb36b03c5af9ff8f",
+      "imports": []
+    },
+    {
+      "module": "RefinedLowerChallenge",
+      "path": "proofs/RefinedLowerChallenge.lean",
+      "original_sha256": "4377aa40cd1c16ba64326e7bafd13bbcd4338322c19513681d310d7d8b41a3b6",
+      "imports": [
+        "LowerChallenge",
+        "SuperpermutationLowerBound.Refinement.Definitions"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.Parameters",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/Parameters.lean",
+      "original_sha256": "0229a602fbe298f566e724f942c6b6bdf80e3ae368d75448a8cd0b0bb0e90614",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.Definitions"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Foundation.Words",
+      "path": "proofs/SuperpermutationLowerBound/Foundation/Words.lean",
+      "original_sha256": "bec747f286d92a39c2141a22652b8dd2eabe12a5b73a2010d7a224d333af80aa",
+      "imports": []
+    },
+    {
+      "module": "SuperpermutationLowerBound.Foundation.Graph",
+      "path": "proofs/SuperpermutationLowerBound/Foundation/Graph.lean",
+      "original_sha256": "238d7b23dc5d26afdd41e4c9c7e4256d25ddc498b5842ff3360fd9e5c9941eea",
+      "imports": [
+        "SuperpermutationLowerBound.Foundation.Words"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section01.Overlap",
+      "path": "proofs/SuperpermutationLowerBound/Section01/Overlap.lean",
+      "original_sha256": "4b7bbe59a675671f1669ba6b99ba335ee8ba77365cc750affc5033c43ec2a24e",
+      "imports": [
+        "SuperpermutationLowerBound.Foundation.Graph"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section01.Paths",
+      "path": "proofs/SuperpermutationLowerBound/Section01/Paths.lean",
+      "original_sha256": "70937fae1a01bf7162c036de795317bda507df38b11b41544b72eaac972d8209",
+      "imports": [
+        "SuperpermutationLowerBound.Section01.Overlap"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section01.Blocks",
+      "path": "proofs/SuperpermutationLowerBound/Section01/Blocks.lean",
+      "original_sha256": "09889645b49e9c13da5b800a08c5b18b33c639d938c585f3ee14813941189fba",
+      "imports": [
+        "SuperpermutationLowerBound.Section01.Paths"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Foundation.FiniteDigraph",
+      "path": "proofs/SuperpermutationLowerBound/Foundation/FiniteDigraph.lean",
+      "original_sha256": "598aca7651fe4b3a792794a95b1539f3a216303a3e1ea8a21f3cafaa91d874b8",
+      "imports": [
+        "SuperpermutationLowerBound.Foundation.Graph"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section02.ForestTransformation",
+      "path": "proofs/SuperpermutationLowerBound/Section02/ForestTransformation.lean",
+      "original_sha256": "9820652b82b19288d61da181fb1e92bee902c713641fc1aad0fe1b5d4c4ce2c1",
+      "imports": [
+        "SuperpermutationLowerBound.Section01.Blocks",
+        "SuperpermutationLowerBound.Foundation.FiniteDigraph"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section02.PathForest",
+      "path": "proofs/SuperpermutationLowerBound/Section02/PathForest.lean",
+      "original_sha256": "84bc55eb165ad671bc1060c5667857985d42dad3c1cad531aed8303ac22ef5e5",
+      "imports": [
+        "SuperpermutationLowerBound.Section02.ForestTransformation"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section03.ReducedPaths",
+      "path": "proofs/SuperpermutationLowerBound/Section03/ReducedPaths.lean",
+      "original_sha256": "9149b13e45a1d0c876ff8383c53bf4c4f5a1c4ff6e8b201cedda30d0b0ea3f54",
+      "imports": [
+        "SuperpermutationLowerBound.Section02.PathForest"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section04.TwoLoops",
+      "path": "proofs/SuperpermutationLowerBound/Section04/TwoLoops.lean",
+      "original_sha256": "d7eec88faa9ec3b14e898d388ef96a1235da3dcb847ddf6fc3dd3597bddde9eb",
+      "imports": [
+        "SuperpermutationLowerBound.Section03.ReducedPaths"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section04.Runs",
+      "path": "proofs/SuperpermutationLowerBound/Section04/Runs.lean",
+      "original_sha256": "e64d4c747a0d20e5d9d4c61d524ea92d6fc1f51e7cfb861ff9a8e885831c334d",
+      "imports": [
+        "SuperpermutationLowerBound.Section04.TwoLoops"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section04.Doors",
+      "path": "proofs/SuperpermutationLowerBound/Section04/Doors.lean",
+      "original_sha256": "2610a8cbbfb5d3c1129bb54e5d6357f2a6947b330c68bb9aeeb5319a951ea8a9",
+      "imports": [
+        "SuperpermutationLowerBound.Section04.Runs"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section05.FullRunChart",
+      "path": "proofs/SuperpermutationLowerBound/Section05/FullRunChart.lean",
+      "original_sha256": "92a959dc585e9b53bec1c96134a7092c64caa9aaeb113c596462f4adfb4ff788",
+      "imports": [
+        "SuperpermutationLowerBound.Section04.Doors"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section05.SatelliteCalculus",
+      "path": "proofs/SuperpermutationLowerBound/Section05/SatelliteCalculus.lean",
+      "original_sha256": "b51816530db73242d12c571098e94ea63a953ab076ff0fe3878c6c17b760db76",
+      "imports": [
+        "SuperpermutationLowerBound.Section05.FullRunChart"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section05.LegalDeficits",
+      "path": "proofs/SuperpermutationLowerBound/Section05/LegalDeficits.lean",
+      "original_sha256": "6ccae42c6d9e4637f2ab41bd67f3568bf8b3b490a2c952e3db74d79bd857a4d2",
+      "imports": [
+        "SuperpermutationLowerBound.Section05.SatelliteCalculus"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section06.DeficitFunction",
+      "path": "proofs/SuperpermutationLowerBound/Section06/DeficitFunction.lean",
+      "original_sha256": "59a139aab267fe0a1f783ebe36bc096b4fed87fbec8c7c3662c7a774fb1516a9",
+      "imports": [
+        "SuperpermutationLowerBound.Section05.LegalDeficits"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section06.Witnesses",
+      "path": "proofs/SuperpermutationLowerBound/Section06/Witnesses.lean",
+      "original_sha256": "9b53ff662e70c475d65134fc1e874fab28c510758e9b148f4e8fe7c73dfd4a5e",
+      "imports": [
+        "SuperpermutationLowerBound.Section06.DeficitFunction"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section06.Charging",
+      "path": "proofs/SuperpermutationLowerBound/Section06/Charging.lean",
+      "original_sha256": "c93ee64932215df8cf5745781261bb1f64a96b7f4d059448986906e5bf2df09e",
+      "imports": [
+        "SuperpermutationLowerBound.Section06.Witnesses"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainPacking",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainPacking.lean",
+      "original_sha256": "53353750174262e2eb77f17ec37c728926b3053c76f4fbb25aff511c96d872e8",
+      "imports": [
+        "SuperpermutationLowerBound.Section06.Charging"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ScalarAlgebra",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ScalarAlgebra.lean",
+      "original_sha256": "f13565bbf6f048c88d7a813e75a691e355bb406867368d65f55f2adeeb46a065",
+      "imports": []
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainPackingCounts",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainPackingCounts.lean",
+      "original_sha256": "d990a3c5ed2dcb77832fdc8ecb0fcf1e21521e90e670e2a0fb565f7795acf704",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainPacking",
+        "SuperpermutationLowerBound.Refinement.ScalarAlgebra"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ScalarClusters",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ScalarClusters.lean",
+      "original_sha256": "b15a246543d512f16782dcbb8886d0e5e85ea75bb029cc4646be545836417d55",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainPackingCounts"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ScalarCore",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ScalarCore.lean",
+      "original_sha256": "939f2c4275d9b94a09ea41ca50d03bd510e864e9b49bbba94471627c6cbd9f32",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ScalarClusters"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ScalarSequence",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ScalarSequence.lean",
+      "original_sha256": "64d6aa2c54e74f4198381ed8aec448d2a12773ec39f5f87c940030b7f21e08f2",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ScalarCore"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section06.Exact",
+      "path": "proofs/SuperpermutationLowerBound/Section06/Exact.lean",
+      "original_sha256": "59e453b45f4fc91d12587e2db9969f45c85cccc693e7a2b7a075fc162df4d8b0",
+      "imports": [
+        "SuperpermutationLowerBound.Section06.Charging"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section06.TerminalNonfull",
+      "path": "proofs/SuperpermutationLowerBound/Section06/TerminalNonfull.lean",
+      "original_sha256": "55044d2ceaed81de3d7362285a2419fabfb9b68b643d3ee86d2957e27bad85dd",
+      "imports": [
+        "SuperpermutationLowerBound.Section06.Exact"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section07.EndpointDeficits",
+      "path": "proofs/SuperpermutationLowerBound/Section07/EndpointDeficits.lean",
+      "original_sha256": "68a9d2db5b3235608db29af1f8cb9964f8da07992b2f5113b6abf92d6b93629c",
+      "imports": [
+        "SuperpermutationLowerBound.Section06.TerminalNonfull"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section08.ComponentCapacity",
+      "path": "proofs/SuperpermutationLowerBound/Section08/ComponentCapacity.lean",
+      "original_sha256": "7a571e98792365a248f9861d888ec1178cd5745c4bbec3bde61cc1344f40c5f6",
+      "imports": [
+        "SuperpermutationLowerBound.Section07.EndpointDeficits"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.EndpointBounds",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/EndpointBounds.lean",
+      "original_sha256": "736735919027ebc88ac0cfbc76321b4e70f11baf485ad2b05c995e56c63da0d1",
+      "imports": [
+        "SuperpermutationLowerBound.Section08.ComponentCapacity"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ForestFoundation",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ForestFoundation.lean",
+      "original_sha256": "a683ad24d786c02abec9a180db103a60cf27b5a7cb77deceefa6f133c8f6d840",
+      "imports": [
+        "SuperpermutationLowerBound.Section08.ComponentCapacity"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section09.ResidualInequality",
+      "path": "proofs/SuperpermutationLowerBound/Section09/ResidualInequality.lean",
+      "original_sha256": "14a8a7482689250fd35048f0996dffca648da3470f018948b10204d68a05d44d",
+      "imports": [
+        "SuperpermutationLowerBound.Section08.ComponentCapacity"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section10.SurplusRows",
+      "path": "proofs/SuperpermutationLowerBound/Section10/SurplusRows.lean",
+      "original_sha256": "025dd8aa87cf82c8df809491a2a44c1fb9332828b14572b19fb5ce8b40e2e9d4",
+      "imports": [
+        "SuperpermutationLowerBound.Section09.ResidualInequality"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ForestCapacity",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ForestCapacity.lean",
+      "original_sha256": "e8536d197215d4a1c1e57f627f6efcc9d2dc195f2944a0231e84f5dd6824a6c7",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.EndpointBounds",
+        "SuperpermutationLowerBound.Refinement.ForestFoundation",
+        "SuperpermutationLowerBound.Section10.SurplusRows"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ForestResidual",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ForestResidual.lean",
+      "original_sha256": "2d111e0ad5fb2026e1a07319b329155a05f7f3371c78ee176832cbb09b24e097",
+      "imports": [
+        "SuperpermutationLowerBound.Section09.ResidualInequality"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ForestIncidence",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ForestIncidence.lean",
+      "original_sha256": "d213e74f773d5ab93a3c7bb2a388b76a469fb6ce1b92983e095007241c49aa68",
+      "imports": []
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section10.AbsorptionPieces",
+      "path": "proofs/SuperpermutationLowerBound/Section10/AbsorptionPieces.lean",
+      "original_sha256": "616d2ce228042cb9d7755f9da24955fb9a67d6a93c6c84a4e700fbceceffd8c8",
+      "imports": [
+        "SuperpermutationLowerBound.Section10.SurplusRows"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section10.Assembly",
+      "path": "proofs/SuperpermutationLowerBound/Section10/Assembly.lean",
+      "original_sha256": "c988cc8b39f8bc72ce2b7559be37c1a9e7d8bab2f94ce1d7e46088e0f7b6abf6",
+      "imports": [
+        "SuperpermutationLowerBound.Section10.AbsorptionPieces"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ForestAssembly",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ForestAssembly.lean",
+      "original_sha256": "edbc4102bd5337630534e0c6654bece4a17ec12ad2c9d90968c19e22fd6aa226",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ForestCapacity",
+        "SuperpermutationLowerBound.Refinement.ForestResidual",
+        "SuperpermutationLowerBound.Refinement.ForestIncidence",
+        "SuperpermutationLowerBound.Section10.Assembly"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Section11.MainBound",
+      "path": "proofs/SuperpermutationLowerBound/Section11/MainBound.lean",
+      "original_sha256": "8aa819b1300affc7a7b35e3eafb2163b04ff8349019dd3aee0983d4d28e8a3a4",
+      "imports": [
+        "SuperpermutationLowerBound.Section10.Assembly"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.WordBound",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/WordBound.lean",
+      "original_sha256": "5665e982c2da8fda69440bc302bf0208ec85392c1bb71450d77ddc3bb38cf555",
+      "imports": [
+        "RefinedLowerChallenge",
+        "SuperpermutationLowerBound.Refinement.Parameters",
+        "SuperpermutationLowerBound.Refinement.ScalarSequence",
+        "SuperpermutationLowerBound.Refinement.ForestAssembly",
+        "SuperpermutationLowerBound.Section11.MainBound"
+      ]
+    },
+    {
+      "module": "bridge.GenericTransfer",
+      "path": "proofs/bridge/GenericTransfer.lean",
+      "original_sha256": "1057c891dbbbd41c3cc980a2b0ad554e95ad7a357a6ea49288038e3c25eafea8",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.WordBound"
+      ]
+    },
+    {
+      "module": "bridge.ParameterGates",
+      "path": "proofs/bridge/ParameterGates.lean",
+      "original_sha256": "721099e0f4fbc8d5b4f4ed1420012b5212c1f7b97fc9ef5a249d09afeea7c0e5",
+      "imports": [
+        "bridge.GenericTransfer"
+      ]
+    },
+    {
+      "module": "bridge.NumericalEvaluations",
+      "path": "proofs/bridge/NumericalEvaluations.lean",
+      "original_sha256": "43b7fb8ef3ee77482d40f9563113cfd39962af00cdd7b8d5ca1b5f9808b64450",
+      "imports": [
+        "bridge.ParameterGates"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryBasic",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryBasic.lean",
+      "original_sha256": "1f11bc33889581a630264173b8dfac1f81dd86d7b63c22c8011473ee07935439",
+      "imports": [
+        "SuperpermutationLowerBound.Section05.LegalDeficits"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryCoordinates",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryCoordinates.lean",
+      "original_sha256": "bee617ef8465931eb9b98eec7a7f6b7df99908c54c810bf2475b05e942559803",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryBasic"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryIntervals",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryIntervals.lean",
+      "original_sha256": "a9979638caf1b4529a3e5114c2189c68a66e6312199e0494f8049fe2d38cf6a8",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryCoordinates"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryWordIndices",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryWordIndices.lean",
+      "original_sha256": "1499b38947e10f736f65ddd02eb32c87e638ec5edcb5ce0eeb678c9e00fcfa6f",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryIntervals"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnMaps",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnMaps.lean",
+      "original_sha256": "7ee3eee4c58f1ba8fc282d1dfe2f31bc9179d781d04cbda87db9ea747abd699e",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.Definitions"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnEntries",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnEntries.lean",
+      "original_sha256": "bf18d6155e7aeac978a41f02c8590f3b8331f2f09b7a26b543776038f7c13cba",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnMaps"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnGeometry",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnGeometry.lean",
+      "original_sha256": "dbba8fd42f1d553c5346f6376e8994a5e397c9443389030b0afce8c5d7699bac",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryWordIndices",
+        "SuperpermutationLowerBound.Refinement.ReturnEntries"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryFullChart",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryFullChart.lean",
+      "original_sha256": "bb5f9a0a1eeaeef7321927a833b4d628c28d15ec8ccfb9b59912918fb6b2c202",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryWordIndices"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnLocalCollisions",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnLocalCollisions.lean",
+      "original_sha256": "6f8251ed0227aa8b29d23f1b08a77b3ed09fb4b52772bc91dfa86b576219c7e4",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnGeometry",
+        "SuperpermutationLowerBound.Refinement.GeometryFullChart"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryCells",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryCells.lean",
+      "original_sha256": "c2c4b18726ef17bbba302e99608e55e5e26adda9fe73cb711d89e742954b3731",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnLocalCollisions"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainEncoding",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainEncoding.lean",
+      "original_sha256": "10a940b0b05e2cb56294d0cca18edd5e93db50aff200b9b4d29a871b6479c9a4",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainPacking"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryPatterns",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryPatterns.lean",
+      "original_sha256": "9bb10d94d678bd7968d278c0468a45a2f109ed81e67c798c7b6baca86d50ac78",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryCells",
+        "SuperpermutationLowerBound.Refinement.ChainEncoding"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryPatternCells",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryPatternCells.lean",
+      "original_sha256": "b23210d1e340621e3fd67330bd0da796008f43e28b8187fe645d9356f619eba5",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryPatterns"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainFactors",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainFactors.lean",
+      "original_sha256": "20aaf0fa5872fde6cbb4744ee6c04cb800519155253614c21c36eec43cad5f22",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainEncoding"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainPatterns",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainPatterns.lean",
+      "original_sha256": "9896d69318098a9356da1a1621494a2520fb7740683c9a8fa43ee4b5b45cd8e3",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainFactors"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnNormalization",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnNormalization.lean",
+      "original_sha256": "670737949657474437237e39fde201d10119460567ea427965da791d288a8724",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnMaps",
+        "SuperpermutationLowerBound.Refinement.ChainPatterns"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryCellWord",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryCellWord.lean",
+      "original_sha256": "b48337901adefd4431ea00696ead84d7f15880b54aee51aad18a50c12ba065b4",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryPatternCells",
+        "SuperpermutationLowerBound.Refinement.ReturnNormalization"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryReturnCollision",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryReturnCollision.lean",
+      "original_sha256": "882638f021dc369d6803bb9bb017c686c3f857af25572d4b5c81519e08951415",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryCellWord"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnPeriod",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnPeriod.lean",
+      "original_sha256": "a54ec27273bf664d04f2278d35134b0b7959ee4edde07bb54bfc3cf0c79d247a",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnMaps"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnCycleShift",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnCycleShift.lean",
+      "original_sha256": "719f8b85cf5a28e1dce7e33b5981a69d2007b42f06d80fae4a126c808e1b7cf3",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnPeriod"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnResidueOne",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnResidueOne.lean",
+      "original_sha256": "b5f198b12de860cb72e57140ff6193de1d5625fb1919237f8020f55c96f78afe",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnCycleShift",
+        "SuperpermutationLowerBound.Refinement.ReturnEntries"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnResidueTwo",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnResidueTwo.lean",
+      "original_sha256": "a81f4220e7843d3907f0068ac3e087be419dfd607d3aa77bede983cf5dd00a6c",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnCycleShift",
+        "SuperpermutationLowerBound.Refinement.ReturnEntries"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnUniversal",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnUniversal.lean",
+      "original_sha256": "67f1934999e4ef9544462996f786d2ea85bd7a0e8ca486b94531104361e34712",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnGeometry"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnNormalizationPatterns",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnNormalizationPatterns.lean",
+      "original_sha256": "9e8d593cdedc98cf6992a431eae6d3b28baf73b6c0056739f2eda32782a4658b",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnNormalization",
+        "SuperpermutationLowerBound.Refinement.Parameters",
+        "SuperpermutationLowerBound.Refinement.ReturnPeriod",
+        "SuperpermutationLowerBound.Refinement.ReturnResidueOne",
+        "SuperpermutationLowerBound.Refinement.ReturnResidueTwo",
+        "SuperpermutationLowerBound.Refinement.ReturnUniversal"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryPureUniversal",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryPureUniversal.lean",
+      "original_sha256": "ffbf9a146176103be5b02486a8def731d1ee14e2ed5dddaa8f6d7c08af7a18e4",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryReturnCollision",
+        "SuperpermutationLowerBound.Refinement.ReturnNormalizationPatterns"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnTerminal",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnTerminal.lean",
+      "original_sha256": "cb1532b5371e1a38a7d15a27beadd8794c6cf7ace279e1d711fa3c39e3511b03",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnGeometry"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnResidueTwoGeometry",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnResidueTwoGeometry.lean",
+      "original_sha256": "5e8940b451852fcbb172f7b2e8fd4e2ce5fdefeb43a8b39ac1ece8d8ad2134b8",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnResidueTwo",
+        "SuperpermutationLowerBound.Refinement.ReturnGeometry"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryPatternIncoming",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryPatternIncoming.lean",
+      "original_sha256": "6f36a4fb639cb85121ddbb9d372bba535d574ab0affe385de9399480ea4108fa",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryPatternCells"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryTerminalTraps",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryTerminalTraps.lean",
+      "original_sha256": "a6541f20141119951571071d8a16ee3393eaf22d0fd459159c5700378334e642",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnTerminal",
+        "SuperpermutationLowerBound.Refinement.ReturnResidueTwoGeometry",
+        "SuperpermutationLowerBound.Refinement.GeometryCellWord",
+        "SuperpermutationLowerBound.Refinement.GeometryPatternIncoming",
+        "SuperpermutationLowerBound.Refinement.ReturnNormalizationPatterns",
+        "SuperpermutationLowerBound.Refinement.ChainPatterns"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnResidueOneGeometry",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnResidueOneGeometry.lean",
+      "original_sha256": "999f2ac4fccba25364fd0169df53662a281ddb7db73987a66753566bb8052806",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnResidueOne",
+        "SuperpermutationLowerBound.Refinement.ReturnGeometry"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryAlgebraicTraps",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryAlgebraicTraps.lean",
+      "original_sha256": "e0e2f3339e2d749c1201842968662d4b76b2aa805947f0af4f691dd694a9005e",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryReturnCollision",
+        "SuperpermutationLowerBound.Refinement.GeometryTerminalTraps",
+        "SuperpermutationLowerBound.Refinement.ReturnResidueOneGeometry",
+        "SuperpermutationLowerBound.Refinement.ReturnNormalizationPatterns"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReflectionBasic",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReflectionBasic.lean",
+      "original_sha256": "0d6f87a9db53c63e433d2f0685b4bb553b3bda196339e7969087cdec0d56781f",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryBasic"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReflectionLists",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReflectionLists.lean",
+      "original_sha256": "5dc010627bab3fe53d50d952faa76e9a3e4d559c068a11b6042b26ebea679921",
+      "imports": []
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReflectionPath",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReflectionPath.lean",
+      "original_sha256": "dde2c8ce968b8bc782f3a685ef8859d874bc2cf30196b2434230111840508bdf",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReflectionBasic",
+        "SuperpermutationLowerBound.Refinement.ReflectionLists"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReflectionTraps",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReflectionTraps.lean",
+      "original_sha256": "ac03c3dbd030dc9c7c31925e3365a4e2b5b3e63a3c7fe6c034bb47f8ae667abf",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReflectionPath",
+        "SuperpermutationLowerBound.Refinement.ChainPatterns"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainPackingPairing",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainPackingPairing.lean",
+      "original_sha256": "7316503c5d26b185f3dc2bf3adaa6f5ce0001218b6d048e67bea1433c9cee05d",
+      "imports": []
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainPackingUniversal",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainPackingUniversal.lean",
+      "original_sha256": "805911583ce014b2b2480628109af5cf6ed610ae5491d5bdff2530b80a32cbef",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainPacking"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ChainTrapEncoding",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ChainTrapEncoding.lean",
+      "original_sha256": "9f8f47382d8df0b93cfc8e63d62d5fe90a95814b800a742a3863048b2f8149fa",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainPatterns",
+        "SuperpermutationLowerBound.Refinement.ChainPackingPairing",
+        "SuperpermutationLowerBound.Refinement.ChainPackingUniversal"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.ReturnPacking",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/ReturnPacking.lean",
+      "original_sha256": "11dc96a1b117fde033d5ccd572d29c6ba278caa1c020ec14cdd2423233603b4b",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainTrapEncoding",
+        "SuperpermutationLowerBound.Refinement.Parameters"
+      ]
+    },
+    {
+      "module": "SuperpermutationLowerBound.Refinement.GeometryPacking",
+      "path": "proofs/SuperpermutationLowerBound/Refinement/GeometryPacking.lean",
+      "original_sha256": "19132a703beac862e3f1027fbe3a703b2bfa6908a84243d21e157b2ba90d75d3",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryPureUniversal",
+        "SuperpermutationLowerBound.Refinement.GeometryAlgebraicTraps",
+        "SuperpermutationLowerBound.Refinement.GeometryTerminalTraps",
+        "SuperpermutationLowerBound.Refinement.ReflectionTraps",
+        "SuperpermutationLowerBound.Refinement.ReturnPacking"
+      ]
+    },
+    {
+      "module": "bridge.InheritedCheck",
+      "path": "proofs/bridge/InheritedCheck.lean",
+      "original_sha256": "62eddc173c66cb32fbe58ae7b74d715d43375f48fd409f2b17707b880b82492b",
+      "imports": [
+        "bridge.NumericalEvaluations",
+        "SuperpermutationLowerBound.Refinement.GeometryPacking"
+      ]
+    },
+    {
+      "module": "pairs.PaidTiles",
+      "path": "proofs/pairs/PaidTiles.lean",
+      "original_sha256": "882db810cf8b56ddf2e9c27ca9c8a198a596f89231c87512e3c757a9898a6a29",
+      "imports": []
+    },
+    {
+      "module": "pairs.GreedyChunks",
+      "path": "proofs/pairs/GreedyChunks.lean",
+      "original_sha256": "d1c1dbf35b10e08c9fd6875802a5c2e57d6701ad5fe5c2b576337f735fb95a10",
+      "imports": [
+        "pairs.PaidTiles"
+      ]
+    },
+    {
+      "module": "pairs.ChunkClassification",
+      "path": "proofs/pairs/ChunkClassification.lean",
+      "original_sha256": "4c3cc8f0403823f2f18c92d710d99ea79771737ead586e12e777428da85d6704",
+      "imports": [
+        "pairs.GreedyChunks"
+      ]
+    },
+    {
+      "module": "pairs.GreedyLocal",
+      "path": "proofs/pairs/GreedyLocal.lean",
+      "original_sha256": "3cdf4906f788abed75ea8e8f4e04509093c44eff3db496836dbd3b4242721aaa",
+      "imports": [
+        "pairs.ChunkClassification"
+      ]
+    },
+    {
+      "module": "pairs.TwoClassification",
+      "path": "proofs/pairs/TwoClassification.lean",
+      "original_sha256": "ddb3cc9c3fe2cdd4634840fb4fc175f4ae92627b15633fa3b5b344ee436a26fb",
+      "imports": [
+        "pairs.GreedyLocal"
+      ]
+    },
+    {
+      "module": "pairs.PeriodicReturns",
+      "path": "proofs/pairs/PeriodicReturns.lean",
+      "original_sha256": "63d7f81bc452e1e17081abb89a121ced3ccb17a4abc5df98774719d78b7e2d4c",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryReturnCollision"
+      ]
+    },
+    {
+      "module": "pairs.CompletedFactors",
+      "path": "proofs/pairs/CompletedFactors.lean",
+      "original_sha256": "07bf4d68f398c994027fbbe7618130487723c7276f43b7de4db72149654e2cd1",
+      "imports": [
+        "pairs.PeriodicReturns",
+        "pairs.GreedyChunks"
+      ]
+    },
+    {
+      "module": "pairs.PaidOne",
+      "path": "proofs/pairs/PaidOne.lean",
+      "original_sha256": "8ae209393d8e9182a859a489f88238e6016be6f479336ec3c38c07395a2f68d2",
+      "imports": [
+        "pairs.GreedyLocal",
+        "pairs.CompletedFactors",
+        "SuperpermutationLowerBound.Refinement.ReturnPacking"
+      ]
+    },
+    {
+      "module": "pairs.TwoLocal",
+      "path": "proofs/pairs/TwoLocal.lean",
+      "original_sha256": "0256348359928a099b4ec91c964d63a85e679a9811cb15a2b3f3b20e95cd78df",
+      "imports": [
+        "pairs.TwoClassification",
+        "pairs.PaidOne"
+      ]
+    },
+    {
+      "module": "pairs.ChunkPayment",
+      "path": "proofs/pairs/ChunkPayment.lean",
+      "original_sha256": "d7083253106a69e06fed01e99a3c02d1ef5706191b1555904f4405665a6cf6cd",
+      "imports": [
+        "pairs.TwoLocal",
+        "pairs.CompletedFactors"
+      ]
+    },
+    {
+      "module": "bridge.NineGroup",
+      "path": "proofs/bridge/NineGroup.lean",
+      "original_sha256": "a39fac20efd61f32e9836ffdab5e17cee786bed21b627a9527d2d5f18cb39cba",
+      "imports": [
+        "pairs.CompletedFactors"
+      ]
+    },
+    {
+      "module": "FinitePrefixReturns",
+      "path": "proofs/FinitePrefixReturns.lean",
+      "original_sha256": "9a6551b87ad20f73d5ff01485e4057248f675b71935c6208f21c3f152b2d6f7a",
+      "imports": []
+    },
+    {
+      "module": "bridge.NineReturn",
+      "path": "proofs/bridge/NineReturn.lean",
+      "original_sha256": "3b17f2f6f26b9ac2dc414e6e8933d4f1d42283bf48cabfc42f20e7b9bdd9a452",
+      "imports": [
+        "bridge.NineGroup",
+        "pairs.TwoClassification",
+        "FinitePrefixReturns"
+      ]
+    },
+    {
+      "module": "pairs.PaidNine",
+      "path": "proofs/pairs/PaidNine.lean",
+      "original_sha256": "5fb79e28100e4c89f3472e3e0bee8bb2c3e0fb2b16337b64126b5a24a2071014",
+      "imports": [
+        "pairs.ChunkPayment",
+        "bridge.NineReturn",
+        "SuperpermutationLowerBound.Refinement.GeometryPacking"
+      ]
+    },
+    {
+      "module": "FrozenStatement",
+      "path": "proofs/FrozenStatement.lean",
+      "original_sha256": "f66a8ba5b1aad7a80fd5c71e373b657ee55c6385ec54238cfbdfac03a4a054cf",
+      "imports": [
+        "Challenge"
+      ]
+    },
+    {
+      "module": "bridge.ReturnPositivity",
+      "path": "proofs/bridge/ReturnPositivity.lean",
+      "original_sha256": "f9a593a341f196c7b70ac089824bf15decaa28645d1926fdb4e057357654a22d",
+      "imports": [
+        "FrozenStatement"
+      ]
+    },
+    {
+      "module": "bridge.FrozenParameters",
+      "path": "proofs/bridge/FrozenParameters.lean",
+      "original_sha256": "6e48af772c01ced6013df94d2a80a399507955075941b9bf9bdc4a3fb64e2248",
+      "imports": [
+        "bridge.ParameterGates",
+        "bridge.ReturnPositivity"
+      ]
+    },
+    {
+      "module": "bridge.Normalization",
+      "path": "proofs/bridge/Normalization.lean",
+      "original_sha256": "37f086497327c796e40d21eb331d74edacc3d5a1e2f1d5bb70c085ae1d35fb64",
+      "imports": [
+        "bridge.GenericTransfer",
+        "FrozenStatement"
+      ]
+    },
+    {
+      "module": "bridge.FrozenEvaluations",
+      "path": "proofs/bridge/FrozenEvaluations.lean",
+      "original_sha256": "37075022a1c5dd14e1d64c9fedf6af296aff891830cdd03956ab949babfb0d04",
+      "imports": [
+        "bridge.FrozenParameters",
+        "bridge.Normalization",
+        "bridge.NumericalEvaluations"
+      ]
+    },
+    {
+      "module": "bridge.FrozenNine",
+      "path": "proofs/bridge/FrozenNine.lean",
+      "original_sha256": "fc0917337e4ca564a81c0f755b5bcba2a2859d36cd3680a63fca707a379fca98",
+      "imports": [
+        "pairs.PaidNine",
+        "bridge.FrozenEvaluations"
+      ]
+    },
+    {
+      "module": "alternation.AlternatingReturnAlgebra",
+      "path": "proofs/alternation/AlternatingReturnAlgebra.lean",
+      "original_sha256": "d30495f1489e9813b698d4473c1998990a51fdee6806466373c0d313179e9c28",
+      "imports": []
+    },
+    {
+      "module": "alternation.CircleCoordinates",
+      "path": "proofs/alternation/CircleCoordinates.lean",
+      "original_sha256": "50f37549f99ef9dd877d7a52873117022149197c4d708d7a52e6fbff83001e65",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnMaps",
+        "alternation.AlternatingReturnAlgebra"
+      ]
+    },
+    {
+      "module": "bridge.ReturnZeroMap",
+      "path": "proofs/bridge/ReturnZeroMap.lean",
+      "original_sha256": "fb0d489ae02cdc5aa7965cc4098e21c386402c7675676eba56ebd917bca88f3e",
+      "imports": [
+        "bridge.ReturnPositivity"
+      ]
+    },
+    {
+      "module": "bridge.ReturnZeroOrder",
+      "path": "proofs/bridge/ReturnZeroOrder.lean",
+      "original_sha256": "7cbc04f52712e43bcb3f1f88cac9848087141b7500d1614928ee22f0cc1fc481",
+      "imports": [
+        "bridge.ReturnZeroMap"
+      ]
+    },
+    {
+      "module": "alternation.AlternatingActualReturn",
+      "path": "proofs/alternation/AlternatingActualReturn.lean",
+      "original_sha256": "2ffac845f3bb0fc52b7ab5b70f701a5b1629fcd8eef7ce1e0ba579011112cf74",
+      "imports": [
+        "alternation.CircleCoordinates",
+        "pairs.PeriodicReturns",
+        "SuperpermutationLowerBound.Refinement.ReturnPeriod",
+        "bridge.ReturnZeroOrder"
+      ]
+    },
+    {
+      "module": "alternation.AlternationPayment",
+      "path": "proofs/alternation/AlternationPayment.lean",
+      "original_sha256": "6b09d88df0e26161e2ed892219fcc56d11c8de46dd64d13b34df61afe986b88b",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ChainPackingUniversal"
+      ]
+    },
+    {
+      "module": "alternation.AlternatingStrings",
+      "path": "proofs/alternation/AlternatingStrings.lean",
+      "original_sha256": "d20039f65b1ad049ee8810509d1122d0ae6dad99fcef7f912a095647e263990b",
+      "imports": []
+    },
+    {
+      "module": "alternation.InteriorLosses",
+      "path": "proofs/alternation/InteriorLosses.lean",
+      "original_sha256": "01f2c6aca0a8ffd69bf455a08bd4aa3f42438cc378176721cd7ca943ba3bcfbb",
+      "imports": [
+        "alternation.AlternationPayment",
+        "alternation.AlternatingStrings"
+      ]
+    },
+    {
+      "module": "alternation.AlternatingFactors",
+      "path": "proofs/alternation/AlternatingFactors.lean",
+      "original_sha256": "ed5c72e231dcb9a72d67e135622a644cbaacf5ccfe2496cf49d99fd074f85c5a",
+      "imports": [
+        "alternation.InteriorLosses",
+        "pairs.PeriodicReturns",
+        "SuperpermutationLowerBound.Refinement.ChainTrapEncoding"
+      ]
+    },
+    {
+      "module": "alternation.ActualPacking",
+      "path": "proofs/alternation/ActualPacking.lean",
+      "original_sha256": "ea06f7ac4b08491ccc69887f11d7257041b492720b1fe10bb265f8f2260dbad5",
+      "imports": [
+        "alternation.AlternatingActualReturn",
+        "alternation.AlternatingFactors",
+        "SuperpermutationLowerBound.Refinement.GeometryPacking",
+        "bridge.GenericTransfer"
+      ]
+    },
+    {
+      "module": "bridge.FrozenZero",
+      "path": "proofs/bridge/FrozenZero.lean",
+      "original_sha256": "e860bc717a27f47854dab105af6f6a5c8d68ad5d2a102270e2d3b0507dcc685f",
+      "imports": [
+        "alternation.ActualPacking",
+        "bridge.FrozenParameters"
+      ]
+    },
+    {
+      "module": "pairs.ActualOne",
+      "path": "proofs/pairs/ActualOne.lean",
+      "original_sha256": "897a7347dacdc329f738fde87e356238e3b0b346057e7f899a07892a508a196c",
+      "imports": [
+        "pairs.PaidOne",
+        "SuperpermutationLowerBound.Refinement.GeometryPacking"
+      ]
+    },
+    {
+      "module": "ReturnOneMap",
+      "path": "proofs/ReturnOneMap.lean",
+      "original_sha256": "5ce41e12797e5d99665fcbd030d7f803013db342ca659926468f6a99bbdfdbb0",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnResidueOne"
+      ]
+    },
+    {
+      "module": "ReturnOneDescent",
+      "path": "proofs/ReturnOneDescent.lean",
+      "original_sha256": "a188c32ec643bc7fc4e2bc1dfeb19845cdc2aae68eda0eef11943a3bddca1f5f",
+      "imports": [
+        "ReturnOneMap"
+      ]
+    },
+    {
+      "module": "ReturnOneAnchors",
+      "path": "proofs/ReturnOneAnchors.lean",
+      "original_sha256": "6f28af5e1c39fe68a136747b0869b92edd1171981345096da63ebf90750a1cf3",
+      "imports": [
+        "ReturnOneDescent"
+      ]
+    },
+    {
+      "module": "alternation.OneAnchorCycles",
+      "path": "proofs/alternation/OneAnchorCycles.lean",
+      "original_sha256": "3dc2b32f89338191536db86532005ac70d7e85222a057fa3dafb10ee7df070bc",
+      "imports": [
+        "ReturnOneAnchors",
+        "FrozenStatement"
+      ]
+    },
+    {
+      "module": "alternation.OneActualReturn",
+      "path": "proofs/alternation/OneActualReturn.lean",
+      "original_sha256": "be79b581dbedc51f8709329812e4e9b04879af9f5922282372a9b228cd12503e",
+      "imports": [
+        "alternation.OneAnchorCycles"
+      ]
+    },
+    {
+      "module": "pairs.VerifiedOne",
+      "path": "proofs/pairs/VerifiedOne.lean",
+      "original_sha256": "028c0e4849e853191308f74b43a7eacaee7d2e3eddd57462c0f40dcf59c69052",
+      "imports": [
+        "pairs.ActualOne",
+        "alternation.OneActualReturn",
+        "bridge.ReturnPositivity"
+      ]
+    },
+    {
+      "module": "alternation.OneActualPacking",
+      "path": "proofs/alternation/OneActualPacking.lean",
+      "original_sha256": "4abf3c18f70f4ccf964761d03d93093229006653013e7af2fcc7aebd5b25e55f",
+      "imports": [
+        "pairs.VerifiedOne",
+        "bridge.GenericTransfer"
+      ]
+    },
+    {
+      "module": "bridge.FrozenOne",
+      "path": "proofs/bridge/FrozenOne.lean",
+      "original_sha256": "7a66fbf7b06d61d5acadb10e97fe25d31068041743f9b91608805c2e69b6b145",
+      "imports": [
+        "alternation.OneActualPacking",
+        "bridge.FrozenParameters"
+      ]
+    },
+    {
+      "module": "PaidTwo",
+      "path": "proofs/PaidTwo.lean",
+      "original_sha256": "739414f4229fedf36d343fc5c172d67d5dfcc702bf9ae8faeaa007c707bd931c",
+      "imports": [
+        "pairs.ChunkPayment"
+      ]
+    },
+    {
+      "module": "pairs.InteriorFullRuns",
+      "path": "proofs/pairs/InteriorFullRuns.lean",
+      "original_sha256": "3363110e0d1efdfb4aefde8a299612f4a40ab7555217ef6211ded0618568d634",
+      "imports": [
+        "pairs.PeriodicReturns"
+      ]
+    },
+    {
+      "module": "alternation.SquareLocations",
+      "path": "proofs/alternation/SquareLocations.lean",
+      "original_sha256": "5d364fd3790e744e023806380e61636b389c5b6e87218ed904f2daea4fe8f51c",
+      "imports": [
+        "pairs.PeriodicReturns",
+        "pairs.TwoClassification"
+      ]
+    },
+    {
+      "module": "pairs.SquareMap",
+      "path": "proofs/pairs/SquareMap.lean",
+      "original_sha256": "94d2a064adb6ace7825f43aa9786d863c390efff576e1384a3df983f922b77ff",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ReturnResidueTwo"
+      ]
+    },
+    {
+      "module": "pairs.SquareComparison",
+      "path": "proofs/pairs/SquareComparison.lean",
+      "original_sha256": "4809dcf70c31ac9cda96e8fa9d28ca4b791c9cdfd08b8903aac6f7a7e9d14096",
+      "imports": [
+        "pairs.SquareMap"
+      ]
+    },
+    {
+      "module": "SquareEntry",
+      "path": "proofs/SquareEntry.lean",
+      "original_sha256": "d9fec683c88830141724182b85246458dbb006c3829b6938eab18d4d72d04c11",
+      "imports": [
+        "pairs.SquareComparison",
+        "SuperpermutationLowerBound.Refinement.ReturnGeometry"
+      ]
+    },
+    {
+      "module": "SquareCharts",
+      "path": "proofs/SquareCharts.lean",
+      "original_sha256": "7c97d4a2aba5978fe06a49f28ea88eccda127ff319abe7f762ba6b6cad39b821",
+      "imports": [
+        "SquareEntry",
+        "pairs.TwoClassification"
+      ]
+    },
+    {
+      "module": "pairs.ActualSquare",
+      "path": "proofs/pairs/ActualSquare.lean",
+      "original_sha256": "33e731bfb6446e7765edddb6a47bddbe60cc0614235343d88e4aa398d82022f7",
+      "imports": [
+        "pairs.InteriorFullRuns",
+        "alternation.SquareLocations",
+        "SquareCharts"
+      ]
+    },
+    {
+      "module": "bridge.FrozenTwo",
+      "path": "proofs/bridge/FrozenTwo.lean",
+      "original_sha256": "7acdd32df7f7ea3d16836f0f284baff6571ab1b8713495fda94e2498efe8ff5b",
+      "imports": [
+        "PaidTwo",
+        "pairs.ActualSquare",
+        "SuperpermutationLowerBound.Refinement.GeometryPacking",
+        "bridge.FrozenParameters"
+      ]
+    },
+    {
+      "module": "bridge.FrozenPacking",
+      "path": "proofs/bridge/FrozenPacking.lean",
+      "original_sha256": "c8fc13a7db25f6ab17c7c4f6350d9755269f0c202fc1b9a533fce286a5f930a3",
+      "imports": [
+        "bridge.InheritedCheck",
+        "bridge.FrozenNine",
+        "bridge.FrozenZero",
+        "bridge.FrozenOne",
+        "bridge.FrozenTwo"
+      ]
+    },
+    {
+      "module": "bridge.FrozenBounds",
+      "path": "proofs/bridge/FrozenBounds.lean",
+      "original_sha256": "f577459ca9813e846018f62ea7655c12930fd703a03f7fc07de0ebaedb3c93d3",
+      "imports": [
+        "bridge.FrozenPacking",
+        "bridge.FrozenEvaluations"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.GeneralLower.Solution",
+      "path": "SuperpermutationResults/GeneralLower/Solution.lean",
+      "original_sha256": "ecd319a259bfff8b583c3134ca44abadf13e4aff34197c5e37309da92c0374c6",
+      "imports": [
+        "SuperpermutationResults.GeneralLower.Challenge",
+        "bridge.FrozenBounds"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.LowerAsymptotics.Challenge",
+      "path": "SuperpermutationResults/LowerAsymptotics/Challenge.lean",
+      "original_sha256": "42071e955e6bd117bfdd66b670de69f11a1e02dc3c08825592f2a8dea420f41c",
+      "imports": [
+        "SuperpermutationResults.GeneralLower.Challenge"
+      ]
+    },
+    {
+      "module": "asymptotics.Definitions",
+      "path": "proofs/asymptotics/Definitions.lean",
+      "original_sha256": "579abd8428651004e990ad717b3c8bfd6b03be23e1b296f0f1bda4823c4b4674",
+      "imports": [
+        "bridge.FrozenBounds"
+      ]
+    },
+    {
+      "module": "asymptotics.foundation.Factorial",
+      "path": "proofs/asymptotics/foundation/Factorial.lean",
+      "original_sha256": "701b051d4caf1030908ae6cdab2c2fc9c382bc603c10e81e74dd214bdf659bc1",
+      "imports": []
+    },
+    {
+      "module": "asymptotics.foundation.Rounding",
+      "path": "proofs/asymptotics/foundation/Rounding.lean",
+      "original_sha256": "2971402fa324598ec9f4adb02a25276279c30ef936a74f6cd8f713456eb6e587",
+      "imports": [
+        "asymptotics.foundation.Factorial"
+      ]
+    },
+    {
+      "module": "asymptotics.reference.Parameters",
+      "path": "proofs/asymptotics/reference/Parameters.lean",
+      "original_sha256": "c24b6d934e871b49401d754141ef7392670222045e1b6e798dd0db412063c6c9",
+      "imports": [
+        "bridge.FrozenParameters"
+      ]
+    },
+    {
+      "module": "asymptotics.foundation.Leading",
+      "path": "proofs/asymptotics/foundation/Leading.lean",
+      "original_sha256": "64ba9e122570b67bc9877ec16ea91703da1ecfba793cdedf6a0975f7e1fae49a",
+      "imports": [
+        "asymptotics.Definitions",
+        "asymptotics.foundation.Rounding",
+        "asymptotics.reference.Parameters"
+      ]
+    },
+    {
+      "module": "asymptotics.reference.ParameterTable",
+      "path": "proofs/asymptotics/reference/ParameterTable.lean",
+      "original_sha256": "88f8b92e411676ee398dcc50009c828fc6ef48707dacbdfa8d51ece44beca3c0",
+      "imports": [
+        "asymptotics.reference.Parameters",
+        "asymptotics.Definitions"
+      ]
+    },
+    {
+      "module": "asymptotics.reference.Comparison",
+      "path": "proofs/asymptotics/reference/Comparison.lean",
+      "original_sha256": "7eb60cc70bbe65559b111239042fbecc01b97e0d58540e99583c9a700d0f0353",
+      "imports": [
+        "asymptotics.reference.Parameters",
+        "asymptotics.Definitions",
+        "asymptotics.foundation.Rounding"
+      ]
+    },
+    {
+      "module": "asymptotics.reference.IntegerComparison",
+      "path": "proofs/asymptotics/reference/IntegerComparison.lean",
+      "original_sha256": "bcd5c4da2b0d5f043d4ad893f7812f90a0fe8b92e7e2397580c9f89a288d0de8",
+      "imports": [
+        "asymptotics.reference.Comparison"
+      ]
+    },
+    {
+      "module": "asymptotics.reference.Results",
+      "path": "proofs/asymptotics/reference/Results.lean",
+      "original_sha256": "79108ed40377389a4e6c81507eca3ebfa7de7b700be3103666a415373a5677cb",
+      "imports": [
+        "asymptotics.reference.ParameterTable",
+        "asymptotics.reference.IntegerComparison"
+      ]
+    },
+    {
+      "module": "asymptotics.gains.Algebra",
+      "path": "proofs/asymptotics/gains/Algebra.lean",
+      "original_sha256": "d7de1ae3e019064f97278dd8b5ff922b382c50bce8f2d1680e17c659c75fa5da",
+      "imports": [
+        "asymptotics.Definitions"
+      ]
+    },
+    {
+      "module": "asymptotics.gains.QuadraticLimits",
+      "path": "proofs/asymptotics/gains/QuadraticLimits.lean",
+      "original_sha256": "294212eb2df510d93e3147957cf5bd73d406c4e10706f0303203a94ee55a61d5",
+      "imports": [
+        "asymptotics.gains.Algebra",
+        "asymptotics.reference.Parameters",
+        "asymptotics.foundation.Factorial"
+      ]
+    },
+    {
+      "module": "asymptotics.gains.IntegerGains",
+      "path": "proofs/asymptotics/gains/IntegerGains.lean",
+      "original_sha256": "f4d8e7c3d9b87e4f7cfcd9da277d4a12b58fa272ae969f7961b64fa1806fbc2a",
+      "imports": [
+        "asymptotics.gains.QuadraticLimits",
+        "asymptotics.foundation.Rounding"
+      ]
+    },
+    {
+      "module": "asymptotics.gains.ExactComparison",
+      "path": "proofs/asymptotics/gains/ExactComparison.lean",
+      "original_sha256": "abfc93d62b013da672fafe94e032f5e409d0affb239db8eb46d8454d8279f847",
+      "imports": [
+        "asymptotics.gains.IntegerGains"
+      ]
+    },
+    {
+      "module": "asymptotics.gains.ExactGains",
+      "path": "proofs/asymptotics/gains/ExactGains.lean",
+      "original_sha256": "251b055f9a84568c8220c78f155f069ba20d14fda8b110488e63d4035155a168",
+      "imports": [
+        "asymptotics.gains.ExactComparison"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.LowerAsymptotics.Solution",
+      "path": "SuperpermutationResults/LowerAsymptotics/Solution.lean",
+      "original_sha256": "a0ae2014fd193449d7ec647402e515a891b0e8a46ef0f58ba9894b04e88a9221",
+      "imports": [
+        "SuperpermutationResults.LowerAsymptotics.Challenge",
+        "asymptotics.foundation.Leading",
+        "asymptotics.reference.Results",
+        "asymptotics.gains.ExactGains"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.Lower10.Challenge",
+      "path": "SuperpermutationResults/Lower10/Challenge.lean",
+      "original_sha256": "b37615a578b36d997446584e218ec5b1cdea8fd8194402aabf3e37ff0cb8f3b8",
+      "imports": [
+        "SuperpermutationResults.Definitions"
+      ]
+    },
+    {
+      "module": "LowerBounds.SSearch",
+      "path": "proofs/LowerBounds/SSearch.lean",
+      "original_sha256": "357515672fdf4aaecf9fa6af1573f739b975106f3f5c979dd3386ec544d3e647",
+      "imports": []
+    },
+    {
+      "module": "LowerBounds.SCut",
+      "path": "proofs/LowerBounds/SCut.lean",
+      "original_sha256": "d1c4381f41345ef3ce74a2821ac8ad1d60b033bb0ea703dc49ff6a02256fec2b",
+      "imports": [
+        "LowerBounds.SSearch"
+      ]
+    },
+    {
+      "module": "LowerBounds.SLit",
+      "path": "proofs/LowerBounds/SLit.lean",
+      "original_sha256": "15f55c98fb05ee87d6fb597d5dc49afa01414e2f0466f031fc57c21284f0a3f5",
+      "imports": [
+        "LowerBounds.SSearch"
+      ]
+    },
+    {
+      "module": "LowerBounds.SDec",
+      "path": "proofs/LowerBounds/SDec.lean",
+      "original_sha256": "1935c6a460ceebeaa5f3fc6bee4d59dc83c897abfb47f5bf49d4961788dcf186",
+      "imports": [
+        "LowerBounds.SSearch"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D00",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D00.lean",
+      "original_sha256": "34df4d5dd1502b5995cab44487e8f3568c576a5e8094d132c688989750bcc257",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D01",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D01.lean",
+      "original_sha256": "99b859866a952eee9a1697ce1d46b4e54ed26a37190c2671212233d442238e8f",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D02",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D02.lean",
+      "original_sha256": "b0f45362f2d1cd67766b981af3f1bef5a595cf78c110bbda11b44a6a137146b7",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D03",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D03.lean",
+      "original_sha256": "4e1b60998a87f016d31da030bd05eb204c088c824b3f25c461cbb652f43a743f",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D04",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D04.lean",
+      "original_sha256": "a7d6b75722eed36ae41aeee6121c4d105e9c02d36b90310e52df9b1d6ebbf601",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D05",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D05.lean",
+      "original_sha256": "1b6a8eb9727dd47eb831a67e964f1278061557ab109b92727c8b04ae9c574bd4",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D06",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D06.lean",
+      "original_sha256": "ba6b8b64f4574283e35e5f42fb61af02a04eda88fc2ae561b3189f8ab37a0aea",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D07",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D07.lean",
+      "original_sha256": "9496f8755152d8872af68240e8fd85b74f45c37b80221170bebcf95a7daee413",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D08",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D08.lean",
+      "original_sha256": "823324b5b1eb6696c086689c186eda65cc2b6f87db8bf921a4ada5fb7ccce928",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D09",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D09.lean",
+      "original_sha256": "f3278ea11bd62e3cfa5607e0dc6431d4906b2a0d7f35d06e707bbdd3d7a992d8",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D10",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D10.lean",
+      "original_sha256": "65028eed763e743402d8fbdc1f192968730bec1ccbf8bf147b4d57089db2afda",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D11",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D11.lean",
+      "original_sha256": "52e289277d067cb2c480c562e5f90cc2ec06bbb535e2595d48366dfe72a8a691",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D12",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D12.lean",
+      "original_sha256": "1e91b19a705a1b7fbe242e7fb84018578417ad4491f1eeffa284e3d6e21e3c4f",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D13",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D13.lean",
+      "original_sha256": "6480ccf5876945eb3cd159580f062e8aadacadbc5e0c4dfd5d96c1a873f8c2df",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D14",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D14.lean",
+      "original_sha256": "23a16e55990eeff4b640495246269ce1fb0afc79f15bd839e81ac57e5ee2fd6b",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D15",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D15.lean",
+      "original_sha256": "9e3e7d757f203795a1fb7e05feea82ca3559c91ace9a9318a0b218ad07c38ae3",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D16",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D16.lean",
+      "original_sha256": "cf35cea6fa8890079c5e4de43177dcad1b7f070198f2dc1e0544dd2e2f554911",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D17",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D17.lean",
+      "original_sha256": "08df46f0ed02e0d6a95e899ce7292ee0fd86c8bcf4fe054c7c84550c34723c17",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D18",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D18.lean",
+      "original_sha256": "748dc70b4ac3b2ef2c3ab74115b30df6f3c2a6f43b709f9264ea970d332411e3",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D19",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D19.lean",
+      "original_sha256": "584632e882f012cdb55c3bed8a2378c25a4b1e485f560ee21574ca4d55f86bf8",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D20",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D20.lean",
+      "original_sha256": "655f0c4445a1ea697706613b032e72d37045bdea47ee60adebdfb377afe5a3ca",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D21",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D21.lean",
+      "original_sha256": "c46c2ef4e4be4ba88119e0ec5dc992c333ce823f1d781cb7012f6a81ea965e53",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D22",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D22.lean",
+      "original_sha256": "145287b664169125584b3dd68eaa276850af101119a26de59ec34fa6b96744e1",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127D23",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127D23.lean",
+      "original_sha256": "b883c8ad85c7c589ff73cdb0ab3e557ab34408d2ec70451d0753ff1e63b62c49",
+      "imports": [
+        "LowerBounds.SDec"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127Defs",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127Defs.lean",
+      "original_sha256": "8bd6dbdc292d2ba01b0ff96045f3ed3f4b8bdea281d81a2031fc82159e52590f",
+      "imports": [
+        "LowerBounds.SGen.C10_31_508_127D00",
+        "LowerBounds.SGen.C10_31_508_127D01",
+        "LowerBounds.SGen.C10_31_508_127D02",
+        "LowerBounds.SGen.C10_31_508_127D03",
+        "LowerBounds.SGen.C10_31_508_127D04",
+        "LowerBounds.SGen.C10_31_508_127D05",
+        "LowerBounds.SGen.C10_31_508_127D06",
+        "LowerBounds.SGen.C10_31_508_127D07",
+        "LowerBounds.SGen.C10_31_508_127D08",
+        "LowerBounds.SGen.C10_31_508_127D09",
+        "LowerBounds.SGen.C10_31_508_127D10",
+        "LowerBounds.SGen.C10_31_508_127D11",
+        "LowerBounds.SGen.C10_31_508_127D12",
+        "LowerBounds.SGen.C10_31_508_127D13",
+        "LowerBounds.SGen.C10_31_508_127D14",
+        "LowerBounds.SGen.C10_31_508_127D15",
+        "LowerBounds.SGen.C10_31_508_127D16",
+        "LowerBounds.SGen.C10_31_508_127D17",
+        "LowerBounds.SGen.C10_31_508_127D18",
+        "LowerBounds.SGen.C10_31_508_127D19",
+        "LowerBounds.SGen.C10_31_508_127D20",
+        "LowerBounds.SGen.C10_31_508_127D21",
+        "LowerBounds.SGen.C10_31_508_127D22",
+        "LowerBounds.SGen.C10_31_508_127D23"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P00",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P00.lean",
+      "original_sha256": "5c460360f633db40bd04db5dc3eea7cdcbb49b20464a845a04cd4007f2050f9d",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P01",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P01.lean",
+      "original_sha256": "06933523dafe3bff3b499827e8d54eec4a54f8bac81a84a2bb2892492e5c4fb0",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P02",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P02.lean",
+      "original_sha256": "1c15ee3743ad01dca0aa59427da88ee1c79e05aadc44fe3e922eb7970d6170f8",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P03",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P03.lean",
+      "original_sha256": "66813b5794445b41c8edc60251186a60e7e96258e9c941b2943c4f034181d4a5",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P04",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P04.lean",
+      "original_sha256": "984789c748d9e4076f615b11448349a498d55ad7faafd1ca7d3906d1a5f3170e",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P05",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P05.lean",
+      "original_sha256": "e81b3a61326d25af7ea5b0df11c190c4d991f6969ab4530deede72687a4a5655",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P06",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P06.lean",
+      "original_sha256": "7444ec8f06ef7626346572d1fc3e8bf78abc6680a0663e2dcebf255404d749ed",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P07",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P07.lean",
+      "original_sha256": "0d2f56f32e4f72563be61282ee0c5709358c2a81e9421d5de42eb6cc2a2cfd7e",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P08",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P08.lean",
+      "original_sha256": "79f602a2c3999c9917aa5094c51021718753d09ae6027bfcb6991a3aa64a2d7f",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P09",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P09.lean",
+      "original_sha256": "1edad8a11536e76b49e78efaa395cf825ee9387394adcf26a4c197f7e948e8b3",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P10",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P10.lean",
+      "original_sha256": "39b20a2ba0fc56e0938209fd147bea55f347d2685806c7a5252d77abe489ffed",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P11",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P11.lean",
+      "original_sha256": "ce75f6049c14235132784faadc67348251e14d1ebac75afd8d7ebde418c8b4c2",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P12",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P12.lean",
+      "original_sha256": "2c69e8f1af7b20d3e3fe02ecdcab8107289cebf76f2420ec417bf2ba24d57afa",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P13",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P13.lean",
+      "original_sha256": "a4da1b75ad47a0c80193c95e7d9c85f2f425b52513657b6aa18f9a4797ed39c9",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P14",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P14.lean",
+      "original_sha256": "7e10754216ebf71f5c7457bed44217a74a9d2cfd9b5df9b8ac9ce2d9146e098d",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P15",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P15.lean",
+      "original_sha256": "b4864ae194bb4da70d67de78049cbf656be9ea713c88e1f9170c5b1931c6e8c0",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P16",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P16.lean",
+      "original_sha256": "b2dba08c3d798f5c4bb79f66c576f6b578717a894a35fcd0f2e6ecf07a98547f",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P17",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P17.lean",
+      "original_sha256": "b24cd61f032f4fb7813d8e165ff613d4e45eec04ca68db6d3475762cfe2d6724",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P18",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P18.lean",
+      "original_sha256": "1d2d5db08372cf6de4315f494db969de86cdb188cc26d3afe52a95dbca6d1d60",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P19",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P19.lean",
+      "original_sha256": "71ba07783854816d881079fc169aba732974cd6abc11b9ae16d4d87e93d153a9",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P20",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P20.lean",
+      "original_sha256": "03cfadcae017dab58bede63d9d7e4f5b830ca1ce14f439152b765c8800db5751",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P21",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P21.lean",
+      "original_sha256": "b6698cb44897b69921c6317168277dd9008a55b0aa4c1244075385feb0db8d67",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P22",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P22.lean",
+      "original_sha256": "8b5417dc2839f01390ee9cdcb8816fa781873bd3157fd2e52bbca8187b842f8e",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P23",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P23.lean",
+      "original_sha256": "d915a88015ebc11fab7d96a071b9f3d8813af48fca2c68f59d6ba5e3463a54ed",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P24",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P24.lean",
+      "original_sha256": "ce30db953d6c75d88a74c5312dd262b36dbd826c4d1436dcd1581c3abdffde4e",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P25",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P25.lean",
+      "original_sha256": "a2cc5786afc51b9b72edd5d42d484e07e3a326acea1706e38fd068750e9c955f",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P26",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P26.lean",
+      "original_sha256": "383efdaaab46d1707f69cc5b451e1955bf5800c4f44f3523cc90643a8a264646",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P27",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P27.lean",
+      "original_sha256": "94ebd69fc2378d1bc2004643be86a58d76ec7935c38ab38cf95a50b31ae4f15d",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P28",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P28.lean",
+      "original_sha256": "28e28670aeca70377dd5fe083f1defdd60201d4f5f6ebd279be6fa4c4643c9e3",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P29",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P29.lean",
+      "original_sha256": "6618544c0be0a0bfa52734dfad2a592790a71e5cdcd3bd34bbc81d5bf620c72f",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P30",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P30.lean",
+      "original_sha256": "7de8d003dfb3e19ef97cae1120cd956d53eb61c090f7970730f098a8f6f6c346",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P31",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P31.lean",
+      "original_sha256": "478fbfdc91afc63228f028c69a14b8222ce56b57e006c1e7305dc55ba92072e7",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P32",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P32.lean",
+      "original_sha256": "89129fcec32599fdf40947055310f89e29872635f4bdba32e4f2fbe601c761ea",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P33",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P33.lean",
+      "original_sha256": "141cfd36bde98086c146aa8e157b8f444a1cd5ea42600c02a4252daa6a6fb814",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P34",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P34.lean",
+      "original_sha256": "e80c85cecd6444be4fed5204ae6d3c76e088275f8f0fdfd11de2d1648139d1ac",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P35",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P35.lean",
+      "original_sha256": "4b684d4c59ad7edf81e5179df4a2548029a4b72fc77cc5bb9197f22cfc1a3f4f",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P36",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P36.lean",
+      "original_sha256": "65892ef063781f1f9f6b9eebc65d8a11dccc9c5d776ac5403ec69a9c09404c83",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P37",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P37.lean",
+      "original_sha256": "05f8c2cfb0c99d9724293fe607dfae51dcedecd2ebc27f9066e1ad5dce014583",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P38",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P38.lean",
+      "original_sha256": "37d6b4aa6493fdc713c0ed6bb07e78f2b52306aab32df362b529913645485fde",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P39",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P39.lean",
+      "original_sha256": "86d578ecc32ca14baa2d961e19da305b25555e6bc57e74b257d17e4298505607",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P40",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P40.lean",
+      "original_sha256": "ebf95212d186bb4d2213a3a9b76c0ed2e0addf153b8962b385066b2b94066213",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P41",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P41.lean",
+      "original_sha256": "dd68d41e9b1272b9c8a542cd3ce207a2a80b9d71c2ae91d96d31ce339d36cd52",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P42",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P42.lean",
+      "original_sha256": "fbdac22249033fc66bce4ee671df682081d16e2bc0297f0de589b7fe4d9f2077",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P43",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P43.lean",
+      "original_sha256": "5bed57cc01c506e06aa7d23f1ab275a1976574526aefae80453c3576b94f8d2c",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P44",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P44.lean",
+      "original_sha256": "775ee22d5df203bdd72b2b08ad9644f66b6311c909b046a7aeefe3c4da907c0e",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P45",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P45.lean",
+      "original_sha256": "05a5a0375b73a140f20163c8751685cbacc6e210d1977a12a101d16dbfe16730",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P46",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P46.lean",
+      "original_sha256": "f00d6cd57af8baea30b8d8cfb41d15510fcb0c6c39361420270cc38c59b64a26",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P47",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P47.lean",
+      "original_sha256": "9f391fc4203b8d024264e87584987ab47ed5bf25d7ef3f91ea111532c7adbaf4",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P48",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P48.lean",
+      "original_sha256": "5232d3ca954e72028a21ecc18b9a063a21688f5e649e3c375d4911b4349ccf20",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P49",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P49.lean",
+      "original_sha256": "8e23fd860a070dff22fe413b4ff3249404dc7f9adeb84ae2b0e1aa8c50e92ba2",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P50",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P50.lean",
+      "original_sha256": "60b404e3f8c0c1b70910a9a61763e4de8f779ad47c46327ccfc232ac923bf8dc",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P51",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P51.lean",
+      "original_sha256": "381aa001fffa974d005b52abec9f571a75545f4b244739deba1c269470982206",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P52",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P52.lean",
+      "original_sha256": "04b9964378a4ebcc678dbfa5d57f9f58fea2d2cefd3e2830605c4d07a8e2e88e",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P53",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P53.lean",
+      "original_sha256": "ce4b8f0c5d60772c148873ec5295301efe43f3e6c2f81d1020a938f8e65b0c6c",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P54",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P54.lean",
+      "original_sha256": "dd6351005e7eed2bc2954e932724aff200dc3e9a18c1ac955b04e1114ed1c10d",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P55",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P55.lean",
+      "original_sha256": "69a1872b34011682a5a81813322c0357a73a575c378eb5dca60628eb34f2a6de",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P56",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P56.lean",
+      "original_sha256": "a10128f7d9110c0c3e2806dae9fd2b0fa75274cded128df00503fb4f258bd506",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P57",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P57.lean",
+      "original_sha256": "5b1808e0384e68c0bcd52b71ada82d5c594d92a2e99895485d6a97514fd48a5d",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P58",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P58.lean",
+      "original_sha256": "bce713bc727c699da65f356740f0e4fdd9f4b3aba32c4e6336f2a531150b05fb",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P59",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P59.lean",
+      "original_sha256": "d12a7c93f2b63f42dfd09e04d7868d8925eece9a2d804fe83ff5b27a3e7c2441",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P60",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P60.lean",
+      "original_sha256": "c5c4701e8baf1ac3ffc460be5c452a8499c5a40d3832543502947b08d4e0ace9",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P61",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P61.lean",
+      "original_sha256": "4e4218b8e98a0ea783c70e36693fafc4a7585c30b4e33f5672279f94154ec78b",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127P62",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127P62.lean",
+      "original_sha256": "096025f3715778323ca168d10c5025c56c14d768ad39b56bdbf4b67b210ff257",
+      "imports": [
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127Defs"
+      ]
+    },
+    {
+      "module": "LowerBounds.SGen.C10_31_508_127",
+      "path": "proofs/LowerBounds/SGen/C10_31_508_127.lean",
+      "original_sha256": "e740d61946c49c0ab43d473c21809f72d533a0e793f0f1e41a3967466e7fcc0a",
+      "imports": [
+        "LowerBounds.SCut",
+        "LowerBounds.SLit",
+        "LowerBounds.SGen.C10_31_508_127P00",
+        "LowerBounds.SGen.C10_31_508_127P01",
+        "LowerBounds.SGen.C10_31_508_127P02",
+        "LowerBounds.SGen.C10_31_508_127P03",
+        "LowerBounds.SGen.C10_31_508_127P04",
+        "LowerBounds.SGen.C10_31_508_127P05",
+        "LowerBounds.SGen.C10_31_508_127P06",
+        "LowerBounds.SGen.C10_31_508_127P07",
+        "LowerBounds.SGen.C10_31_508_127P08",
+        "LowerBounds.SGen.C10_31_508_127P09",
+        "LowerBounds.SGen.C10_31_508_127P10",
+        "LowerBounds.SGen.C10_31_508_127P11",
+        "LowerBounds.SGen.C10_31_508_127P12",
+        "LowerBounds.SGen.C10_31_508_127P13",
+        "LowerBounds.SGen.C10_31_508_127P14",
+        "LowerBounds.SGen.C10_31_508_127P15",
+        "LowerBounds.SGen.C10_31_508_127P16",
+        "LowerBounds.SGen.C10_31_508_127P17",
+        "LowerBounds.SGen.C10_31_508_127P18",
+        "LowerBounds.SGen.C10_31_508_127P19",
+        "LowerBounds.SGen.C10_31_508_127P20",
+        "LowerBounds.SGen.C10_31_508_127P21",
+        "LowerBounds.SGen.C10_31_508_127P22",
+        "LowerBounds.SGen.C10_31_508_127P23",
+        "LowerBounds.SGen.C10_31_508_127P24",
+        "LowerBounds.SGen.C10_31_508_127P25",
+        "LowerBounds.SGen.C10_31_508_127P26",
+        "LowerBounds.SGen.C10_31_508_127P27",
+        "LowerBounds.SGen.C10_31_508_127P28",
+        "LowerBounds.SGen.C10_31_508_127P29",
+        "LowerBounds.SGen.C10_31_508_127P30",
+        "LowerBounds.SGen.C10_31_508_127P31",
+        "LowerBounds.SGen.C10_31_508_127P32",
+        "LowerBounds.SGen.C10_31_508_127P33",
+        "LowerBounds.SGen.C10_31_508_127P34",
+        "LowerBounds.SGen.C10_31_508_127P35",
+        "LowerBounds.SGen.C10_31_508_127P36",
+        "LowerBounds.SGen.C10_31_508_127P37",
+        "LowerBounds.SGen.C10_31_508_127P38",
+        "LowerBounds.SGen.C10_31_508_127P39",
+        "LowerBounds.SGen.C10_31_508_127P40",
+        "LowerBounds.SGen.C10_31_508_127P41",
+        "LowerBounds.SGen.C10_31_508_127P42",
+        "LowerBounds.SGen.C10_31_508_127P43",
+        "LowerBounds.SGen.C10_31_508_127P44",
+        "LowerBounds.SGen.C10_31_508_127P45",
+        "LowerBounds.SGen.C10_31_508_127P46",
+        "LowerBounds.SGen.C10_31_508_127P47",
+        "LowerBounds.SGen.C10_31_508_127P48",
+        "LowerBounds.SGen.C10_31_508_127P49",
+        "LowerBounds.SGen.C10_31_508_127P50",
+        "LowerBounds.SGen.C10_31_508_127P51",
+        "LowerBounds.SGen.C10_31_508_127P52",
+        "LowerBounds.SGen.C10_31_508_127P53",
+        "LowerBounds.SGen.C10_31_508_127P54",
+        "LowerBounds.SGen.C10_31_508_127P55",
+        "LowerBounds.SGen.C10_31_508_127P56",
+        "LowerBounds.SGen.C10_31_508_127P57",
+        "LowerBounds.SGen.C10_31_508_127P58",
+        "LowerBounds.SGen.C10_31_508_127P59",
+        "LowerBounds.SGen.C10_31_508_127P60",
+        "LowerBounds.SGen.C10_31_508_127P61",
+        "LowerBounds.SGen.C10_31_508_127P62"
+      ]
+    },
+    {
+      "module": "LowerBounds.SWord",
+      "path": "proofs/LowerBounds/SWord.lean",
+      "original_sha256": "188adb4ff0ea7218b7faf3b780a3f7c9a176bf3c886ef20b073dd2f5f8675c2f",
+      "imports": [
+        "LowerBounds.SSearch"
+      ]
+    },
+    {
+      "module": "LowerBounds.ChainCapacityC",
+      "path": "proofs/LowerBounds/ChainCapacityC.lean",
+      "original_sha256": "555a38dec43306b7b25af5cfc564a9438c04a1698143980d19c7c9e80c154094",
+      "imports": []
+    },
+    {
+      "module": "LowerBounds.SSound",
+      "path": "proofs/LowerBounds/SSound.lean",
+      "original_sha256": "0ad5b8a2a3f6fd01fa7047065cb201f51f26cc5be2cd60663703b3f9102ac74f",
+      "imports": [
+        "LowerBounds.SWord",
+        "LowerBounds.ChainCapacityC"
+      ]
+    },
+    {
+      "module": "H20.ActualSegments",
+      "path": "proofs/H20/ActualSegments.lean",
+      "original_sha256": "25d081b526a97f5b59dcac8e363a60837173498c2c6e1ebdd5e55154a2f03bae",
+      "imports": [
+        "LowerBounds.SSound",
+        "SuperpermutationLowerBound.Refinement.ChainPacking"
+      ]
+    },
+    {
+      "module": "H20.WindowScalar",
+      "path": "proofs/H20/WindowScalar.lean",
+      "original_sha256": "37ee13d5fc9f5d9fac22bf54ec9904c688e47502f3281a2ebe75f222d5ec58ee",
+      "imports": [
+        "H20.ActualSegments",
+        "SuperpermutationLowerBound.Refinement.EndpointBounds"
+      ]
+    },
+    {
+      "module": "H20.FiniteWords",
+      "path": "proofs/H20/FiniteWords.lean",
+      "original_sha256": "c244609f12574b1f5d30f653a3b8b3234169b807489f2026559dd7ef95f7daf2",
+      "imports": [
+        "H20.WindowScalar",
+        "SuperpermutationLowerBound.Refinement.WordBound"
+      ]
+    },
+    {
+      "module": "H20.K10",
+      "path": "proofs/H20/K10.lean",
+      "original_sha256": "87af1875114942e30d91a8fb261e37a32ae38c613263b52236c39273a441b215",
+      "imports": [
+        "LowerBounds.SGen.C10_31_508_127",
+        "LowerBounds.SSound",
+        "H20.FiniteWords"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.Lower10.Solution",
+      "path": "SuperpermutationResults/Lower10/Solution.lean",
+      "original_sha256": "bfc9f4ea78e7518c72c06e0a11dc6ed7d8c498f542e26d28ac15299b47ba95c8",
+      "imports": [
+        "SuperpermutationResults.Lower10.Challenge",
+        "H20.K10"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.Lower14.Challenge",
+      "path": "SuperpermutationResults/Lower14/Challenge.lean",
+      "original_sha256": "10e8aa5d4c7c7733dc310c60598bfb9bc8f5f713e392d3e8c87f8b67a4ed1c98",
+      "imports": [
+        "SuperpermutationResults.Definitions"
+      ]
+    },
+    {
+      "module": "bridge.OneWord",
+      "path": "proofs/bridge/OneWord.lean",
+      "original_sha256": "fc95c9d3eb2b62db66ea57fa08b3fc8f94349f1a96f468ef4f0130a246f228cb",
+      "imports": [
+        "bridge.FrozenOne",
+        "bridge.FrozenEvaluations"
+      ]
+    },
+    {
+      "module": "new_results.ForestRigidity",
+      "path": "proofs/new_results/ForestRigidity.lean",
+      "original_sha256": "a6ca0fb9fe8de526296b027ebe3829b04841c529fc045ad78839fa1d6da3d93e",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ForestAssembly",
+        "bridge.OneWord"
+      ]
+    },
+    {
+      "module": "new_results.ScalarRigidity",
+      "path": "proofs/new_results/ScalarRigidity.lean",
+      "original_sha256": "a5e2ba310cad6dd045adcfc949ae0d290f0090d8337b69c51b14ad77705ade20",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.ScalarSequence"
+      ]
+    },
+    {
+      "module": "new_results.RegularSpacing",
+      "path": "proofs/new_results/RegularSpacing.lean",
+      "original_sha256": "32f6635afc47f6aabe518c0e55aa0097051f9841b4bd66bb4a3f303b4bc264fa",
+      "imports": [
+        "new_results.ScalarRigidity"
+      ]
+    },
+    {
+      "module": "new_results.PivotRigidity",
+      "path": "proofs/new_results/PivotRigidity.lean",
+      "original_sha256": "9ea9cff5a18c74a58868fa952117ce3999d3f30f946a5aff08c6254f6db8b7b3",
+      "imports": [
+        "new_results.ScalarRigidity",
+        "new_results.RegularSpacing",
+        "SuperpermutationLowerBound.Refinement.GeometryIntervals",
+        "SuperpermutationLowerBound.Refinement.ReflectionPath"
+      ]
+    },
+    {
+      "module": "new_results.GlobalPartition",
+      "path": "proofs/new_results/GlobalPartition.lean",
+      "original_sha256": "9681725412b7b02ad43171e90c7ed176fa92a70b3de459998e140a9c661a6282",
+      "imports": [
+        "SuperpermutationLowerBound.Refinement.GeometryBasic"
+      ]
+    },
+    {
+      "module": "new_results.Bounds",
+      "path": "proofs/new_results/Bounds.lean",
+      "original_sha256": "52f5ca4b54b2e282098e353fbc90dcbbd96cdffc7d865e11f87e1b181bcbc03f",
+      "imports": [
+        "new_results.ForestRigidity",
+        "new_results.ScalarRigidity",
+        "new_results.PivotRigidity",
+        "new_results.GlobalPartition",
+        "bridge.NumericalEvaluations"
+      ]
+    },
+    {
+      "module": "SuperpermutationResults.Lower14.Solution",
+      "path": "SuperpermutationResults/Lower14/Solution.lean",
+      "original_sha256": "471cc23689983e8a6141b76a55b9225998486d37a1bd569694a5aec2084e114e",
+      "imports": [
+        "SuperpermutationResults.Lower14.Challenge",
+        "new_results.Bounds"
+      ]
+    }
+  ],
+  "compatibility_record": "port-compatibility.json",
+  "visibility_reversal_check": {
+    "matching_original_modules": 270,
+    "nonmatching_modules": 0,
+    "method": "Reverse the exact documented inserted visibility directives and compare bytes against each original_sha256 and pinned original source."
+  }
+}

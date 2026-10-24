@@ -1,0 +1,43 @@
+'SuperpermutationResults.GeneralLower.exact_word_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SuperpermutationResults.GeneralLower.quadratic_word_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.exact_leading_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.quadratic_leading_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.word_lower_bound_two_sub_epsilon' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_zero_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_one_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.exact_gain_zero_asymptotic_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationPalomar.LowerAsymptotics.exact_gain_one_asymptotic_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SuperpermutationResults.Lower10.word_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SuperpermutationResults.Lower14.word_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

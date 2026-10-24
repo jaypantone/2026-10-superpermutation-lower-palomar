@@ -1,0 +1,76 @@
+{
+  "format_version": 1,
+  "status": "COMMENTS_ONLY_CODE_UNCHANGED",
+  "checked_source_commit": "2cbc6c02fe3deb29a6c7853263deeaf50a065dfe",
+  "checked_source_manifest": "verification/lean-source-sha256.json",
+  "current_source_manifest": "verification/lean-source-sha256-current.json",
+  "scope": "Eleven comment edits; every noncomment byte, including whitespace and string contents, is unchanged. All other Lean files are byte-identical. No new compiler or kernel run is claimed.",
+  "edits": [
+    {
+      "path": "proofs/H20/K10.lean",
+      "before_sha256": "7817a1fd6fada38f0bc244a19f267a98464650574eb77522f59a8680a3933a14",
+      "after_sha256": "77550a275f531aad39f1a34dd43c8f0999df6515a46990e469e7f50da9283c35",
+      "noncomment_bytes_sha256": "3b1fc476fbb74fd01af4609b714972cc18efc542941980f3216e1a7de333b919"
+    },
+    {
+      "path": "proofs/H20/WindowScalar.lean",
+      "before_sha256": "f202fab0f9d9f6f1021107006dd91d3b74bbce45a28fe36d7d69e4ca3d184e65",
+      "after_sha256": "9d1e1050d5829cba9744f972fad54778b2a141e332847afdbaf36c6ff6ec4fee",
+      "noncomment_bytes_sha256": "f82e851f655a2fecc391a77917a2ec05240e87c73df4bf38423f39d42c8aac9e"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section01/Blocks.lean",
+      "before_sha256": "e07ab34e0efd17edb01013b05c0fad60ee0a39be9cad6c91d601c32549f17e1d",
+      "after_sha256": "ef8f86a46ff52e54566c2199f39c90442e6fe43b927835b6f8b15e8224fc0225",
+      "noncomment_bytes_sha256": "2eee7a51c769e3162221aed39ac6f3eb94a6c6b4dbbf63684cf8e880bdc796ef"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section02/PathForest.lean",
+      "before_sha256": "d97a6487265463cc0af5879b5488083ca42fa1a25f9b9d380ca2d4ae812f155f",
+      "after_sha256": "c5e6531f1f602a99223526e43af74f3f4e4176421f240e5c38f3d2d651fb9465",
+      "noncomment_bytes_sha256": "0b715f5c73455f42fdd2c48cf9bc26ef73cab1e719d2444f9df24e7aea069456"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section03/ReducedPaths.lean",
+      "before_sha256": "5a91c562fbcc769b7e7631742aba00d86bc953b792e996d8a09b39627824be97",
+      "after_sha256": "a44d47f7d5372d0a68ff22ff716533f4caffb650088dfd46352b2f0991c909c1",
+      "noncomment_bytes_sha256": "974d9a2860da307b261e65d5fd27463ae6677eae524b0fc69b70e8c58ca81554"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section04/Doors.lean",
+      "before_sha256": "06e52191caf298a869a01c036ecadf44f583f2b52df5e95a01d1948f6fc818a5",
+      "after_sha256": "6ba71b95ec6435d16f4aacaee1975fcfca38c40b77e76c6973a85fda04fa7c89",
+      "noncomment_bytes_sha256": "5292ee1864a11d5968d65480788220e760cbe6f4ded1f4c7fa9cf4ea4e47b6dc"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section05/FullRunChart.lean",
+      "before_sha256": "ee4d1333f6ecc8c09a677433051924d4a8ff68e8c3eaf6dc36b232c5f4493de9",
+      "after_sha256": "c3319d3c78a7404f8eebbc37dd20b9b26021c093a59cde17c3134c120d5b8955",
+      "noncomment_bytes_sha256": "604ddd0a0cf762faf870ecdeadafe772ea2982dcc787670cbdf82a71e584a620"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section05/SatelliteCalculus.lean",
+      "before_sha256": "70a747fe62d277f09069f8fcda6f6f27ccce2d9d7e4d642f2bb39ad1927209aa",
+      "after_sha256": "a0fe0cc6c1e89d94ff7a2b78eba265baec68da4fdc5af0b531efb68dfb388c6d",
+      "noncomment_bytes_sha256": "0b7d731a4b84c4b737569ad3130293dcf01ee8beefb90e577a01a81b1ada9990"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section06/Witnesses.lean",
+      "before_sha256": "97acee398b3af8e371a786929fb1892d541375af7b2a5fcc5ee7cd4b3825ab7e",
+      "after_sha256": "a29f5a451b5601fea7dd3f1c5d4be2eac071585650d8c89a4c634558fbbf12b8",
+      "noncomment_bytes_sha256": "fae5bae66644589f6e2d0397096e68c583f622044b9168c431cba146e4e13dc6"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section08/ComponentCapacity.lean",
+      "before_sha256": "9a4a1c530080fe8b974b595492e0152f1e4dd76ac30588abd592ee37d8182ce1",
+      "after_sha256": "dc605b2c2e4066a2bc4f95814a5a9799be2f731cee92b5c09d8db3119235c0ea",
+      "noncomment_bytes_sha256": "8a7ca6c7ab54a73f9fcd70911a98c70c895e17e9bd117b818349b4e8a3d73c50"
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section09/ResidualInequality.lean",
+      "before_sha256": "243cf7edb06a02999f1b4e983fffd772c6fbd401daae0b6a3f3bf71afa3e0a94",
+      "after_sha256": "a5b0c64cd64def8bad7c54d9fb12ede0ab918b68dc9277bbd9dddf6b2dbb4551",
+      "noncomment_bytes_sha256": "aae52ceaefcdfce10c194f3ef2ea00c2fe317b9194e700bfef102aa9da5fbb84"
+    }
+  ]
+}

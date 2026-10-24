@@ -1,0 +1,453 @@
+{
+  "format_version": 1,
+  "recorded_utc": "2026-10-24T15:27:35.178911+00:00",
+  "status": "PASS_CHECKED_PROOFS_WITH_COMMENT_ONLY_SOURCE_EDITS; FULL_PALOMAR_PREFLIGHT_NOT_RUN",
+  "mathematical_source_commit": "c9ccb6a0d9ddd1007fdce6efab50807ec47464b9",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "build": {
+    "status": "PASS",
+    "modules": 279,
+    "targets": [
+      "Submissions.General.Challenge",
+      "Submissions.General.Solution",
+      "Submissions.Asymptotics.Challenge",
+      "Submissions.Asymptotics.Solution",
+      "Submissions.Ten.Challenge",
+      "Submissions.Ten.Solution",
+      "Submissions.Fourteen.Challenge",
+      "Submissions.Fourteen.Solution",
+      "AxiomCheck"
+    ],
+    "raw_receipt_sha256": "4d0031d10406d4b8cff1db9bf28936e98d30cad7e1276d192bee0ca243f62ba8",
+    "compiler_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+    "finished_utc": "2026-10-22T21:26:25.233554+00:00",
+    "source_hashes": "verification/lean-source-sha256.json",
+    "method": "Serial Lean 4.35 build. Reused objects require matching source, compiler/runtime, transitive closure, and object hashes. Sources and build products were staged outside Dropbox.",
+    "resource_limits": "One project compiler; one thread; Lean 4096 MiB; sampled process-group RSS 8 GiB; 300 seconds per module; nice 10."
+  },
+  "axiom_audit": {
+    "status": "PASS",
+    "declarations": 17,
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "output": "verification/axioms.txt",
+    "output_sha256": "35d377cf92dad5e5f2a4743ccd4585cd242ecc6338c36f6c969cab82d49edd11",
+    "declaration_scope": "Exactly the theorem names in the current comparator configurations."
+  },
+  "local_comparisons": [
+    {
+      "configuration": "comparator-asymptotics.json",
+      "configuration_sha256": "000d08c93c55a719366dbe4990d8bb426f81284dbb759de5e249c7103f590487",
+      "status": "PASS_LOCAL_UNSANDBOXED_DIAGNOSTIC",
+      "scope": "Unsandboxed local diagnostics; NOT full Palomar mechanical verification.",
+      "raw_receipt_sha256": "3f17bc8fe4d817a9159d9b4b42a4791462dcea6bc38a9cf4fcfefd177d60b645",
+      "source_binding": "Exact checked challenge/solution source closure and final-build compiler/runtime hashes matched. This describes the checked snapshot; comment_only_source_update identifies later comment edits.",
+      "phases": {
+        "statement_and_axiom_comparison": "PASS_LOCAL_LOG_CONFIRMED",
+        "lean_export_replay": "PASS_LOCAL_UNSANDBOXED",
+        "nanoda_export_replay": "PASS_LOCAL_UNSANDBOXED"
+      },
+      "phase_evidence": {
+        "comparator_source_sha256": "55daf430e5adea38453b21798cbdf4cd099f66ec969494022a566a8ae098c00b",
+        "interpretation": "The reviewed verifyMatch calls statement comparison and axiom checking before starting kernel replay. A kernel-start log marker establishes those earlier phases only; resource stops leave the overall diagnostic incomplete."
+      },
+      "started_utc": "2026-10-22T19:53:43.756534+00:00",
+      "finished_utc": "2026-10-22T19:57:30.748695+00:00",
+      "steps": [
+        {
+          "step": "export-challenge",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 2202816,
+            "seconds": 11.868,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "export-solution",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 3355856,
+            "seconds": 31.029,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "comparator-and-lean-kernel",
+          "exit_code": 0,
+          "log_sha256": "44185e931f2fc8b47a320483e3fea92b5edc0288cf80f976547fd712815368a4",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 898848,
+            "seconds": 113.863,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "nanoda-one-thread",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 688368,
+            "seconds": 69.516,
+            "stop_reason": null
+          }
+        }
+      ],
+      "exports": {
+        "challenge_export": {
+          "bytes": 31953388,
+          "sha256": "500e176581809d582c88fded8e44f912e275c9f2d35722107f3537c429332ccd"
+        },
+        "solution_export": {
+          "bytes": 253154917,
+          "sha256": "1493632c2849e520b2c77d3bbe4966129c5d764b6da872df0adaa0f056ef6a68"
+        }
+      },
+      "checked_source_modules": 160
+    },
+    {
+      "configuration": "comparator-fourteen.json",
+      "configuration_sha256": "b4e5b80627be2d86aa3ebe1848789d6eae074d1549481dd6803c635af4b38393",
+      "status": "PASS_LOCAL_UNSANDBOXED_DIAGNOSTIC",
+      "scope": "Unsandboxed local diagnostics; NOT full Palomar mechanical verification.",
+      "raw_receipt_sha256": "b041129a6c5c3ed1185d16a2c06fdd0dd458d7dcbdd22077cf2ddc8ec6ec4557",
+      "source_binding": "Exact checked challenge/solution source closure and final-build compiler/runtime hashes matched. This describes the checked snapshot; comment_only_source_update identifies later comment edits.",
+      "phases": {
+        "statement_and_axiom_comparison": "PASS_LOCAL_LOG_CONFIRMED",
+        "lean_export_replay": "PASS_LOCAL_UNSANDBOXED",
+        "nanoda_export_replay": "PASS_LOCAL_UNSANDBOXED"
+      },
+      "phase_evidence": {
+        "comparator_source_sha256": "55daf430e5adea38453b21798cbdf4cd099f66ec969494022a566a8ae098c00b",
+        "interpretation": "The reviewed verifyMatch calls statement comparison and axiom checking before starting kernel replay. A kernel-start log marker establishes those earlier phases only; resource stops leave the overall diagnostic incomplete."
+      },
+      "started_utc": "2026-10-22T19:44:54.412568+00:00",
+      "finished_utc": "2026-10-22T19:46:55.927849+00:00",
+      "steps": [
+        {
+          "step": "export-challenge",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 1092480,
+            "seconds": 3.452,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "export-solution",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 3323136,
+            "seconds": 31.914,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "comparator-and-lean-kernel",
+          "exit_code": 0,
+          "log_sha256": "44185e931f2fc8b47a320483e3fea92b5edc0288cf80f976547fd712815368a4",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 842496,
+            "seconds": 59.943,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "nanoda-one-thread",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 906400,
+            "seconds": 25.811,
+            "stop_reason": null
+          }
+        }
+      ],
+      "exports": {
+        "challenge_export": {
+          "bytes": 1051010,
+          "sha256": "8547fb07e180fa45c5b04847cdf2c47d74949220a658762ff53311e48e18c046"
+        },
+        "solution_export": {
+          "bytes": 187385969,
+          "sha256": "eba80fd2b4940b9e0a7fa227b19706542979c91927c2f3ea3bca658525a4841e"
+        }
+      },
+      "checked_source_modules": 121
+    },
+    {
+      "configuration": "comparator-ten.json",
+      "driver_source_sha256": {
+        "local_compare.py": "2492f6e6f1e37a37520feab79d75f9be9b0685c3ae01632d2d3a84ff67eb0624",
+        "resource_guard.py": "78994ecd895487a50d1e23b0f0f729908254c684423b4f983c2ae1fd27bc468d"
+      },
+      "local_deadlines_seconds": {
+        "exports": 300,
+        "each_kernel_check": 10800
+      },
+      "configuration_sha256": "9c1cd4daa6402788b1a85eb1f4e9e14e1d90d923284e81bea838e9e5e2314690",
+      "status": "PASS_LOCAL_UNSANDBOXED_DIAGNOSTIC",
+      "scope": "Unsandboxed local diagnostics; NOT full Palomar mechanical verification.",
+      "raw_receipt_sha256": "83e66f08959c7cca40622d1dcd5e1f215a535f3135bf2c3e8376d04fc77b3b45",
+      "source_binding": "Exact checked challenge/solution source closure and final-build compiler/runtime hashes matched. This describes the checked snapshot; comment_only_source_update identifies later comment edits.",
+      "phases": {
+        "statement_and_axiom_comparison": "PASS_LOCAL_LOG_CONFIRMED",
+        "lean_export_replay": "PASS_LOCAL_UNSANDBOXED",
+        "nanoda_export_replay": "PASS_LOCAL_UNSANDBOXED"
+      },
+      "phase_evidence": {
+        "comparator_source_sha256": "55daf430e5adea38453b21798cbdf4cd099f66ec969494022a566a8ae098c00b",
+        "interpretation": "The reviewed verifyMatch calls statement comparison and axiom checking before starting kernel replay. A kernel-start log marker establishes those earlier phases only; resource stops leave the overall diagnostic incomplete."
+      },
+      "started_utc": "2026-10-23T01:31:42.492478+00:00",
+      "finished_utc": "2026-10-23T02:39:20.185299+00:00",
+      "steps": [
+        {
+          "step": "export-challenge",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "timeout_limit_seconds": 300,
+            "peak_sampled_rss_kib": 1179696,
+            "seconds": 7.28,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 27659,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        },
+        {
+          "step": "export-solution",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "timeout_limit_seconds": 300,
+            "peak_sampled_rss_kib": 3246208,
+            "seconds": 35.206,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 27720,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        },
+        {
+          "step": "comparator-and-lean-kernel",
+          "exit_code": 0,
+          "log_sha256": "44185e931f2fc8b47a320483e3fea92b5edc0288cf80f976547fd712815368a4",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-10800s",
+            "timeout_limit_seconds": 10800,
+            "peak_sampled_rss_kib": 1799712,
+            "seconds": 2757.922,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 27963,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        },
+        {
+          "step": "nanoda-one-thread",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-10800s",
+            "timeout_limit_seconds": 10800,
+            "peak_sampled_rss_kib": 1193200,
+            "seconds": 1256.894,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 36449,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        }
+      ],
+      "exports": {
+        "challenge_export": {
+          "bytes": 1051001,
+          "sha256": "4a3d1850eff4e20aaf7a059e6663f76f0da04090ca347e66571585d9873e1ba7"
+        },
+        "solution_export": {
+          "bytes": 148872312,
+          "sha256": "76e62decc9e2c1c938c6372f79037914256fa38be36a877d00ed112c5be6566a"
+        }
+      },
+      "checked_source_modules": 150
+    },
+    {
+      "configuration": "comparator.json",
+      "configuration_sha256": "f154ca0871c5687999e6ddf93a1139dc890fbe5c4136fa3382b7fff3a01a98f1",
+      "status": "PASS_LOCAL_UNSANDBOXED_DIAGNOSTIC",
+      "scope": "Unsandboxed local diagnostics; NOT full Palomar mechanical verification.",
+      "raw_receipt_sha256": "8d2db3026054bfb656fed3d24dfd5d7cf81f5fb6bcc03f2443eb3fb0c474f467",
+      "source_binding": "Exact checked challenge/solution source closure and final-build compiler/runtime hashes matched. This describes the checked snapshot; comment_only_source_update identifies later comment edits.",
+      "phases": {
+        "statement_and_axiom_comparison": "PASS_LOCAL_LOG_CONFIRMED",
+        "lean_export_replay": "PASS_LOCAL_UNSANDBOXED",
+        "nanoda_export_replay": "PASS_LOCAL_UNSANDBOXED"
+      },
+      "phase_evidence": {
+        "comparator_source_sha256": "55daf430e5adea38453b21798cbdf4cd099f66ec969494022a566a8ae098c00b",
+        "interpretation": "The reviewed verifyMatch calls statement comparison and axiom checking before starting kernel replay. A kernel-start log marker establishes those earlier phases only; resource stops leave the overall diagnostic incomplete."
+      },
+      "started_utc": "2026-10-22T19:38:48.391392+00:00",
+      "finished_utc": "2026-10-22T19:40:29.020208+00:00",
+      "steps": [
+        {
+          "step": "export-challenge",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 1748336,
+            "seconds": 4.141,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "export-solution",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 3349280,
+            "seconds": 16.535,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "comparator-and-lean-kernel",
+          "exit_code": 0,
+          "log_sha256": "44185e931f2fc8b47a320483e3fea92b5edc0288cf80f976547fd712815368a4",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 887328,
+            "seconds": 49.582,
+            "stop_reason": null
+          }
+        },
+        {
+          "step": "nanoda-one-thread",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "peak_sampled_rss_kib": 508400,
+            "seconds": 29.974,
+            "stop_reason": null
+          }
+        }
+      ],
+      "exports": {
+        "challenge_export": {
+          "bytes": 9542494,
+          "sha256": "3fa8bb15cce6c3d06a42eddc289848ff835d8357e633de088ed9ef9a5c2b140b"
+        },
+        "solution_export": {
+          "bytes": 219575435,
+          "sha256": "091d67bc7c932a3ce1976f419c99566741b7bb3f22f07d6b04149bf750d79d90"
+        }
+      },
+      "checked_source_modules": 145
+    }
+  ],
+  "static_checks": {
+    "status": "PASS_STATIC_CHECKS_ONLY",
+    "recorded_utc": "2026-10-24T15:27:35.178911+00:00",
+    "checks": [
+      {
+        "check": "source-policy",
+        "exit_code": 0,
+        "output_sha256": "9b1416f9503e589b2118cd79322c80fbc87769d3ae1986f0d5666877275c1b00"
+      },
+      {
+        "check": "metadata-and-source",
+        "exit_code": 0,
+        "output_sha256": "b0e9726dc468d54a16d6633067d39df661a3035ebf2d9be725adb7be7c140713"
+      }
+    ],
+    "input_sha256": {
+      "formalization.yaml": "8f855ba546c89338321a391d21befad220870c7144174bf749dbbc8c77d794aa",
+      "lakefile.toml": "bfa835ad67a4fb73c26bd0a2ebd28968b9ed99dfac3fc71bb263e29e5ef1406b",
+      "lake-manifest.json": "f5a52c8f1309f20cdd53c6bfb2a2702882fdb7fe94ebc647b02d0c53a2b8e50f",
+      "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "tools/source_policy.py": "e091b59059f6e38732da271db3c8566ab1a8fe873f8754b0f40493f7724c4d3c",
+      "tools/proof_sources.py": "9ea04968e328c6b0415251272083c19687250052d241124e4d344390c5e564b7",
+      "tools/shared_setup.py": "41140cceac8b6f4ffb6197c5557ae98489b6a828d6d59e0549fd80123066904b",
+      "tools/resource_guard.py": "8193fa46e93e161bba32e7611c61e4b43c53dbe33845dada8a0f257c0efa6ada",
+      "tools/check.py": "cfb0c7d9dcb129da926e4a676707952a75d6d1b2c2742035cda2571bdb50c52f",
+      "tools/local_compare.py": "2492f6e6f1e37a37520feab79d75f9be9b0685c3ae01632d2d3a84ff67eb0624",
+      "scripts/validate-submission.py": "2fd625552d758cd807494274dcad3cc5a0c86f615c390ca8d23e2bec6b99f732",
+      "scripts/check-lean-sources.py": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+      ".github/workflows/palomar-preflight.yml": "21331bd2571ff7256b63c5ef68f67da350280930b3c1f258ae3ebea39b52267c",
+      "comparator-asymptotics.json": "000d08c93c55a719366dbe4990d8bb426f81284dbb759de5e249c7103f590487",
+      "comparator-fourteen.json": "b4e5b80627be2d86aa3ebe1848789d6eae074d1549481dd6803c635af4b38393",
+      "comparator-ten.json": "9c1cd4daa6402788b1a85eb1f4e9e14e1d90d923284e81bea838e9e5e2314690",
+      "comparator.json": "f154ca0871c5687999e6ddf93a1139dc890fbe5c4136fa3382b7fff3a01a98f1"
+    },
+    "source_manifest": "verification/lean-source-sha256-current.json",
+    "source_manifest_sha256": "667742549d9724233adbf9fdbf583de1944c0e3de10b0f40c5ffb36a23b7e3a8",
+    "palomar_validator_commit": "ad5db9e7ff8b17523d73aeb244aaeabcde810c64",
+    "additional_source_type_policy": {
+      "repository": "https://github.com/PalomarRegistry/PalomarPolicy",
+      "commit": "28bd48b9b71bbb2a82c718ce761d5a4220ef8e60",
+      "path": "CONTRIBUTING.md"
+    },
+    "scope": "Source policy, metadata/configuration checks, source size/header scan, source manifest rehash, and Python syntax checks. No Lean compilation or kernel replay."
+  },
+  "full_palomar_preflight": {
+    "status": "NOT_RUN",
+    "reason": "The hosted workflow has not run. It is required before agent API intake; human form intake starts Palomar verification after authentication.",
+    "workflow": ".github/workflows/palomar-preflight.yml"
+  },
+  "publication": "NOT_SUBMITTED_TO_PALOMAR",
+  "checked_source_snapshot": {
+    "record": "verification/pre-comment-cleanup.json",
+    "sha256": "293debe334c77b634735a14067a1528743e3ccafea1236296e5e3c66c59fdee8",
+    "scope": "Complete verification record before comment-only release edits; checked source hashes remain in verification/lean-source-sha256.json."
+  },
+  "comment_only_source_update": {
+    "record": "verification/comment-edits.json",
+    "sha256": "ae3a7ca25ba79d58cd18dda27a2dc6ae0974ec57ebc770d567e89d4659ec2561",
+    "current_manifest": "verification/lean-source-sha256-current.json",
+    "current_manifest_sha256": "667742549d9724233adbf9fdbf583de1944c0e3de10b0f40c5ffb36a23b7e3a8",
+    "scope": "All proof code is unchanged. Eleven comments were edited after the recorded proof checks; no new compiler or kernel run is claimed."
+  }
+}

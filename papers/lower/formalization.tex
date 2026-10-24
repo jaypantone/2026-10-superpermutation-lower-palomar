@@ -1,0 +1,70 @@
+\section{The formal statements}
+
+The companion Lean development separates its public definitions from
+the proofs. The coverage predicate on a word $w$ over $\operatorname{Fin}K$
+is the assertion that every list $p$ of length $K$ with distinct entries
+has a prefix $u$ and a suffix $v$ with $w=upv$. Thus the final statements
+refer directly to covering words, with no path or chain hypothesis.
+
+The two statements in
+\nolinkurl{Submissions/General/Challenge.lean}
+are Theorem~\ref{thm:main} with the exact and quadratic return orders.
+Their formulas include the initial rows $8\le K\le12$.
+Their declaration names are \nolinkurl{exact_word_bound} and
+\nolinkurl{quadratic_word_bound}, in the namespace
+\nolinkurl{SuperpermutationResults.GeneralLower}.
+The challenge imports only Mathlib. Its solution environment imports
+proved declarations with the same names; the internal bridge between
+the displayed formulas and the proof's formulas is checked by reflexivity.
+The Lean formula uses the natural-number ceiling. The correction in
+\eqref{eq:bound} is positive in every stated application, so this
+agrees with the ordinary ceiling used here.
+
+The challenge in \nolinkurl{Submissions/Asymptotics/Challenge.lean}
+states thirteen consequences. The correspondence
+with the paper is recorded below. Names in the second column are the
+suffixes of declarations in
+\nolinkurl{SuperpermutationPalomar.LowerAsymptotics}.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.37\textwidth}
+                  >{\raggedright\arraybackslash}p{0.59\textwidth}@{}}
+\toprule
+Mathematical statement & Lean declaration\\
+\midrule
+The leading correction in Corollary~\ref{cor:comparison}
+& \nolinkurl{exact_leading_limit}\newline
+  \nolinkurl{quadratic_leading_limit}\\[3pt]
+Corollary~\ref{cor:word-asymptotic}
+& \nolinkurl{word_lower_bound_two_sub_epsilon}\\[3pt]
+The three comparisons of $B$ with $H$
+& \nolinkurl{exact_reference_limit_zero}\newline
+  \nolinkurl{exact_reference_limit_one}\newline
+  \nolinkurl{exact_reference_limit_two}\\[3pt]
+The three comparisons of $Q$ with $H$
+& \nolinkurl{quadratic_reference_limit_zero}\newline
+  \nolinkurl{quadratic_reference_limit_one}\newline
+  \nolinkurl{quadratic_reference_limit_two}\\[3pt]
+The two limits for $Q-O$
+& \nolinkurl{quadratic_gain_zero_limit}\newline
+  \nolinkurl{quadratic_gain_one_limit}\\[3pt]
+The two eventual lower estimates for $B-O$
+& \nolinkurl{exact_gain_zero_asymptotic_lower}\newline
+  \nolinkurl{exact_gain_one_asymptotic_lower}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Here the suffixes zero, one and two refer to $n=K-1$ modulo three.
+The last two declarations say that, for each positive epsilon, the
+normalized difference is eventually at least the stated constant minus
+that epsilon. They do not assert convergence. The finite strict-improvement
+thresholds in Proposition~\ref{prop:gains} have the ordinary proof in
+Appendix~\ref{app:numerical}; they are not separate claims in this
+asymptotic challenge.
+
+Every declaration just listed, and both general word bounds, has a proof
+using only \nolinkurl{propext}, \nolinkurl{Classical.choice}, and
+\nolinkurl{Quot.sound}. No native computation assumption is used in these
+lower-bound families.

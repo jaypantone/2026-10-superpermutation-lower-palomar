@@ -1,0 +1,172 @@
+\section{When the efficient pattern alternates}
+
+Assume $n=3m$ with $m\ge3$. This case has a different efficient pattern. Here the period is
+$p_0=2m$, so every chain in a nontrivial path has length at most
+$b=p_0-1$. Lemma~\ref{lem:inherited-chains} forbids four consecutive chains
+whose middle two both have length $b$ and whose outer two have
+length at least two.
+
+Temporarily suppose that no chain has length one. Away from the ends of
+the path, two chains of maximum length cannot then be adjacent. The
+largest average allowed by this restriction comes from alternating $b$
+and $b-1$. For example, at $n=12$ the candidate sequence is
+$7,6,7,6,\ldots$, with mean $13/2$. The old parameter is accordingly
+$t_0=2b-1=2p_0-3$.
+
+As before, this efficient repetition returns to an occupied class. The
+additional issue is how to count departures from it. A chain of length
+one can allow a neighboring pair of maximum lengths that would otherwise
+be forbidden. Such a short chain loses many units of length, and some of
+that loss must pay for the exception it creates. Counting only the number
+of nonalternating positions would discard this information.
+
+\subsection{The return of an alternating pair}
+
+The normalization of one pair is $h_{b-1}h_b$. It has an especially
+simple description after changing coordinates: advance seven places
+backwards around a circle, then interchange two neighboring symbols.
+A transposition either splits one cycle into two or joins two cycles
+into one. This gives the order without following a long word of cells.
+
+Define
+\begin{equation}\label{eq:R0}
+ R_0=\begin{cases}
+ 2n/7,&7\mid n,\\
+ u(n-u),&7\nmid n,
+ \end{cases}
+\end{equation}
+where in the second case $1\le u<n$ and $7u\equiv1\pmod n$.
+For $n=12$, the inverse is $u=7$, giving $R_0=35$.
+
+\begin{lemma}\label{lem:alternating-return}
+An alternating factor of $2R_0+1$ chains, with lengths $b,b-1$ in
+either order, cannot occur in a genuine light segment. Moreover,
+$R_0\le n^2/4$.
+\end{lemma}
+
+\begin{proof}
+Let $s$ be the successor permutation of the circle $(1,3,\ldots,n,2)$,
+and put $\tau=(1\ 3)$. The permutations in \eqref{eq:maps} give
+$\rho=\tau s$ and $g=\tau s^3$. Since $g$ has order $p_0$,
+\[
+ M_0=h_{b-1}h_b=\rho g^{-2}\rho g^{-1}
+     =\tau s^{-2}\tau s^{-5}\tau.
+\]
+Conjugation by $s^2\tau$ gives $\tau s^{-7}$, as described above.
+If $7\nmid n$, the map $s^{-7}$ is an $n$-cycle. The transposition
+cuts it into arcs of lengths $u$ and $n-u$. These lengths are coprime,
+so the order is $u(n-u)\le n^2/4$.
+If $7\mid n$, the map $s^{-7}$ has seven cycles of length $n/7$.
+The transposition joins two and leaves the other five, giving order
+$2n/7\le n^2/4$.
+
+Reversing the pair gives a conjugate map with the same order. In an
+alternating factor of $2R_0+1$ chains, the first $2R_0$ have outgoing
+shortened gaps. Their $R_0$ pairs have combined normalization equal
+to the identity, so the following short-run start repeats the first
+start class. The post-$B$ forcing rule applies because each such run
+has $n-2\ge7$ blocks.
+\end{proof}
+
+\subsection{Paying for the breaks in alternation}
+
+We first describe the count. Measure each chain's loss from its maximum
+length $b$. The two efficient lengths $b,b-1$ then become the binary
+symbols $0,1$, and the efficient pattern becomes an alternating binary
+string. We shall remove larger losses, cut at adjacent equal binary
+symbols, and apply Lemma~\ref{lem:alternating-return} to the alternating
+strings that remain.
+
+In the interior of the path there are two kinds of equal adjacency.
+A pair $11$ already contains
+extra loss: both chains have fallen below the maximum. A pair $00$ has
+no such loss, but the four-chain restriction requires a neighboring
+chain of length one. That chain supplies the payment. The following
+proof keeps track of these two sources separately.
+
+\begin{proposition}\label{prop:CP0}
+For $n=3m$, $m\ge3$, we have
+\[
+ \CP\left(p_0+\frac12+\frac1{4R_0},\,
+ t_0-\frac1{2R_0}\right).
+\]
+\end{proposition}
+
+\begin{proof}
+Consider a path of $q\ge2$ chains. Write $z_i=b-\ell_i$ for the loss
+of its $i$th chain, and let $w_i$ indicate whether that chain has
+length one. For each four-chain window, at least one of the middle
+chains is below maximum length or one of the outer chains has length
+one. Thus, for $2\le i\le q-2$,
+\[
+ f_i:=\ind_{z_i>0}+\ind_{z_{i+1}>0}+w_{i-1}+w_{i+2}\ge1.
+\]
+Think of each summand as a witness to this local restriction.
+An ordinary nonmaximum chain supplies one marker, and a chain of length
+one supplies two: it can witness the restriction in a middle position
+or in an outer position. Accordingly, put $v_i=\ind_{z_i>0}+w_i$.
+Each marker occurs in at most two of the windows counted by $\sum f_i$.
+Also $v_i\le z_i$: a chain of length one loses $b-1\ge4$ units,
+more than enough to supply its two markers.
+
+There are $q-3$ windows when $q\ge3$. This suggests measuring the
+remaining loss by $E=2\sum_i z_i-(q-3)$, after subtracting their
+mandatory witnesses. Let $A=\sum_{i=2}^{q-2}(f_i-1)$ count the extra
+witnesses. Then
+\[
+ E=2\sum_i(z_i-v_i)
+   +\left(2\sum_i v_i-\sum_{i=2}^{q-2}f_i\right)+A.
+\]
+All three terms are nonnegative. A nonmaximum chain other than a chain
+of length one spends one loss unit on its marker. If its loss is at
+least two, at least one unit remains. A chain of length one spends two
+of its $b-1$ units, leaving $b-3$. Consequently, if $B_0$ counts the
+indices with $z_i\ge2$ and $\ell_i\ne1$, and $W$ counts those with
+$\ell_i=1$, then
+\begin{equation}\label{eq:defect-payment}
+ E\ge2B_0+2(b-3)W+A.
+\end{equation}
+This is the reserve available to pay for cuts.
+
+Now restrict to the interior indices $2,\ldots,q-1$ and remove those
+counted by $B_0$ or $W$, leaving breaks where they stood. The surviving
+strings are binary. Cut at every $00$ or $11$ adjacency. Each $11$
+contributes at least one extra witness to $A$. Each $00$ needs a
+neighboring chain of length one, and a single such chain can explain
+at most two $00$ adjacencies. Hence the total number of alternating
+strings is at most $B_0+3W+A+1$: a removed chain creates one break,
+and a chain of length one may account for two further cuts.
+
+Every remaining string has length at most $2R_0$. Counting the removed
+indices as well gives
+\begin{equation}\label{eq:alternating-count}
+ q-2\le B_0+W+2R_0(B_0+3W+A+1)\le2R_0(E+1).
+\end{equation}
+For the last inequality, \eqref{eq:defect-payment} pays for each type
+of break separately; $b\ge5$ and $R_0\ge1$ suffice for the coefficients.
+At $q=3$ the window sums are empty and the argument still applies.
+At $q=2$, the identity $E=2\sum_i z_i+1\ge1$ gives
+\eqref{eq:alternating-count} directly.
+
+Finally let $\mu=t_0/2=b-1/2$. The total length is
+\begin{equation}\label{eq:loss-length}
+ \sum_i\ell_i=\mu q+\frac32-\frac E2.
+\end{equation}
+Inserting \eqref{eq:alternating-count} into \eqref{eq:loss-length}
+gives
+\[
+ \sum_i\ell_i\le
+ \left(\mu-\frac1{4R_0}\right)q+2+\frac1{2R_0}
+ =p_0+\frac12+\frac1{4R_0}
+  +\frac12\left(t_0-\frac1{2R_0}\right)(q-1).
+\]
+For a single chain, the earlier bound $\ell_1\le p_0$ suffices.
+\end{proof}
+
+The average has decreased, but the endpoint allowance has increased
+slightly. The count explains both changes: alternating pieces have bounded
+length, while the two ends can leave incomplete pieces. Only the first
+cost accumulates with the number of chains.
+The same proof permits any real upper bound $U\ge R_0$ in place of
+$R_0$, because every alternating string has length at most $2R_0\le2U$.
+In particular, the simpler choice $U=n^2/4$ is valid.

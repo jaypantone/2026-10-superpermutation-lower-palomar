@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Submissions.General.Challenge",
+  "solution_module": "Submissions.General.Solution",
+  "theorem_names": [
+    "SuperpermutationResults.GeneralLower.exact_word_bound",
+    "SuperpermutationResults.GeneralLower.quadratic_word_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

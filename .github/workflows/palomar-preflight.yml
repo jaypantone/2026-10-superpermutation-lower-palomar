@@ -1,0 +1,48 @@
+name: Palomar mechanical preflight
+
+# This is a manually requested diagnostic run, not a registry submission.
+# Palomar fetches the selected immutable snapshot without private credentials;
+# the repository must first be public, with the author's authorization.
+on:
+  workflow_dispatch:
+    inputs:
+      authorization_relationship:
+        description: Relationship to the substantive formalization
+        required: true
+        type: choice
+        options:
+          - I am a responsible author or maintainer
+          - I have approval from a responsible author or maintainer
+
+permissions:
+  contents: read
+
+concurrency:
+  group: palomar-mechanical-preflight
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - comparator_config: comparator.json
+            request_id: general00001
+          - comparator_config: comparator-asymptotics.json
+            request_id: asymptotic01
+          - comparator_config: comparator-ten.json
+            request_id: tenbound0001
+          - comparator_config: comparator-fourteen.json
+            request_id: fourteen0001
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@ad5db9e7ff8b17523d73aeb244aaeabcde810c64
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: ad5db9e7ff8b17523d73aeb244aaeabcde810c64
+      request_id: ${{ matrix.request_id }}
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: >-
+        {"comparator_config_path":"${{ matrix.comparator_config }}","authorization_relationship":"${{ inputs.authorization_relationship }}"}

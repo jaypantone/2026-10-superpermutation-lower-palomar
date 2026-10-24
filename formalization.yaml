@@ -1,0 +1,108 @@
+version: v0.4
+project:
+  name: Chain returns and lower bounds for superpermutations
+  description: Prove explicit general lower bounds for the shortest superpermutation length S(n),
+    valid for every n >= 8. The exact-order and quadratic-order formulas refine the lower-order
+    terms while retaining leading correction (2+o(1))(n-4)! above n!+(n-1)!+(n-2)!. The development
+    also proves asymptotic comparisons with earlier general formulas; the selected theorem statements
+    specify their exact scope. Separate finite refinements prove S(10) >= 4033379 and S(14) >=
+    93891141150.
+  authors:
+  - Jay Pantone
+  license: Apache-2.0
+  responsible_maintainers:
+  - Jay Pantone
+repository:
+  role: substantive-development
+classification:
+  arxiv:
+  - math.CO
+  msc2020:
+  - 05A05
+  - 68R15
+  - 03B35
+sources:
+- title: Chain returns and lower bounds for superpermutations
+  authors:
+  - Jay Pantone
+  id: https://github.com/jaypantone/2026-10-superpermutation-bounds/tree/c9ccb6a0d9ddd1007fdce6efab50807ec47464b9/papers/lower/lower-bounds.tex
+  type: paper
+  relationship: formalizes
+  note: The manuscript and previous Lean development accompany the private October 2026 source
+    release at the pinned revision. This repository contains the substantive proof development
+    ported to a supported Lean release; it is not merely a wrapper around a private dependency.
+    The result is carried forward, not claimed as first discovered in this port.
+  license: Apache-2.0
+  location: Also included at papers/lower/lower-bounds.tex.
+- title: Three finite lower bounds for superpermutations
+  authors:
+  - Jay Pantone
+  id: https://github.com/jaypantone/2026-10-superpermutation-bounds/tree/c9ccb6a0d9ddd1007fdce6efab50807ec47464b9/papers/finite/finite-lower-bounds.tex
+  type: paper
+  relationship: formalizes
+  location: Ten-symbol and fourteen-symbol results only; also included at papers/finite/finite-lower-bounds.tex.
+  note: The native-qualified thirteen-symbol result discussed in the paper is not among the claims
+    compared in this repository.
+  license: Apache-2.0
+- title: 'Three lower bounds in Lean: Theorems A, B and C'
+  authors:
+  - Jakub Halfar
+  id: https://github.com/jhalfar/superpermutations/tree/cc5c763bd5854317b20dadb138990802656e6f03/proofs/lean/lower
+  type: other
+  relationship: background
+  note: The Fritsch-type general formula recorded by Halfar is used for comparison. The ten-symbol
+    finite proof reuses Halfar's chain-piece search, completeness and capacity framework, with
+    the retained upstream source and notices crediting Xiaolong Liu and the Hunter-Raudvere library.
+    The stronger certificate and bridge to the unrestricted word model are from Pantone's development.
+    The general chain-return argument and fourteen-symbol compatibility argument are separate
+    contributions.
+- title: New upper bound with 1771/3456 and new lower bounds for n = 8 to 14, both in Lean
+  authors:
+  - Jakub Halfar
+  id: https://groups.google.com/g/superpermutators/c/6ozhk3faHDA
+  type: web discussion
+  relationship: background
+  note: Dated reference for the announced general formula and finite bounds. The finite comparisons
+    in the companion paper refer to this announcement.
+related_formalizations:
+- id: https://github.com/jaypantone/2026-10-superpermutation-bounds/tree/c9ccb6a0d9ddd1007fdce6efab50807ec47464b9
+  relationship: adapts
+  note: Source snapshot for the present curated and ported proof development. The source repository
+    is private at preparation time; no build dependency on it is required.
+- id: https://github.com/jhalfar/superpermutations/tree/cc5c763bd5854317b20dadb138990802656e6f03/proofs/lean/lower
+  relationship: builds-on
+  note: The ten-symbol result uses the credited chain-piece search framework; retained source
+    notices record the exact reused modules.
+status:
+  scope: 'Seventeen compared declarations in four separately submitted configurations: two general
+    lower bounds, thirteen asymptotic statements and comparisons, the ten-symbol lower bound 4033379,
+    and the fourteen-symbol lower bound 93891141150. All word bounds apply to arbitrary covering
+    words. The thirteen-symbol bound 6746627228 using native_decide is excluded from every configuration
+    and from the proof closure; its discussion in the companion finite paper is contextual only.'
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex
+    tool_setup: Human-directed AI research and formalization, multiple agents for independent
+      proof review, Lean tactics, and finite certificate generation and checking.
+    prompting_notes: The author requested improvements to superpermutation bounds, independent
+      proof review, complete formalizations, readable mathematical accounts, and a subsequent
+      Palomar-compatible port.
+  notes: The research presented here, the Lean formalization, and the accompanying documents were
+    generated entirely by AI systems under Jay Pantone's direction. Inherited mathematical work
+    and software retain their original credits. Independent AI review is not human peer review.
+    Exact historical model versions and total compute cost were not comprehensively recorded;
+    no estimates are supplied.
+fidelity:
+  divergences: This is a port and reorganization of the pinned source development. The Challenge
+    states the advertised claims directly on finite words. No claim is made that all contents
+    of the earlier combined release are registered by this configuration. The companion scope
+    and provenance documents identify exclusions.
+review:
+  status: agent-reviewed; human review status not recorded
+  notes: Independent AI agents reviewed the mathematical arguments and statement interfaces in
+    the preceding development. The precise extent of human checking has not been recorded here;
+    there is no claim of expert peer review. Current build, Comparator and independent-kernel
+    status must be read from the verification records, not inferred from this metadata.
+acknowledgements: Lean, Mathlib, and the mathematical and formalization sources listed here; existing
+  source attribution and licence notices are retained.

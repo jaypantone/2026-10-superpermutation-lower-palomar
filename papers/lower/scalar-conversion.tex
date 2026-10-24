@@ -1,0 +1,101 @@
+\section{The scalar conversion}\label{app:scalar}
+
+For completeness, we give the counting step that turns a chain
+inequality into a hereditary bound on segment deficits. This is Pantone's scalar theorem~\cite{pantone-framework}; no
+integrality of $p$ or $t$ is required.
+
+Call a finite sequence of nonnegative integers \emph{legal} if its
+zero intervals have length at most $a$, except that an entirely zero
+sequence may have length $a+1$; every factor $(0,1,d)$ has $d\ge2$;
+and across an internal zero interval of length $a$, the neighboring
+positive entries sum to at least $a+2$. These are the local run rules
+for genuine light segments. A bound on all legal sequences satisfying
+$\CP(p,t)$ therefore applies to those segments.
+
+\begin{lemma}\label{lem:scalar}
+Let $a\ge4$, $0\le p\le t$, $t>0$, and $t(a-2)\ge4p+6$.
+Set
+\[
+ \lambda=at-2,\qquad B=2t(a+1)+4p.
+\]
+Every legal sequence satisfying $\CP(p,t)$ on its zero-ended factors
+has length $r$ and sum $D$ satisfying $\lambda D-2tr+B\ge0$.
+\end{lemma}
+
+\begin{proof}
+First consider a zero-ended sequence with $s\ge1$ positive clusters.
+Let cluster $j$ have length $m_j$ and sum $D_j$. The rule concerning
+$(0,1,d)$ gives $D_j\ge m_j+1$, so $D_j-2\ge m_j-1\ge0$.
+Moreover $D_j=2$ holds exactly for a regular cluster. Put
+\[
+ M=\sum_j(m_j-1),\quad V=\sum_j(D_j-2),\quad
+ b=\#\{j:(m_j,D_j)\ne(1,2)\}.
+\]
+Write $u_0,\ldots,u_s$ for the zero-gap lengths, including the two end
+gaps, and define
+\[
+ g_0=\#\{j:1\le j<s,\ u_j=a\},\quad
+ H=\sum_{j=1}^{s-1}\max(0,a-1-u_j),\quad
+ L=(a-u_0)+(a-u_s).
+\]
+Counting entries and deficit gives
+\begin{equation}\label{eq:cluster-count}
+ r=as+a+1+M-H+g_0-L,\qquad D=2s+V.
+\end{equation}
+
+Let $h_1$ count the gaps of length $a-2$ between originally adjacent
+regular clusters, and let $h_2$ count the shorter such gaps. Cutting
+at the $b$ other clusters and at these $h_2$ gaps leaves at most
+$b+1+h_2$ paths of chains. The sum of their numbers of links is $h_1$.
+Thus $\CP(p,t)$ gives
+\[
+ s-b\le p(b+1+h_2)+\frac t2h_1.
+\]
+Since $H\ge h_1+2h_2$ and $p\le t$, it follows that
+\begin{equation}\label{eq:J}
+ J:=4p+4(p+1)b+2tH-4s\ge0.
+\end{equation}
+
+Set $c=\lambda-2t$. The numerical hypothesis says $c\ge4(p+1)$.
+Give cluster $j$ the reserve
+\[
+ \Phi_j=\lambda(D_j-2)-2t(m_j-1)
+       -4(p+1)\ind_{(m_j,D_j)\ne(1,2)}.
+\]
+A regular cluster has reserve zero. Every other cluster has
+$D_j-2\ge1$, and therefore
+$\Phi_j\ge c(D_j-2)-4(p+1)\ge0$.
+
+Suppose a zero gap of length $a$ separates clusters $i,j$.
+The actual neighboring positive entries sum to at least $a+2$;
+each other entry in those clusters contributes at least one. Hence
+\[
+ (D_i-2)+(D_j-2)\ge a-2+(m_i-1)+(m_j-1).
+\]
+It follows that
+\[
+ \Phi_i+\Phi_j\ge\lambda(a-2)-8(p+1)
+ \ge\lambda(a-2)-2c
+ =\lambda(a-4)+4t\ge4t.
+\]
+
+Form a graph on the positive clusters, with an edge across each gap
+of length $a$. Its $g_0$ edges form a subgraph of a path. In particular,
+every degree is at most two. Substituting \eqref{eq:cluster-count}
+and \eqref{eq:J} gives the identity
+\[
+ \lambda D-2tr+B
+ =J+2tL
+ +\frac12\sum_{\{i,j\}\in E}(\Phi_i+\Phi_j-4t)
+ +\frac12\sum_j(2-\deg(j))\Phi_j.
+\]
+Every term on the right is nonnegative.
+
+An entirely zero sequence has length at most $a+1$, so its left side
+is at least $4p$. An entirely positive sequence satisfies
+$\lambda D-2tr\ge0$. In a mixed sequence, remove the initial and
+final positive clusters. Each removed entry contributes at least
+$\lambda-2t=c\ge0$. The remainder is either one zero interval or a
+zero-ended sequence of the kind already considered. The empty sequence
+also satisfies the claimed inequality.
+\end{proof}

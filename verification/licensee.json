@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "status": "PASS_LOCAL_PINNED_LICENSEE_CLASSIFICATION",
+  "checked_utc": "2026-10-23T00:32:55.485714+00:00",
+  "scope": "Root LICENSE classification; not a complete Palomar workflow run.",
+  "pipeline": {
+    "repository": "https://github.com/PalomarRegistry/PalomarSubmission",
+    "commit": "ad5db9e7ff8b17523d73aeb244aaeabcde810c64"
+  },
+  "classifier": {
+    "path": "scripts/detect_license.rb",
+    "sha256": "7cc4ad2c63633b307c42808cbe29b6df799ef93f6c7560456e2637bc376f35f8",
+    "confidence_threshold": 98,
+    "threshold_note": "Configured threshold; the classifier does not report a numeric match score."
+  },
+  "dependency_files_sha256": {
+    "Gemfile": "c0197db488ffa8e154edea20a26fa7a1c1c3e89675dfce43e72c16831966dd9b",
+    "Gemfile.lock": "d93caad3b41ab81138c1770dcde1415ac9aa47e8e469ea25b3f876a9f3d2cdff"
+  },
+  "tool_versions": {
+    "ruby": "3.3.12",
+    "ruby_platform": "arm64-darwin23",
+    "bundler": "2.7.2",
+    "licensee": "10.0.0"
+  },
+  "license": {
+    "path": "LICENSE",
+    "bytes": 11358,
+    "sha256": "c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c",
+    "detected_spdx_identifier": "Apache-2.0",
+    "declared_spdx_identifier": "Apache-2.0"
+  },
+  "metadata": {
+    "path": "formalization.yaml",
+    "sha256": "6546354cd919dfd8dc788a87540da862d7bbf87cc1077936e9902e8476dff125",
+    "scope": "Metadata bytes at the original classifier run; preserved unchanged as historical evidence."
+  },
+  "detector_exit_code": 0,
+  "raw_audit_receipt_sha256": "f798a791537aac43bc455eeb5155b52dcdb65647911698265c44162686a5c9f1",
+  "current_metadata_declaration": {
+    "recorded_utc": "2026-10-24T15:27:35.178911+00:00",
+    "path": "formalization.yaml",
+    "sha256": "8f855ba546c89338321a391d21befad220870c7144174bf749dbbc8c77d794aa",
+    "declared_spdx_identifier": "Apache-2.0",
+    "license_bytes_unchanged": true,
+    "scope": "Static comparison of the current declaration with the existing classifier result; the classifier was not rerun."
+  }
+}

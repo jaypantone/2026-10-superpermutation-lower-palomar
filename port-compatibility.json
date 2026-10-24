@@ -1,0 +1,228 @@
+{
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathematical_statements_changed": false,
+  "edits": [
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section01/Paths.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions of attained minimum lengths refer to private existence lemmas and a private finite enumeration; retaining the original helper names and proofs avoids unnecessary mathematical edits."
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section02/PathForest.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed block and path-component definitions use private witnesses; exports those existing declarations without changing their proofs or adding axioms."
+    },
+    {
+      "path": "proofs/bridge/NineGroup.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "nineG0": [
+          "nineV",
+          "nineA"
+        ],
+        "nineG1": [
+          "nineU",
+          "nineA"
+        ],
+        "nineG2": [
+          "nineU",
+          "nineB",
+          "nineV",
+          "nineA"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section10/AbsorptionPieces.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "pathForestAbsorptionGraph": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionInNeighbors": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionOutNeighbors": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionInDegree": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionOutDegree": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionUnderlyingGraph": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionPieceVertices": [
+          "AbsorptionVertex"
+        ],
+        "pathForestAbsorptionPieceEdges": [
+          "AbsorptionVertex"
+        ],
+        "PathForestAbsorptionEdgeTypeI": [
+          "AbsorptionVertex"
+        ],
+        "PathForestAbsorptionEdgeTypeII": [
+          "AbsorptionVertex"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section10/Assembly.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "pathForestAbsorptionPieceOf": [
+          "AssemblyVertex"
+        ],
+        "pathForestAbsorptionPiecesEquivComponents": [
+          "AssemblyVertex"
+        ],
+        "pathForestUnabsorbedU": [
+          "AssemblyVertex"
+        ],
+        "pathForestUnabsorbedUEquivUHeadedPieces": [
+          "unabsorbed_piece_map_injective",
+          "unabsorbed_piece_is_UHeaded",
+          "UHeaded_has_unabsorbed_head"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section04/Doors.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "selfAbsorberEntry12345": [
+          "k5BaseWord",
+          "k5BaseWord_perm_alphabet"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section04/Runs.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "entry": [
+          "blocks_nonempty"
+        ],
+        "lastEntry": [
+          "blocks_nonempty"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section04/TwoLoops.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "entrySatellite": [
+          "vertex_word_nonempty"
+        ],
+        "rotationClassSlot": [
+          "alphabet_mem_vertex"
+        ],
+        "coreSlotLetter": [
+          "entry_core_nonempty"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section06/Charging.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "maximalCriticalRunLengths": [
+          "criticalRunState"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section06/TerminalNonfull.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "terminalEvenWitness": [
+          "terminalEvenWitnessBlocks"
+        ],
+        "terminalExceptionalWitness": [
+          "terminalExceptionalWitnessBlocks"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section06/Witnesses.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "evenDeficitWitness": [
+          "evenWitnessBlocks"
+        ],
+        "oddDeficitWitness": [
+          "oddWitnessBlocks"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section06/Exact.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "leastAdmissibleDeficit": [
+          "exists_maxLegalLength_admissible"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section08/ComponentCapacity.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "blockAlignedRunBoundaryExcess": [
+          "adjacentExcess"
+        ]
+      }
+    },
+    {
+      "path": "proofs/SuperpermutationLowerBound/Section09/ResidualInequality.lean",
+      "change": "Enable Lean backward.privateInPublic compatibility option.",
+      "reason": "Exposed definitions use existing private helpers; exporting them preserves their names and proofs and adds no axiom.",
+      "exposed_definitions_and_private_dependencies": {
+        "pathForestTailEdge": [
+          "predecessorIndex_pos",
+          "pathForestNonroot_tail_ne_pathTail"
+        ],
+        "hamiltonianPredecessorEdge": [
+          "predecessorIndex_pos"
+        ],
+        "pathForestGEdge": [
+          "pathForestGClassUnion_has_edge"
+        ],
+        "pathForestAbsorberHead": [
+          "pathForestAbsorberDomain_has_edge"
+        ],
+        "pathForestMTwoEdge": [
+          "pathForestMTwo_has_edge"
+        ]
+      }
+    }
+  ],
+  "verification_note": "This visibility compatibility option does not replace the required Comparator agreement and kernel replays.",
+  "independent_asymptotic_interface": {
+    "namespace": "SuperpermutationPalomar",
+    "reason": "Lean caches generated pattern matchers within a module. Inlining GeneralLower definitions only in the independent Challenge reused a different generated matcher name from the original imported proof environment. Comparator correctly rejected that difference despite definitionally equal bodies.",
+    "repair": "Challenge and Solution now repeat exactly the same fixed definitions under a fresh namespace; all thirteen Solution theorems are direct applications of the original theorems, checked by definitional equality.",
+    "unchanged": "No inherited mathematical definition, proof, target proposition, permitted axiom, or definition_names setting is changed."
+  },
+  "explicit_imports": [
+    {
+      "path": "proofs/LowerBounds/SWord.lean",
+      "module": "Mathlib.Data.List.Nodup",
+      "reason": "The original transitive imports no longer expose List.disjoint_of_nodup_append, List.Nodup.of_append_right, and List.Nodup.map_on under the pinned Mathlib version. Adding their defining module preserves every theorem statement and proof body."
+    }
+  ]
+}

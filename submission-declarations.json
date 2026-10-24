@@ -1,0 +1,43 @@
+{
+  "General": {
+    "challenge_module": "Submissions.General.Challenge",
+    "solution_module": "Submissions.General.Solution",
+    "declarations": [
+      "SuperpermutationResults.GeneralLower.exact_word_bound",
+      "SuperpermutationResults.GeneralLower.quadratic_word_bound"
+    ]
+  },
+  "Asymptotics": {
+    "challenge_module": "Submissions.Asymptotics.Challenge",
+    "solution_module": "Submissions.Asymptotics.Solution",
+    "declarations": [
+      "SuperpermutationPalomar.LowerAsymptotics.exact_leading_limit",
+      "SuperpermutationPalomar.LowerAsymptotics.quadratic_leading_limit",
+      "SuperpermutationPalomar.LowerAsymptotics.word_lower_bound_two_sub_epsilon",
+      "SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_zero",
+      "SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_one",
+      "SuperpermutationPalomar.LowerAsymptotics.exact_reference_limit_two",
+      "SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_zero",
+      "SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_one",
+      "SuperpermutationPalomar.LowerAsymptotics.quadratic_reference_limit_two",
+      "SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_zero_limit",
+      "SuperpermutationPalomar.LowerAsymptotics.quadratic_gain_one_limit",
+      "SuperpermutationPalomar.LowerAsymptotics.exact_gain_zero_asymptotic_lower",
+      "SuperpermutationPalomar.LowerAsymptotics.exact_gain_one_asymptotic_lower"
+    ]
+  },
+  "Ten": {
+    "challenge_module": "Submissions.Ten.Challenge",
+    "solution_module": "Submissions.Ten.Solution",
+    "declarations": [
+      "SuperpermutationResults.Lower10.word_lower_bound"
+    ]
+  },
+  "Fourteen": {
+    "challenge_module": "Submissions.Fourteen.Challenge",
+    "solution_module": "Submissions.Fourteen.Solution",
+    "declarations": [
+      "SuperpermutationResults.Lower14.word_lower_bound"
+    ]
+  }
+}

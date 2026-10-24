@@ -1,0 +1,35 @@
+name = "superpermutation_lower_palomar"
+version = "0.1.0"
+defaultTargets = ["Submissions", "SuperpermutationResults", "AxiomCheck"]
+moreLeanArgs = ["-j1", "-M4096"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[lean_lib]]
+name = "Submissions"
+roots = []
+globs = ["Submissions.+"]
+
+[[lean_lib]]
+name = "SuperpermutationResults"
+roots = []
+globs = ["SuperpermutationResults.+"]
+
+[[lean_lib]]
+name = "InheritedProofs"
+srcDir = "proofs"
+roots = []
+globs = [
+  "Challenge", "FinitePrefixReturns", "FrozenStatement", "H20.+",
+  "LowerBounds.+", "LowerChallenge", "PaidTwo", "RefinedLowerChallenge",
+  "ReturnOneAnchors", "ReturnOneDescent", "ReturnOneMap", "SquareCharts",
+  "SquareEntry", "SuperpermutationLowerBound.+", "alternation.+",
+  "asymptotics.+", "bridge.+", "new_results.+", "pairs.+"
+]
+
+[[lean_lib]]
+name = "AxiomCheck"
+roots = ["AxiomCheck"]

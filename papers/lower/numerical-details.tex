@@ -1,0 +1,96 @@
+\section{Parameter checks and integer improvements}\label{app:numerical}
+
+\subsection{The transfer hypotheses}
+
+The chain inequalities are \eqref{eq:CP1}, \eqref{eq:CP2}, and
+Proposition~\ref{prop:CP0}. We verify the numerical assumptions of
+Proposition~\ref{prop:transfer}.
+
+For $n=3m\ge9$, write $p_0=2m$. Since $R_0\ge1$, the new parameters
+satisfy
+\[
+ t-p=p_0-\frac72-\frac3{4R_0}>0,
+\]
+and
+\[
+ t(n-4)-4p-6
+ \ge(2p_0-3)(n-4)-4p_0-8-\frac{n-2}{2}
+ =\frac43n^2-\frac{23}{2}n+5>0.
+\]
+The last polynomial is positive and increasing for $n\ge9$.
+
+For $n=3m+1$ with $m\ge3$, the new $t$ is at least $t_0-1\ge p_0$,
+and
+\[
+ (t_0-1)(n-4)-4p_0-6=6m^3-8m^2-19m+3>0.
+\]
+Writing $m=3+x$ makes the right side
+$6x^3+46x^2+95x+36$.
+For $n=3m+2$, $m\ge2$, all the stated choices have $t\ge t_0-1$.
+Here
+\[
+ t_0-1-p_0=2(m+2)(m-1)>0,
+\]
+and
+\[
+ (t_0-1)(n-4)-4p_0-6
+ =(m-2)(12m^2+23m+15)+26>0.
+\]
+At $K=8$, the earlier chain theorem gives $\CP(10,10)$
+\cite{pantone-framework}; increasing $t$ to $46/3$ preserves this
+inequality and gives $t(n-4)=4p+6$. The values for $K=9,12$ are the
+two initial cases in Section~\ref{sec:pairs}. Those for $K=10,11$
+are the first instances of the other two residue formulas.
+
+Proposition~\ref{prop:transfer} now proves the asserted word bound.
+Replacing either return order by any larger real number preserves the
+counts in Lemma~\ref{lem:tiles} or \eqref{eq:alternating-count}.
+The weaker quadratic choices still satisfy the same numerical
+estimates, so they too give the claimed bounds.
+
+\subsection{Exact changes in the bound}
+
+Put $T=n!$ and $\kappa=n(n-2)-2$. The nonconstant real term in
+\eqref{eq:forest} is
+\[
+ f(p,t)=\frac{t((n-2)T-2(n-1))-2T-4p}{\kappa t-2n}.
+\]
+First suppose $n=3m+1$. With $h=1/R_1$, direct subtraction gives
+\begin{equation}\label{eq:gain1}
+ f(p_0,t_0-h)-f(p_0,t_0)
+ =\frac{4h[T-p_0\kappa-n(n-1)]}
+ {(\kappa(t_0-h)-2n)(\kappa t_0-2n)}.
+\end{equation}
+For $n\ge10$, we have $t_0<n^2/4$, $p_0<n^2$,
+$\kappa<n^2$, and $h\ge4/n^2$. Hence this difference exceeds
+\[
+ 256\frac{n!-n^4-n^2}{n^{10}}.
+\]
+At $n=13$ the expression exceeds one, and it increases thereafter:
+$n!/n^{10}$ increases since $(1+1/n)^9<3<n$, while
+$n^{-6}$ and $n^{-8}$ decrease. Thus the integer ceiling improves
+at every stated size in this residue class. Since
+$t_0\sim2n^2/9$ and $\kappa\sim n^2$, \eqref{eq:gain1} is
+asymptotic to $81n!/(R_1n^8)$. The quadratic upper bound on $R_1$
+gives the constant $324$.
+
+For $n=3m$, set $h=1/(2R_0)$, $d=1/2+h/2$, and
+$D_0=\kappa t_0-2n$. Subtraction now gives
+\[
+ f(p_0+d,t_0-h)-f(p_0,t_0)
+ =\frac{4h[T-n(n-1)-\kappa p_0-(R_0+1/2)D_0]}
+ {D_0(D_0-\kappa h)}.
+\]
+Using $R_0\le n^2/4$, $p_0=2n/3$, $t_0<4n/3$ and
+$\kappa<n^2$, the total subtracted from $T$ is less than $n^5$.
+The difference therefore exceeds
+\[
+ \frac92\frac{n!-n^5}{n^8}.
+\]
+This is greater than one at $n=12$ and increases thereafter.
+Its factorial term increases because $(1+1/n)^7<3<n$; the
+subtracted term decreases. More precisely, the exact difference
+is asymptotic to $9n!/(8R_0n^6)$, giving the constant $9/2$.
+The difference of two ceilings changes an unrounded difference by
+less than one. Finally, $n!/n^j\sim(n-j)!$, and $K=n+1$,
+which gives both normalizations in the statement.

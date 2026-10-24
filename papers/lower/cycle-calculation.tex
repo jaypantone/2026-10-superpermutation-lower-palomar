@@ -1,0 +1,107 @@
+\section{The return order when \texorpdfstring{$n=3m+1$}{n=3m+1}}\label{app:cycles}
+
+We calculate the order of the map $M_1$ in \eqref{eq:efficient-map} for $m\ge3$.
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c l}
+\toprule
+$m\bmod6$ & Cycle lengths defining $R_1$\\
+\midrule
+$0,2$ & $3m+1$\\
+$1$ & $(2m+1)/3,\ (7m+2)/3$\\
+$3$ & $(7m+3)/6,\ (11m+3)/6$\\
+$4$ & $(2m+1)/3,\ (7m+2)/6,\ (7m+2)/6$\\
+$5$ & $(7m+1)/6,\ (11m+5)/6$\\
+\bottomrule
+\end{tabular}
+\caption{The nonzero cycles of the return map when $n=3m+1$.
+The order $R_1$ is their least common multiple.}
+\label{tab:cycles}
+\end{table}
+
+The nonzero cycles of $g$ are
+\[
+ (3,6,\ldots,3m),\qquad
+ (1,5,8,\ldots,3m-1,2,4,7,\ldots,3m+1).
+\]
+The first has length $m$ and the second length $2m+1$. To evaluate
+$g^{m-1}$ on the second, index its letters by
+\[
+ B_0=1,\quad B_j=3j+2\ (1\le j<m),\quad B_m=2,\quad
+ B_{m+j}=3j+1\ (1\le j\le m).
+\]
+The map $g$ adds one to these indices modulo $2m+1$. Also
+\[
+ (\rho g^{-1})(1)=2,\quad
+ (\rho g^{-1})(2)=3m,\quad
+ (\rho g^{-1})(3)=3m+1,\quad
+ (\rho g^{-1})(4)=3,\quad
+ (\rho g^{-1})(5)=1,
+\]
+and $(\rho g^{-1})(x)=x-2$ for $6\le x\le3m+1$.
+Applying $g^{m-1}$ and then $\rho$ gives
+\[
+\begin{array}{c|rrrrrrrrr}
+x&1&2&3&4&5&6&7&8&9\\\hline
+M_1(x)&3m-1&3m-2&3m-3&3m+1&3m&2&3&4&1,
+\end{array}
+\]
+and, for $10\le x\le3m+1$,
+\begin{equation}\label{eq:descent}
+ M_1(x)=\begin{cases}
+ x-6,&x\equiv0\pmod3,\\
+ x-5,&x\equiv1\pmod3,\\
+ x-4,&x\equiv2\pmod3.
+ \end{cases}
+\end{equation}
+For example, when $x=3i\ge6$, its image under $\rho g^{-1}$ is
+$B_{m+i-1}$. Adding $m-1$ to this index gives $2m$ at $i=2$, zero
+at $i=3$, and $i-3$ for $i\ge4$. These are the exceptional values
+$M_1(6)=2$, $M_1(9)=1$, and the first line of \eqref{eq:descent}.
+The other two residues follow by the same index substitution.
+
+Every orbit outside $\{1,2,3,4,5\}$ decreases until it reaches that
+set. Thus every cycle contains one of these five \emph{anchors}.
+The descent times are as follows; the first jump out of an anchor is
+not included.
+\[
+\renewcommand{\arraystretch}{1.15}
+\begin{array}{c|c|c}
+\text{Starting value}&\text{Anchor reached}&\text{Steps}\\\hline
+6j\ (j\ge1)&2&j\\
+6j+3\ (j\ge1)&1&j\\
+9j+1\ (j\ge1)&5&2j-1\\
+9j+4\ (j\ge0)&4&2j\\
+9j+7\ (j\ge0)&3&2j+1\\
+9j+2\ (j\ge1)&3&2j\\
+9j+5\ (j\ge0)&5&2j\\
+9j+8\ (j\ge0)&4&2j+1
+\end{array}
+\]
+For multiples of three, this is repeated subtraction of six, ending
+at $6\mapsto2$ or $9\mapsto1$. In the other residues, two steps
+subtract nine. The low values $4,5,7,8,10$ give the stated endpoints.
+
+Write $m=6h+r$. Applying the descent times to the five initial jumps
+gives the following first-return data, in anchor order $1,2,3,4,5$.
+\[
+\renewcommand{\arraystretch}{1.2}
+\begin{array}{c|c|c}
+r&\text{Destinations}&\text{Arc lengths}\\\hline
+0&(4,3,1,5,2)&(4h,4h,3h,4h,3h+1)\\
+1&(3,5,2,4,1)&(4h+1,4h,3h+1,4h+1,3h+1)\\
+2&(5,4,1,3,2)&(4h+1,4h+1,3h+1,4h+2,3h+2)\\
+3&(4,3,2,5,1)&(4h+2,4h+2,3h+2,4h+2,3h+2)\\
+4&(3,5,1,4,2)&(4h+3,4h+2,3h+2,4h+3,3h+3)\\
+5&(5,4,2,3,1)&(4h+3,4h+3,3h+3,4h+4,3h+3).
+\end{array}
+\]
+Summing the arc lengths around each anchor cycle gives exactly
+Table~\ref{tab:cycles}. There are no further cycles, since every
+nonanchor reaches an anchor.
+
+For a single cycle, the order is $n\le n^2/4$. For two cycles of
+lengths $u,v$, it is at most $uv\le n^2/4$. The three-cycle case has
+lengths $u,v,v$, so its order is at most $uv\le n^2/8$.
+This proves the quadratic bound used in the main theorem.

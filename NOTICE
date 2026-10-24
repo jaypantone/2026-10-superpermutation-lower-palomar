@@ -1,0 +1,29 @@
+Superpermutation lower bounds
+
+This repository presents general lower bounds, asymptotic comparisons, and
+finite refinements from Jay Pantone's superpermutation research. Its sources
+are curated from jaypantone/2026-10-superpermutation-bounds at commit
+c9ccb6a0d9ddd1007fdce6efab50807ec47464b9.
+
+Seven files in proofs/LowerBounds/ originate from Jakub Halfar's
+https://github.com/jhalfar/superpermutations at commit
+cc5c763bd5854317b20dadb138990802656e6f03:
+SSearch.lean, SCut.lean, SLit.lean, SDec.lean, ChainCapacityC.lean,
+SWord.lean, and SSound.lean.
+
+Their source bodies were unchanged in the frozen source repository. This
+submission version adds Lean module/public visibility directives and may
+contain documented compiler-compatibility changes. The original hashes are
+recorded in source-provenance.json. These files supply the window-search
+framework used by the ten-symbol proof. The stronger finite certificate and
+its connection to the unrestricted word model are supplied by this project;
+no numerical improvement is attributed to an unchanged upstream certificate.
+
+Halfar credits Xiaolong Liu's preimage-chain work and the Hunter-Raudvere
+library for the background to his framework. His original NOTICE is retained
+verbatim in licenses/Halfar-NOTICE. It describes his upstream repository; other
+source files and words discussed there are not thereby included here.
+
+Existing source notices are preserved. Retained sources and papers are
+provided under Apache License 2.0. Mathlib and Lean are external dependencies
+with their own notices and licenses.

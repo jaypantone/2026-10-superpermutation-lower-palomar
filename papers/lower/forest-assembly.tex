@@ -1,0 +1,174 @@
+\section{The hereditary forest estimate}\label{app:forest}
+
+This appendix explains why the local deficit inequality applies to an
+arbitrary covering word. A shortest word gives a minimum overlap path,
+but that path need not visit every rotation class consecutively. The
+forest construction replaces it by auxiliary complete-block paths and
+records the cost of the replacement. The classes in different components
+partition all the rotation classes. A block borrowed at the entrance to
+one component is required to be new only to that component.
+
+The construction uses a particular minimum path. Call a minimum path
+\emph{reduced} if it has no edge from $u$ to its second cyclic rotation
+$\sigma^2(u)$. Such a path exists. Among the minimum paths, choose one
+with as many weight-one edges as possible. If it contained
+$u\to\sigma^2(u)$, remove $\sigma(u)$ from its other location and
+insert it between these two vertices. Removal cannot increase the weight,
+by the triangle inequality, and insertion replaces one weight-two edge
+by two weight-one edges. Moreover, removal deletes no weight-one edge.
+The only possible weight-one predecessor of $\sigma(u)$ is $u$, whose
+successor is already $\sigma^2(u)$, and the only possible weight-one
+successor is $\sigma^2(u)$, whose predecessor is already $u$.
+The new path would therefore still be minimum and have more weight-one
+edges, a contradiction.
+
+We state the properties of the forest construction for this reduced
+minimum path. The construction and its residual inequality are inherited
+from the lower-bound framework~\cite{pantone-framework}. The summation
+argument after the statement is included here.
+
+\begin{lemma}[Forest decomposition]\label{lem:forest-data}
+Put $K=n+1\ge8$ and $T=n!$. A reduced minimum overlap path determines a finite
+set of complete-block path components with a distinguished root. Each
+nonroot component is classified as cheap or expensive. For component
+$v$, let $b_v$ be its number of blocks, $q_v$ its number of runs,
+$D_v$ its total deficit, $m_v$ its number of light segments, and
+$d_v^-,d_v^+$ its first and last deficits. There are nonnegative
+integers $A_v$ and $y_v$ such that
+\[
+ \sum_v b_v=T,\qquad b_v=nq_v-D_v,\qquad
+ z_v=q_v+A_v,\qquad A_v\ge m_v-1.
+\]
+For the root and cheap components, $y_v=z_v$; for expensive components,
+$y_v\ge z_v+1$.
+
+For a cheap component with at least two runs, one can prepend an
+entrance block to obtain another class-distinct path. Its block count
+increases by one, its number of runs and $z_v$ are unchanged, and its
+first deficit decreases by one. Its last deficit is unchanged.
+A cheap component with one run has $y_v=1$ and
+$d_v^-=d_v^+\ge1$.
+
+There is a directed absorption relation on the components. Each component
+has at most one incoming and one outgoing edge, and every target is a
+cheap nonroot component. Every edge is either an isolated loop at a cheap
+one-run component of deficit one, or an ordinary edge $v\to w$ with
+\[
+ d_v^+\ge2,\qquad d_w^-\ge2,\qquad d_v^++d_w^-\ge n+1.
+\]
+If $V$ is the number of cheap nonroot components with no incoming edge,
+and $R=\sum_v y_v$, then
+\begin{equation}\label{eq:residual}
+ S(K)\ge K+(K+1)T-3+R+V.
+\end{equation}
+\end{lemma}
+
+The last inequality accounts for the original path as well as the
+auxiliary components. In particular, it does not assume that entrance
+blocks borrowed by different components are distinct. This is the reason
+for proving the local inequality on every genuine segment, including
+consecutive factors of an entrance-extended path.
+
+\begin{theorem}[Hereditary forest estimate]\label{thm:forest}
+Suppose $0<\delta<1$ and $1\le\beta\le\alpha:=n-\delta$.
+If every genuine light segment with $r$ runs and total deficit $D$
+satisfies $D\ge\delta r-\beta$, then
+\[
+ S(K)\ge K+(K+1)n!-3+
+ \ceil{\frac{n!-\beta}{n-\delta}}.
+\]
+\end{theorem}
+
+\begin{proof}
+The first step recovers endpoint information from the hypothesis.
+Write $F(d)=\max(0,d-\delta)$. Deleting the first deficit from a
+segment and applying the hypothesis to the remainder gives an extra
+term $d^- -\delta$. Applying the hypothesis without deletion gives
+an extra term zero. Taking the larger of these two estimates gives
+\[
+ D\ge\delta r-\beta+F(d^-).
+\]
+There is an identical estimate at the last endpoint. When $r\ge2$,
+we can delete either endpoint, both, or neither, and obtain
+\begin{equation}\label{eq:two-endpoints}
+ D\ge\delta r-\beta+F(d^-)+F(d^+).
+\end{equation}
+The empty remainder causes no difficulty because $0\ge-\beta$.
+The two endpoints in \eqref{eq:two-endpoints} must be distinct;
+we shall handle one-run components separately.
+
+Apply Lemma~\ref{lem:forest-data} and put
+$s_v=b_v-\alpha y_v$. Summing the segment estimates within one
+component gives
+\[
+ b_v-\alpha z_v
+ \le m_v\beta-\alpha A_v-F(d_v^+)
+ \le\beta-F(d_v^+),
+\]
+because $A_v\ge m_v-1$ and $\alpha\ge\beta$. Thus
+\[
+ s_v\le\beta-F(d_v^+)\quad\hbox{at the root},\qquad
+ s_v\le\beta-\alpha-F(d_v^+)\quad\hbox{at an expensive component}.
+\]
+For a cheap component with at least two runs, apply the same argument
+to its entrance-extended path and use both endpoint estimates. Define
+$A(d)=\max(0,d-1-\delta)$ and $c=\beta-1$. The additional block gives
+\[
+ s_v\le c-A(d_v^-)-F(d_v^+).
+\]
+If the two ends lie in different light segments, apply the one-end
+estimate to each of those segments. If they lie in the same segment,
+that segment has at least two runs and \eqref{eq:two-endpoints} applies.
+For a cheap component with a single run, the exact identity is
+\[
+ s_v=(n-d_v^-)-(n-\delta)=\delta-d_v^-=-F(d_v^-).
+\]
+
+Put $\widehat A(d)=\min(A(d),c)$. For a cheap component, let
+$i_v,o_v\in\{0,1\}$ indicate whether it has an incoming and an
+outgoing absorption edge. Then both the multi-run and single-run
+estimates imply
+\[
+ s_v\le c-i_v\widehat A(d_v^-)-o_vF(d_v^+).
+\]
+For a single run, this follows from $0\le\widehat A\le c$.
+Clipping the incoming charge is what permits one formula to cover that
+case without counting its only deficit twice.
+
+Assign an intercept $c_v$ to each component: use $\beta$ at the root,
+$c$ at cheap nonroots, and $\beta-\alpha$ at expensive nonroots.
+Assign the incoming charge $a_v=\widehat A(d_v^-)$ at cheap vertices
+and zero elsewhere, and the outgoing charge $b'_v=F(d_v^+)$.
+There is one exception. At a vertex carrying an isolated special loop,
+use $c_v=\delta-1$ and $a_v=b'_v=0$; its surplus is exactly
+$\delta-1$.
+
+The preceding bounds give
+\[
+ s_v+i_va_v+o_vb'_v\le c_v.
+\]
+For an ordinary edge $v\to w$, its two deficits give
+\[
+ A(d_w^-)+F(d_v^+)\ge n-2\delta,\qquad
+ F(d_v^+)\ge2-\delta.
+\]
+Consequently its charges cover the target intercept, since
+\[
+ b'_v+a_w-c_w
+ =\min\{F(d_v^+)+A(d_w^-)-c,\ F(d_v^+)\}
+ \ge\min\{n+1-\beta-2\delta,\ 2-\delta\}>0.
+\]
+For a special loop, the corresponding excess is $1-\delta>0$.
+
+Now sum the vertex inequalities and the edge inequalities. Each incoming
+and outgoing charge occurs exactly once on either side and cancels.
+The remaining intercepts belong to vertices with no incoming edge.
+These are the root, the $V$ unabsorbed cheap vertices, and all the
+expensive vertices. The latter have nonpositive intercept. It follows that
+\[
+ T-\alpha R=\sum_v s_v\le\beta+(\beta-1)V.
+\]
+Since $\beta\le\alpha$, this implies
+$T\le\alpha(R+V)+\beta$. The number $R+V$ is an integer, so
+\eqref{eq:residual} gives the asserted ceiling bound.
+\end{proof}

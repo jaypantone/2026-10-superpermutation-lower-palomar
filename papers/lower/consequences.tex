@@ -1,0 +1,171 @@
+\section{The resulting lower bound}
+
+We have obtained the chain estimates needed by the deficit count. We now
+apply the earlier word reduction and give the parameters together. This
+is the same capacity calculation illustrated in \eqref{eq:counting-example},
+with the forest theorem accounting for the components and their endpoints.
+
+For $p\ge0$ and $t>0$, define
+\begin{equation}\label{eq:bound}
+ \mathcal B_K(p,t)=F_3(K)+K-3+
+ \ceil{\frac{2(K-2)!-2(K-2)-4p/t}
+ {K^2-4K+1-2(K-1)/t}}.
+\end{equation}
+In each application below the fraction is positive. The preceding
+sections have supplied $p$ and $t$ by bounding the total length of a path
+of chains. The following proposition states precisely how that estimate
+enters the word bound.
+
+\input{transfer-statement}
+
+The proof combines the scalar deficit estimate with the hereditary
+forest theorem. For reference, it is included with the scalar argument
+in Appendices~\ref{app:scalar} and~\ref{app:forest}. Its quantifier over all genuine segments
+is what permits the estimate to be used on the paths produced by the
+reduction from an arbitrary word.
+
+The two return orders in the next theorem are $R_0$ from
+\eqref{eq:R0} and $R_1=\ord(M_1)$ from \eqref{eq:efficient-map}.
+Their exact values can make the bound stronger at particular sizes.
+Replacing them by their common upper bound $n^2/4$ gives a simpler
+formula consisting of rational functions on the three residue classes.
+
+\input{bound-statement}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The chain inequalities are \eqref{eq:CP1}, \eqref{eq:CP2}, and
+Proposition~\ref{prop:CP0}. At $K=8$, the earlier theorem gives
+$\CP(10,10)$, which implies $\CP(10,46/3)$.
+The numerical hypotheses of Proposition~\ref{prop:transfer} are verified
+in Appendix~\ref{app:numerical}, including all five initial sizes.
+That proposition gives the word bound. The counts remain valid when a
+return order is replaced by any larger real number, proving the final
+assertion as well.
+\end{proof}
+
+Write $B(K)$ for the exact-order formula in Theorem~\ref{thm:main}
+and $Q(K)$ for the quadratic-order formula. For $8\le K\le12$ these
+use the same initial rows. Every occurrence of a difference between
+these formulas below is an ordinary difference of integers.
+
+\subsection{The contribution of the return orders}
+
+To isolate the return-order improvements, define $O(K)$ by the same
+initial rows for $K<13$ and, for $K\ge13$, by
+$O(K)=\mathcal B_K(p,t)$ with the parameters
+\[
+\begin{array}{c|c|c}
+n=K-1 & p & t\\\hline
+3m & 2m & 4m-3\\
+3m+1 & m(2m+1) & 2m^2+2m-2\\
+3m+2 & (m+1)(2m+1) & 4m^2+5m-5/2.
+\end{array}
+\]
+Thus $O$ already includes the collision between two efficient pairs in
+Section~\ref{sec:pairs}. The remaining differences come from the
+orders $R_0$ and $R_1$.
+
+\begin{proposition}\label{prop:gains}
+For every $K\ge13$ with $K\equiv1,2\pmod3$, we have
+$B(K)>O(K)$. Along these two residue
+classes, respectively,
+\[
+ \liminf_{K\to\infty}
+ \frac{B(K)-O(K)}{(K-9)!}
+ \ge\frac92,
+ \qquad
+ \liminf_{K\to\infty}
+ \frac{B(K)-O(K)}{(K-11)!}
+ \ge324.
+\]
+Replacing $B$ by $Q$, both normalized differences converge to the
+displayed constants.
+\end{proposition}
+
+\begin{proof}
+Before taking ceilings, the exact-order improvements in the two cases are
+asymptotic to
+\[
+ \frac{9n!}{8R_0n^6},\qquad \frac{81n!}{R_1n^8},
+\]
+respectively. Appendix~\ref{app:numerical} gives the exact subtractions
+and verifies that the real improvement exceeds one from $n=12$ and
+$n=13$, respectively. The bound $R_i\le n^2/4$ gives the two lower
+limits, with equality in the limit for the quadratic choices.
+Taking ceilings changes each difference by less than one.
+\end{proof}
+
+The exact orders sometimes give larger gains: for instance,
+$R_0=2n/7$ when $7\mid n$, and $R_1=n$ in two residue classes of
+$m$. This is why Proposition~\ref{prop:gains} states lower limits
+for the strongest formula. At $K=13,14$, its gains are $12$ and
+$58$; at $K=16,17$, they are $9\,528$ and $16\,920$.
+
+\subsection{Comparison with the all-size reference bound}
+
+Halfar~\cite{halfar} proves the following all-size formula, which he
+attributes to Fritsch:
+\begin{equation}\label{eq:H}
+ H(K)=F_3(K)+K-3+
+ \ceil{\frac{2((K-2)!-(K-2))}{K^2-4K+1}},\qquad K\ge7.
+\end{equation}
+This is Theorem B of the proof package announced on 6 October
+2026~\cite{halfar-announcement}. His Theorem C gives stronger bounds
+from searched parameters at individual sizes. The comparison below
+is with the displayed formula $H$, not those finite bounds.
+
+The earlier chain theorem already improves the all-size formula
+\eqref{eq:H} at a larger order than the refinements above. We record
+the comparison to distinguish these two contributions.
+
+\begin{corollary}\label{cor:comparison}
+For either $A=B$ or $A=Q$, we have
+\[
+ A(K)=F_3(K)+(2+o(1))(K-4)!,
+\]
+and, as $K\to\infty$ through the indicated residue class,
+\[
+ A(K)-H(K)=
+ \begin{cases}
+ (3+o(1))(K-6)!,&K\equiv1\pmod3,\\
+ (18+o(1))(K-7)!,&K\equiv2\pmod3,\\
+ (9+o(1))(K-7)!,&K\equiv0\pmod3.
+ \end{cases}
+\]
+\end{corollary}
+
+\begin{proof}
+For both parameter choices, $p/t$ is bounded and $t\ge1$ for all
+sufficiently large $K$. The numerator inside the ceiling in
+\eqref{eq:bound} is therefore $2(K-2)!+O(K)$ and its denominator is
+$K^2(1+O(1/K))$. Since $(K-2)!/K^2\sim(K-4)!$, the claimed leading
+term follows. The additive term $K-3$ and the rounding error are
+$o((K-4)!)$.
+With $\kappa=n^2-2n-2$, the difference of the real expressions
+inside the ceilings in \eqref{eq:bound} and \eqref{eq:H} is exactly
+\[
+ \frac{4[n!-n(n-1)-p\kappa]}{t\kappa(\kappa-2n/t)}.
+\]
+In the three cases $n\equiv0,1,2\pmod3$, the parameter $t$ is
+asymptotic to $4n/3$, $2n^2/9$, and $4n^2/9$, respectively.
+Substitution gives the three constants. Rounding changes each
+difference by less than one.
+\end{proof}
+
+\begin{corollary}\label{cor:word-asymptotic}
+For every real $\varepsilon>0$, there is $K_0$ such that every
+superpermutation on $K\ge K_0$ symbols has length at least
+\[
+ F_3(K)+(2-\varepsilon)(K-4)!.
+\]
+\end{corollary}
+
+\begin{proof}
+The normalized correction of $B(K)$ tends to $2$, and every covering
+word has length at least $B(K)$ by Theorem~\ref{thm:main}.
+\end{proof}
+
+The conclusion concerns a lower bound, not an asymptotic formula for
+$S(K)$. In particular, the present argument does not produce a positive
+coefficient of $(K-3)!$. It strengthens the count of the cheapest local
+patterns while retaining the same segment-to-word reduction.
