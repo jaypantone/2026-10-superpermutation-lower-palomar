@@ -1,5 +1,7 @@
 # Lower bounds for superpermutations
 
+The Almanac entry point is `almanac_claim` in [AlmanacSolution.lean](AlmanacSolution.lean). It proves the lower bound `4033379` at `10` symbols. See [BUILD.md](docs/BUILD.md) for build commands and verification.
+
 The research presented here, the Lean formalization, and this document were
 generated entirely by AI systems under Jay Pantone's direction. The inherited
 mathematical work and software retain their original credits. Independent AI
