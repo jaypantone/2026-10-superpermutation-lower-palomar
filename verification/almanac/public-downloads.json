@@ -1,0 +1,8 @@
+{
+  "downloaded_utc": "2026-10-27",
+  "source": "Public links on https://web-production-daed9.up.railway.app/lean and /submit; Mathlib manifest from its pinned GitHub commit.",
+  "sha256": {
+    "judge-source.tar.gz": "98da77060bb5154e0d22019465b864ae8a15beca4959b6bf71a5e5f07af7e970",
+    "mathlib-manifest.json": "6fcb8417bf0d6056cebf3c9f9bacd4569f21f3b9c571c60649150b9118b55147"
+  }
+}
