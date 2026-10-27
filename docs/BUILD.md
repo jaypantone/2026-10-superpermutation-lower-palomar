@@ -19,10 +19,34 @@ Use a checkout outside cloud-synchronized storage, and reuse matching expanded
 dependencies where possible. The supplied local tools instead use `~/.elan`
 and `~/Library/Caches/LeanShared`, with separate project build directories.
 
-The Lake configuration limits each compiler to one Lean thread and a 4 GiB
-Lean allocation budget. Lake may start several compilers concurrently; those
-per-process settings do not impose an aggregate memory limit. Lean's allocation
-budget is also distinct from total process memory.
+On this Almanac branch the default Lake targets are `AlmanacSolution` and
+`AlmanacAxioms`. The site's public rules allow only `-Doption=value` in Lake's
+extra compiler arguments, so the former `-j1`/`-M4096` package arguments have
+been removed. The local `tools/check.py` runner still passes both limits to
+Lean directly, enforces the project lock, and keeps all outputs outside Dropbox.
+A plain Lake invocation does not inherit those local resource controls.
+
+
+## Almanac interface
+
+`AlmanacSolution.lean` provides the theorem `almanac_claim`.
+`AlmanacAdapter.lean` connects the proof library's word predicate to
+`Almanac.IsSuperpermutation`. The public judge supplies `AlmanacDefs.lean`,
+`AlmanacStatement.lean`, and `AlmanacChallenge.lean`; the local copies allow
+the interface to be built and checked before submission.
+
+The default Lake targets build the solution and its axiom report. With the
+existing shared Lean setup, the equivalent local source checks are:
+
+```sh
+python3 -B tools/check.py AlmanacAxioms --receipt almanac-preparation.json
+python3 -B tools/check.py AlmanacChallenge --receipt almanac-challenge.json
+```
+
+The technical receipts under `verification/almanac/` record source hashes,
+repository-rule checks, statement comparison, and the axiom audit. They do
+not replace the site's kernel replays. The older Palomar verification is
+recorded separately below.
 
 ## Verification
 

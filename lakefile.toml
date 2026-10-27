@@ -1,7 +1,6 @@
 name = "superpermutation_lower_palomar"
 version = "0.1.0"
-defaultTargets = ["Submissions", "SuperpermutationResults", "AxiomCheck"]
-moreLeanArgs = ["-j1", "-M4096"]
+defaultTargets = ["AlmanacSolution", "AlmanacAxioms"]
 
 [[require]]
 name = "mathlib"
@@ -33,3 +32,21 @@ globs = [
 [[lean_lib]]
 name = "AxiomCheck"
 roots = ["AxiomCheck"]
+
+[[lean_lib]]
+name = "AlmanacDefs"
+
+[[lean_lib]]
+name = "AlmanacStatement"
+
+[[lean_lib]]
+name = "AlmanacChallenge"
+
+[[lean_lib]]
+name = "AlmanacSolution"
+
+[[lean_lib]]
+name = "AlmanacAdapter"
+
+[[lean_lib]]
+name = "AlmanacAxioms"
