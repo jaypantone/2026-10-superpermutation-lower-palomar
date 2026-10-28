@@ -40,7 +40,14 @@ def layout():
     elan = external_path(os.environ.get('ELAN_HOME', '~/.elan'))
     toolchain = (ENVIRONMENT/'lean-toolchain').read_text().strip()
     config = tomllib.loads((ENVIRONMENT/'lakefile.toml').read_text())
-    spec = {'toolchain': toolchain, 'require': config.get('require', [])}
+    # Keep the existing expanded cache identity after correcting the public
+    # Lake URL spelling. This is only a local storage key, never a Lake URL.
+    requirements = [dict(r) for r in config.get('require', [])]
+    for requirement in requirements:
+        if (requirement.get('name') == 'mathlib' and
+            requirement.get('git') == 'https://github.com/leanprover-community/mathlib4'):
+            requirement['git'] += '.git'
+    spec = {'toolchain': toolchain, 'require': requirements}
     dependency_id = hashlib.sha256(json.dumps(spec, sort_keys=True).encode()).hexdigest()
     workspace_id = hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
     dependency = shared/'dependencies'/dependency_id
@@ -91,7 +98,15 @@ def validate_dependencies():
         raise RuntimeError('Pinned shared compiler is absent; no installation was attempted')
     manifest = json.loads((ENVIRONMENT/'lake-manifest.json').read_text())
     stored = json.loads((loc['dependency']/'lake-manifest.json').read_text())
-    key = lambda d: sorted(d['packages'], key=lambda p: p['name'])
+    def key(data):
+        packages = [dict(p) for p in data['packages']]
+        # The fixed local cache predates the judge's URL spelling correction.
+        # Compare every other field, including exact revisions, unchanged.
+        for package in packages:
+            if (package.get('name') == 'mathlib' and
+                package.get('url') == 'https://github.com/leanprover-community/mathlib4.git'):
+                package['url'] = 'https://github.com/leanprover-community/mathlib4'
+        return sorted(packages, key=lambda p: p['name'])
     if key(stored) != key(manifest):
         raise RuntimeError('Shared dependency revisions differ; refusing in-place changes')
     for path in cfg['external_lean_paths']:

@@ -224,7 +224,7 @@
     },
     "catalogue_sha256": "a5d1875bab1308ee0417ae6893cab6d0f276d2c5958819fd86eb1298a71e4608"
   },
-  "recorded_utc": "2026-10-28T21:03:26.816590+00:00",
+  "recorded_utc": "2026-10-28T22:42:40.215605+00:00",
   "scope": "Official batch parser, layout, manifest, source and paper checks; no hosted preview, submission, Lean replay, or NanoDa replay.",
   "judge_source_url": "https://web-production-daed9.up.railway.app/lean/judge-source.tar.gz",
   "judge_source_sha256": {
@@ -237,9 +237,10 @@
     "lean/batch/paper.py": "d71b6f4af538c5f39cccb4ac0e969bc2dbebe23564a3f0aeb1326a3fc463fa4e"
   },
   "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "exact_mathlib_urls_and_revisions": "PASS",
   "upstream_mathlib_manifest_sha256": "6fcb8417bf0d6056cebf3c9f9bacd4569f21f3b9c571c60649150b9118b55147",
   "files": 367,
-  "bytes": 39828801,
+  "bytes": 39831310,
   "lean_files": 283,
   "lean_lines": 126142,
   "layout_dir": ".",
@@ -318,8 +319,8 @@
     "SuperpermutationResults/Lower14/Solution.lean": "1f8891c469285fe0329dc41705faaff4821ec298f8d033f3ac4d81f9c5e4f6b5",
     "SuperpermutationResults/LowerAsymptotics/Challenge.lean": "5ffd9bd487a8b28095610c5c33d7ac9c92aec73e28df53271c2ceec49f0cf691",
     "SuperpermutationResults/LowerAsymptotics/Solution.lean": "90edc1bb0a22098131da963a626f92fe772746a11062bc29e7236f0733199da7",
-    "lake-manifest.json": "f5a52c8f1309f20cdd53c6bfb2a2702882fdb7fe94ebc647b02d0c53a2b8e50f",
-    "lakefile.toml": "a7eb9f09ab187a51495283a31a129cb3a891934ff2ce9bcf24f3b398ea00ce7a",
+    "lake-manifest.json": "308f50a8e75d8d822bca9a0ef245fb180cff97caaa94309b0f1e47623d8300c1",
+    "lakefile.toml": "cbb59e929ec46c9552cc3f96b8ed8051592dae1d1a263b590ec1c82ac22f73ac",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "proofs/Challenge.lean": "2b0d4f14ea7f4b0b2daef3ea89b3f114e96bc981bc82af6bc240001950583297",
     "proofs/FinitePrefixReturns.lean": "3768d97aae16dec870026474b1d332b2948a9ec532a2172ad0a12a4eba4cf0ef",

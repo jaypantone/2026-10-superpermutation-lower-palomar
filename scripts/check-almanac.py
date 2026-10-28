@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
 PIN = "56a005855ea17e0b0958f73ec801ae140b0a1679"
@@ -38,10 +39,22 @@ def main():
     upstream = json.loads(args.mathlib_manifest.read_text())
     ecosystem = {p["name"]: p for p in upstream["packages"]}
     ecosystem["mathlib"] = {
-        "url": "https://github.com/leanprover-community/mathlib4.git",
+        "url": "https://github.com/leanprover-community/mathlib4",
         "rev": PIN, "subDir": None, "configFile": "lakefile.lean",
         "manifestFile": "lake-manifest.json",
     }
+    # Lake compares URLs literally when deciding whether to replace a checkout.
+    # The older public static rules normalize .git, which misses this build failure.
+    manifest = json.loads((ROOT / "lake-manifest.json").read_text())
+    for package in manifest["packages"]:
+        expected = ecosystem.get(package["name"])
+        if expected and (package["url"], package["rev"]) != (expected["url"], expected["rev"]):
+            raise RuntimeError("Exact Mathlib URL/revision mismatch in lake-manifest.json: " + package["name"])
+    config = tomllib.loads((ROOT / "lakefile.toml").read_text())
+    for package in config.get("require", []):
+        expected = ecosystem.get(package["name"])
+        if expected and (package.get("git"), package.get("rev")) != (expected["url"], expected["rev"]):
+            raise RuntimeError("Exact Mathlib URL/revision mismatch in lakefile.toml: " + package["name"])
     names = sorted(set(subprocess.check_output(
         ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
         cwd=ROOT).decode().split("\0")) - {""})
@@ -81,6 +94,7 @@ def main():
             ["judge/stages/rules.py", "judge/versions.json", "lean/batch/validate.py",
              "lean/batch/registry.py", "lean/batch/entry.py", "lean/batch/challenge.py", "lean/batch/paper.py"]},
         "mathlib_commit": PIN,
+        "exact_mathlib_urls_and_revisions": "PASS",
         "upstream_mathlib_manifest_sha256": sha(args.mathlib_manifest),
         "files": len(names), "bytes": total,
         "lean_files": result.lean_files, "lean_lines": result.lean_lines,
