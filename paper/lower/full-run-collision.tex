@@ -1,0 +1,63 @@
+\section{The collision between two efficient pairs}\label{app:full-collision}
+
+This appendix proves Lemma~\ref{lem:two-pairs}. Retain the parameters
+$n=3m+2$, $p_0=(m+1)(2m+1)$, $v=2m(m+1)$, $b=p_0-1$, and $c=v-2$.
+
+\begin{proof}
+Normalize the first short-run entry to $(3,\ldots,n,2,1,0)$.
+In a canonical $C$ cell, the nonzero cyclic core of its $r$th full run is
+\[
+ L_r=[\operatorname{rot}^{r-1}(1,3,\ldots,n-1,2),n],
+ \qquad 1\le r\le n-3.
+\]
+Representatives beginning in $1$ give
+\[
+ L_1=[1,3,\ldots,n-1,2,n],\qquad
+ L_{n-3}=[1,3,\ldots,n-3,n,n-2,n-1,2].
+\]
+Set $M=h_ch_b$ and $j=v-m-4$. Number cells from zero. The last full
+run of cell $j$ in the second chain of the first pair has actual core
+$h_b^{-1}g^{-j}L_{n-3}$. The first full run of cell $m$ in the second
+chain of the second pair has core $M^{-1}h_b^{-1}g^{-m}L_1$.
+Both cells precede their chains' final $B$ cell, since
+$0\le j\le c-2$ and $m\le c-2$.
+
+Equality of these two cores is equivalent to $EL_{n-3}=L_1$, where
+\[
+ E=g^mh_bh_cg^{-j}=g^m\rho g^{-1}\rho g^{m+2}.
+\]
+The last expression uses $g^{p_0}=1$, $c=p_0-m-3$ and
+$j=p_0-2m-5$. The two nonzero cycles of $g$ are
+\[
+ (1,5,8,\ldots,3m+2),\qquad
+ (2,4,7,\ldots,3m+1,3,6,\ldots,3m).
+\]
+Applying the displayed expression for $E$ gives
+\[
+\begin{gathered}
+ E(1)=3,\quad E(2)=1,\quad E(x)=x+1\ (3\le x\le n-3),\\
+ E(n-2)=2,\quad E(n-1)=n,\quad E(n)=n-1.
+\end{gathered}
+\]
+It sends $L_{n-3}$ to $[3,4,\ldots,n-1,2,n,1]$, a rotation of $L_1$.
+Thus the two full runs visit the same two-loop, contradicting class
+distinctness.
+\end{proof}
+
+\subsection{The initial case on nine symbols}
+
+At $m=2$, the efficient tiles are $(12)$, $(13,11)$ and $(14,10)$.
+Their transfers lie in a group of order $12$. To see this directly, put
+$A=(2\ 8)$, $Q=(2\ 8\ 7)$, $U=(1\ 3)$ and $V=(5\ 6)$.
+The three transfers are $AV,AU,QUV$. They belong to
+\[
+ \{\sigma U^eV^f:
+ \sigma\in\mathfrak S_{\{2,7,8\}},\ e,f\in\{0,1\},\
+ \operatorname{sgn}(\sigma)=(-1)^{e+f}\},
+\]
+a group of order $12$. Twelve consecutive efficient interior tiles
+would give thirteen prefix maps in this group, two equal, and hence
+a repeated start class. Positive losses are integers and the final
+allowance is two. Lemma~\ref{lem:tiles} therefore gives
+$\CP(15,24-1/12)=\CP(15,287/12)$.
+

@@ -1,8 +1,8 @@
 import AlmanacDefs
 import Submissions.Solution
 
-/-! The complete lower submission, using the Almanac's word predicate for
-the word bounds and preserving all thirteen original asymptotic statements.
+/-! Linking proofs for the lower batch, using the Almanac's word predicate.
+The original general bounds and asymptotic comparisons remain in the library.
 The correction of order (n-4)! is not a positive coefficient of (n-3)!. -/
 
 namespace AlmanacAdapter
@@ -55,42 +55,25 @@ theorem lower14 : Almanac.LowerBoundAt 14 93891141150 := by
   intro w hw
   exact Lower14.word_lower_bound w ((covers_iff w).mpr hw)
 
-/-- All seventeen original claims, plus the twelve-symbol consequence of
-the general bound. All three improving finite values use the site's fixed
-vocabulary. There is no assumed conclusion or extra premise. -/
-def CompleteClaim : Prop :=
-  ExactWordBound ∧ QuadraticWordBound ∧
-  LowerAsymptotics.ExactLeadingLimit ∧
-  LowerAsymptotics.QuadraticLeadingLimit ∧
-  LowerAsymptotics.WordLowerBound ∧
-  LowerAsymptotics.ExactReferenceZero ∧
-  LowerAsymptotics.ExactReferenceOne ∧
-  LowerAsymptotics.ExactReferenceTwo ∧
-  LowerAsymptotics.QuadraticReferenceZero ∧
-  LowerAsymptotics.QuadraticReferenceOne ∧
-  LowerAsymptotics.QuadraticReferenceTwo ∧
-  LowerAsymptotics.QuadraticGainZero ∧
-  LowerAsymptotics.QuadraticGainOne ∧
-  LowerAsymptotics.ExactGainZero ∧
-  LowerAsymptotics.ExactGainOne ∧
-  Almanac.LowerBoundAt 10 4033379 ∧ Almanac.LowerBoundAt 12 522622380 ∧
-  Almanac.LowerBoundAt 14 93891141150
+@[simp] theorem fact_eq (n : Nat) : Almanac.fact n = n.factorial := by
+  induction n with
+  | zero => rfl
+  | succ n ih => simp [Almanac.fact, Nat.factorial_succ, ih]
 
-theorem complete_claim : CompleteClaim := by
-  exact ⟨exact_word_bound, quadratic_word_bound,
-    LowerAsymptotics.exact_leading_limit,
-    LowerAsymptotics.quadratic_leading_limit,
-    LowerAsymptotics.word_lower_bound_two_sub_epsilon,
-    LowerAsymptotics.exact_reference_limit_zero,
-    LowerAsymptotics.exact_reference_limit_one,
-    LowerAsymptotics.exact_reference_limit_two,
-    LowerAsymptotics.quadratic_reference_limit_zero,
-    LowerAsymptotics.quadratic_reference_limit_one,
-    LowerAsymptotics.quadratic_reference_limit_two,
-    LowerAsymptotics.quadratic_gain_zero_limit,
-    LowerAsymptotics.quadratic_gain_one_limit,
-    LowerAsymptotics.exact_gain_zero_asymptotic_lower,
-    LowerAsymptotics.exact_gain_one_asymptotic_lower,
-    lower10, lower12, lower14⟩
+/-- Transfer the real-epsilon word bound to the site's rational-epsilon
+fourth-factorial template, preserving the quantification over all words. -/
+theorem asymptotic_lower_four : Almanac.AsymptoticLowerAt 4 2 := by
+  intro ε hε
+  have hεR : (0 : ℝ) < (ε : ℝ) := by exact_mod_cast hε
+  obtain ⟨N, hN⟩ := LowerAsymptotics.word_lower_bound_two_sub_epsilon (ε : ℝ) hεR
+  refine ⟨N, ?_⟩
+  intro n hn w hw
+  have h := hN n hn w ((covers_iff w).mpr hw)
+  have hR :
+      (n.factorial : ℝ) + ((n - 1).factorial : ℝ) + ((n - 2).factorial : ℝ) +
+        (2 - (ε : ℝ)) * ((n - 4).factorial : ℝ) ≤ (w.length : ℝ) := by
+    simpa [F3Nat, Nat.cast_add] using h
+  simp only [Almanac.asymptoticFormAt, fact_eq]
+  exact_mod_cast hR
 
 end AlmanacAdapter

@@ -1,0 +1,202 @@
+\section{Efficient pairs cannot keep repeating}\label{sec:pairs}
+
+We begin with the fourteen-symbol case, because the improvement can be
+seen before introducing its general parameters. Here $n=13$. A chain
+has length at most $36$, and in a path with two or more chains its length
+is at most $35$. The earlier local collision restrictions say more: a
+chain longer than four forces its successor to have length at most four,
+or at most three if that successor is not the last chain in the path.
+
+Pair each nonterminal chain longer than four with its successor. The
+pairs are disjoint, because the successor is too short to begin another
+pair. All remaining chains, except possibly the last, have length at
+most four. An interior pair has total length at most $38$, attained
+only by $(35,3)$. Thus the earlier count allows an average of $19$
+regular clusters per chain. The length count by itself would permit
+$(35,3),(35,3),\ldots$ indefinitely.
+
+Now follow what such a pair does to the symbols. Its normalization has
+nonzero cycles
+\[
+ (1\ 11\ 7\ 3\ 9),\qquad(2\ 10\ 5\ 12\ 6),\qquad(4\ 13\ 8).
+\]
+After fifteen pairs the relabeling is the identity. If another chain
+then starts, it starts in the same rotation class as the first one.
+Consequently fifteen consecutive interior pairs cannot all be $(35,3)$.
+At least one must have smaller total length, or the pairing must be
+interrupted by a singleton. Either event loses at least one regular
+cluster from the old allowance.
+
+There are at most two chains per pair or singleton. Thus one lost unit
+per fifteen such pieces predicts a reduction of $1/30$ in the mean
+chain length. Equivalently, the parameter $t=38$ should decrease by
+$1/15$. This is the source of the new value $569/15$. The argument
+below proves this prediction while allowing for the final chain, whose
+successor need not exist.
+
+\subsection{Counting the interruptions}
+
+Call a singleton or a chosen pair a \emph{tile}. If the old mean chain
+length is $\mu$, a tile containing $k$ chains is allowed total length
+$\mu k$. Its \emph{loss} is the difference between this allowance and
+its actual total length. This loss counts regular clusters; the run
+deficits introduced earlier count missing blocks.
+
+The count is simple once the efficient tiles have been identified.
+Mark every tile with positive loss. These marks divide the zero-loss
+tiles into consecutive strings. A bound on the lengths of those strings
+then forces enough marks. The only endpoint issue is that the last tile
+may attain a larger length, and a return after it supplies no contradiction
+unless a further chain actually starts. We therefore set that tile aside.
+
+\begin{lemma}\label{lem:tiles}
+Suppose a path of $q\ge2$ chains is partitioned into tiles of one or
+two chains, and a tile with $k$ chains and total length $L$ has loss
+$\mu k-L$. Suppose that before the last tile every loss is nonnegative,
+every positive loss is at least $\varepsilon>0$, and every consecutive
+string of zero-loss tiles has length at most $R-1$, where $R\ge1$.
+If the last tile has loss at least $-c$, where $c\ge0$, then
+\[
+ \sum_{i=1}^q\ell_i\le
+ \left(\mu-\frac{\varepsilon}{2R}\right)q+c+\varepsilon.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $B_+$ be the number of marked tiles and $P$ their total loss,
+excluding the last tile. Then $B_+\le P/\varepsilon$. There are at
+most $B_++1$ intervening strings, each with at most $R-1$ zero-loss
+tiles. Restoring the last tile, the total number of tiles is at most
+$R(B_++1)$. Since each tile has at most two chains,
+\[
+ q\le2R(P/\varepsilon+1),\qquad
+ P\ge\frac{\varepsilon q}{2R}-\varepsilon.
+\]
+The total chain length is at most $\mu q-P+c$, giving the result.
+\end{proof}
+
+\subsection{The case \texorpdfstring{$n=3m+1$}{n=3m+1}}
+
+The fourteen-symbol example is typical of this residue class. Assume
+$m\ge3$, put $p_0=m(2m+1)$ and $b=p_0-1$, and pair every nonterminal
+chain longer than $m$ with its successor. Lemma~\ref{lem:inherited-chains} bounds that successor by $m$, and
+by $m-1$ when it is nonterminal. Hence an interior pair has total
+length at most $t_0=p_0+m-2$, with equality only for $(b,m-1)$.
+
+Take $\mu=t_0/2$. An interior singleton has length at most $m$, so
+its loss is at least $\mu-m\ge1$. All positive interior losses are
+integers, since $t_0=2m^2+2m-2$ is even. Thus a tile either is the
+efficient pair $(b,m-1)$ or loses at least one unit.
+
+The normalization of that pair is
+\begin{equation}\label{eq:efficient-map}
+ M_1=h_{m-1}h_b=\rho g^{m-1}\rho g^{-1}.
+\end{equation}
+Let $R_1$ be its order. As in the example, $R_1$ consecutive efficient
+interior tiles would return to the first start class. The next start
+is forced because a deficit-two run has $n-2\ge8$ blocks, above the
+three-block threshold after $B$.
+
+Merely knowing that $M_1$ has finite order would give a weak quantitative
+estimate. Here its cycles can be calculated explicitly. Their lengths
+are listed in Table~\ref{tab:cycles}, and the calculation in
+Appendix~\ref{app:cycles} proves $R_1\le n^2/4$. The example $n=13$
+has cycle lengths $5,5,3$, so $R_1=15$.
+
+It remains to account for the last tile. A final singleton can have
+length $b$, giving loss $-(p_0-m)/2$. A final pair can have total
+length $b+m=t_0+1$, giving loss $-1$. Thus the single allowance
+$c=(p_0-m)/2$ covers both possibilities. Apply Lemma~\ref{lem:tiles}
+with $\varepsilon=1$. Since $p_0-\mu=c+1$, it yields
+\[
+ \sum_i\ell_i\le
+ \left(\mu-\frac1{2R_1}\right)q+c+1
+ \le p_0+\frac12\left(t_0-\frac1{R_1}\right)(q-1).
+\]
+The case of a single chain already has the stronger bound $p_0$.
+We have therefore proved
+\begin{equation}\label{eq:CP1}
+ \CP\left(p_0,t_0-\frac1{R_1}\right).
+\end{equation}
+At fourteen symbols, the final-tile allowance is $16$. It remains an
+endpoint allowance; it does not cancel the losses that accumulate along
+a long path.
+
+\subsection{When the interiors collide first}
+
+For $n=3m+2$, following the first class of each tile misses an earlier
+collision. It is useful to recall the full run in Figure~\ref{fig:run}.
+Delete the symbol zero from each of its four rotation classes. All four
+give the same cyclic order $1234$; they differ only in the gap into which
+zero was inserted. In general, a full run with distinguished symbol zero
+visits all $n$ such insertions into one cyclic order of the other symbols.
+This family of classes is called a \emph{two-loop}.
+
+Consequently two full runs with the same nonzero cyclic order repeat
+every class, even if the starts of the larger pieces containing them
+are different. This is what happens in the efficient pattern for the
+present residue. Put $p_0=(m+1)(2m+1)$, $v=2m(m+1)$, $b=p_0-1$,
+and $c=v-2$.
+
+\begin{lemma}\label{lem:two-pairs}
+For $m\ge2$, the pattern $T_bT_cT_bT_c$ cannot occur in a genuine
+light segment.
+\end{lemma}
+
+The repeated runs lie inside the two shorter chains. To locate them,
+look at the $C$ cells of each $T_c=C^{c-1}B$. In the first copy choose
+the cell at distance $m$ from the end of this $C$ portion; in the second
+choose the cell at distance $m$ from its beginning, as in
+Figure~\ref{fig:collision}. The last full run of the first chosen cell
+and the first full run of the second chosen cell have the same nonzero
+cyclic order. Appendix~\ref{app:full-collision} checks this equality by
+following the relabelings. Both runs lie strictly before their chains'
+final $B$ cells, so the collision occurs within the displayed pattern.
+
+\begin{figure}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{r l l}
+first pair & $T_b\quad C^{c-2-m}\,\boxed{C}\,C^mB$
+ & last full run in the box\\
+second pair & $T_b\quad C^m\,\boxed{C}\,C^{c-2-m}B$
+ & first full run in the box
+\end{tabular}
+\caption{The two full runs that coincide. The boxes are at equal depths
+from opposite ends of the $C$ portions of the shorter chains. Their
+cyclic orders are compared in the coordinates of the whole path.}
+\label{fig:collision}
+\end{figure}
+
+We can now use the same loss count. Lemma~\ref{lem:inherited-chains} bounds the successor of a chain
+longer than $v$ by $v-1$. If the first length is at least $v+2$ and
+the successor is nonterminal, the stronger bound is $v-2$.
+Pair every nonterminal chain longer than $v$ with its successor, and
+put $t_0=b+v-2=4m^2+5m-2$ and $\mu=t_0/2$.
+
+For $m>2$, the only interior pair attaining $t_0$ is $(b,v-2)$.
+A pair beginning with $v+1$ loses at least $m-2$, and every other
+positive pair loss is an integer. A singleton loses at least
+$(m-2)/2$. Thus every positive interior loss is at least
+$\varepsilon=\min\{1,(m-2)/2\}$. Lemma~\ref{lem:two-pairs}
+excludes two successive efficient tiles, so take $R=2$.
+
+A final singleton has loss at least $-(m+2)/2$, and a final pair has
+loss at least $-1$. Lemma~\ref{lem:tiles}, together with
+$p_0-\mu=(m+2)/2+1$ and $\varepsilon\le1$, gives
+\begin{equation}\label{eq:CP2}
+ \CP(p_0,t_0-\varepsilon/2),\qquad m>2.
+\end{equation}
+The decrement is $1/4$ at $m=3$ and $1/2$ thereafter.
+
+At $m=2$ there are three efficient tiles: $(12)$, $(13,11)$ and
+$(14,10)$. Their normalizations lie in a group of order $12$, so
+twelve consecutive efficient interior tiles would have two equal
+prefix normalizations and hence a repeated start class. Positive
+losses are integers and the final allowance is two. The same lemma
+gives $\CP(15,287/12)$. The small group calculation is also included
+in Appendix~\ref{app:full-collision}.
+
+All these collisions occur within the path under consideration. Thus
+the counts apply in every zero-ended factor, as required by $\CP$;
+no completion of such a factor to a superpermutation is assumed.

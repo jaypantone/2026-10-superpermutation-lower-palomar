@@ -1,8 +1,22 @@
-import AlmanacStatement
+import AlmanacDefs
 import AlmanacAdapter
 
+/-! Headline lower results: the full exact general formula, two separate
+finite refinements, and the fourth-factorial asymptotic consequence. -/
+namespace AlmanacSubmission
 
-/-- Select "My own statement". The generated Almanac.Claim is only the
-judge's True anchor; this theorem states all seventeen original claims and
-the twelve-symbol finite consequence. -/
-theorem almanac_claim : AlmanacAdapter.CompleteClaim := AlmanacAdapter.complete_claim
+/-- The exact-order general lower formula for every n ≥ 8, on arbitrary
+covering words. Its twelve-symbol consequence is S(12) ≥ 522,622,380. -/
+theorem general_lower : AlmanacAdapter.ExactWordBound := AlmanacAdapter.exact_word_bound
+
+/-- Every ten-symbol superpermutation has at least 4,033,379 letters. -/
+theorem lower10 : Almanac.LowerBoundAt 10 4033379 := AlmanacAdapter.lower10
+
+/-- Every fourteen-symbol superpermutation has at least 93,891,141,150 letters. -/
+theorem lower14 : Almanac.LowerBoundAt 14 93891141150 := AlmanacAdapter.lower14
+
+/-- S(n) ≥ F₃(n) + (2 - o(1))(n-4)! in the epsilon sense. -/
+theorem asymptotic_lower_four : Almanac.AsymptoticLowerAt 4 2 :=
+  AlmanacAdapter.asymptotic_lower_four
+
+end AlmanacSubmission

@@ -79,7 +79,7 @@ def validate_sources(inventory):
         raise RuntimeError('A configured challenge source is absent')
     # Public judge-owned templates are deliberately core Lean (no module header).
     # Accept only the exact downloaded bytes, including the challenge placeholder.
-    almanac_templates = {'AlmanacDefs': 'ba6c46024977ada4b6a83d4961a1883fd48029460a04e20ea89dd473c76ffd2f', 'AlmanacChallenge': '6676b64886e1d0215aa2ef2350f3320d5725479f5db8d5ca77f84a851531f09f'}
+    almanac_templates = {'AlmanacDefs': '3e869f896a193e67da97c4fa535ddccec2e2f3d3152d2cbf552373159e138b0f', 'AlmanacStatement': 'c048c75c545218b82e86826ac7cdb2083ceea86583cc8db5bb0b0d36fc598800', 'AlmanacChallenge': '6676b64886e1d0215aa2ef2350f3320d5725479f5db8d5ca77f84a851531f09f'}
     for name, path in inventory.items():
         if name in almanac_templates:
             if hashlib.sha256(path.read_bytes()).hexdigest() != almanac_templates[name]:

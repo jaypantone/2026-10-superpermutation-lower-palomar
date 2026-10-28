@@ -1,0 +1,79 @@
+\begin{abstract}
+A short superpermutation must make extensive use of large overlaps between
+successive permutations. These overlaps organize the permutations into
+runs, and earlier lower bounds control how efficiently such runs can be
+joined. We strengthen this part of the argument. The patterns that attain
+the earlier estimates cannot keep repeating: their action on the symbols
+eventually brings them back to a rotation class already visited. In one
+case, two repetitions already have an entire run in common. Counting the
+necessary departures from these patterns gives an explicit lower bound
+valid for every alphabet size at least eight. It improves the preceding
+general formula at every size at least thirteen not divisible by three.
+The leading correction above $K!+(K-1)!+(K-2)!$ remains asymptotic
+to $2(K-4)!$. The exact formulas and their asymptotic comparisons have
+formal proofs in Lean.
+\end{abstract}
+
+\noindent\textbf{AI disclosure.} The research presented here, the Lean
+formalization, and this document were generated entirely by AI systems
+under Jay Pantone's direction. The inherited mathematical work and
+software retain their original credits. Independent AI review is not
+human peer review.
+
+\section{Introduction}
+
+A \emph{superpermutation} on $K$ symbols is a word containing each of the
+$K!$ permutations as a consecutive subword. For example, $123121321$
+contains all six permutations on three symbols. Write $S(K)$ for the
+length of a shortest superpermutation and put
+\[
+ F_3(K)=K!+(K-1)!+(K-2)!.
+\]
+The lower bounds studied here exceed $F_3(K)$ by a quantity asymptotic
+to $2(K-4)!$. We improve the smaller terms by examining when the local
+counting estimates can be tight. The resulting inequalities hold at every
+alphabet size in their stated range.
+
+The difficulty is that a pattern may be efficient for a few steps without
+remaining efficient for very long. One can see the simplest instance
+directly in a word. Appending the first symbol of a permutation produces
+its next cyclic rotation, at a cost of only one letter. Repeating this
+operation is inexpensive, but after $K$ steps it returns to the original
+permutation. A covering word must eventually do something else.
+
+The same phenomenon occurs further into the lower-bound argument.
+After grouping rotations together, and then grouping those classes into
+runs, the relevant objects are chains of almost full runs. The earlier
+proof bounds the length of each chain and restricts which lengths may
+follow one another. Its best average can nevertheless be attained by a
+repeating sequence of chain lengths. Such a sequence does not determine
+fresh permutations indefinitely. The corresponding relabeling of the
+symbols has finite order, and when it returns, so does a previously
+visited class.
+
+This gives a way to improve the average. Each interruption of the
+repeating pattern loses some of the length allowed by the old estimate.
+If there is a uniform bound on the distance between interruptions, these
+losses accumulate. There are two parts to making this observation useful:
+finding a sufficiently short return, and proving that all other patterns
+really do lose enough to pay for the interruptions. Most of the work in
+this paper concerns the second part.
+
+Our explicit bound is stated in Theorem~\ref{thm:main}. It applies for
+every $K\ge8$, and incorporates the earlier refinement for $K$ divisible
+by three. In each of the other two residue classes it strictly improves
+the preceding general formula for every $K\ge13$. At $K=13$ and
+$K=14$, for example, the increases are $12$ and $58$, respectively. The improvements hold uniformly
+in the alphabet size; no separate search is used to prove an instance.
+
+We use the geometric and forest lemmas of the lower-bound framework
+retained in the accompanying proof library~\cite{pantone-framework}.
+These lemmas reduce an arbitrary word to auxiliary paths of complete
+rotation classes. The new estimates in this paper concern those paths.
+The next section explains why counting deficits in such paths gives a
+word-length bound. We then describe the chains that make the count
+difficult. A fourteen-symbol example introduces the return argument
+before we prove it in general. The explicit numerical formula is given
+after these arguments, when its parameters have a combinatorial meaning.
+The coordinate calculations and the endpoint count for the forest
+reduction are given in the appendices.

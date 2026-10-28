@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[margin=1in]{geometry}
+\usepackage{flafter}
+\usepackage{xurl}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\hypersetup{pdftitle={Chain returns and lower bounds for superpermutations},pdfauthor={Jay Pantone}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\ex}{ex}
+\newcommand{\CP}{\operatorname{CP}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\title{Chain returns and lower bounds for superpermutations}
+\author{Jay Pantone}
+\date{October 2026}
+\begin{document}
+\maketitle
+
+\input{introduction}
+\input{overlaps-and-chains}
+\input{paid-pairs}
+\input{alternation}
+\input{consequences}
+\appendix
+\input{cycle-calculation}
+\input{full-run-collision}
+\input{scalar-conversion}
+\input{forest-assembly}
+\input{transfer-proof}
+\input{numerical-details}
+\input{formalization}
+\input{references}
+\end{document}

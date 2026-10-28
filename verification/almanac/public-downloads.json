@@ -1,8 +1,41 @@
 {
-  "downloaded_utc": "2026-10-27",
-  "source": "Public links on https://web-production-daed9.up.railway.app/lean and /submit; Mathlib manifest from its pinned GitHub commit.",
-  "sha256": {
-    "judge-source.tar.gz": "98da77060bb5154e0d22019465b864ae8a15beca4959b6bf71a5e5f07af7e970",
-    "mathlib-manifest.json": "6fcb8417bf0d6056cebf3c9f9bacd4569f21f3b9c571c60649150b9118b55147"
+  "retrieved_date": "2026-10-28",
+  "downloads": {
+    "/lean.txt": {
+      "url": "https://web-production-daed9.up.railway.app/lean.txt",
+      "sha256": "2247aa8182f91e4a112e6be6c1f738d22aecd303462d63c6e592fd08f2776179"
+    },
+    "/lean/judge-source.tar.gz": {
+      "url": "https://web-production-daed9.up.railway.app/lean/judge-source.tar.gz",
+      "sha256": "ff55a5ed91d7817bc9571aed97b94faea09498bd33a121ad2733d8c1f1abccdb"
+    },
+    "/lean/batch-scaffold.zip": {
+      "url": "https://web-production-daed9.up.railway.app/lean/batch-scaffold.zip",
+      "sha256": "f97e90ffcc301b4017d45c7357e6b7bf7957d4a83501559c291f3869987faec4"
+    },
+    "/lean/templates.json": {
+      "url": "https://web-production-daed9.up.railway.app/lean/templates.json",
+      "sha256": "0f5c08fb93a4ad02248c1b942d857d9eb11cf360e3e0c02c8a738c78d7a5285a"
+    },
+    "/api/records": {
+      "url": "https://web-production-daed9.up.railway.app/api/records",
+      "sha256": "cd7d11ed825a4f9718ebc49c84a7dff04a53b8e5122f6bf3b5689de3d2550f6e"
+    }
+  },
+  "judge_files": {
+    "AlmanacDefs.lean": "3e869f896a193e67da97c4fa535ddccec2e2f3d3152d2cbf552373159e138b0f",
+    "AlmanacStatement.lean": "c048c75c545218b82e86826ac7cdb2083ceea86583cc8db5bb0b0d36fc598800",
+    "AlmanacChallenge.lean": "6676b64886e1d0215aa2ef2350f3320d5725479f5db8d5ca77f84a851531f09f"
+  },
+  "local_site_source_inspected": {
+    "repository": "jaypantone/superperm-records",
+    "commit": "067f6a8b36ebb227d17076b80d6bb3daa62e988f",
+    "files": [
+      "lean/batch/registry.py",
+      "lean/batch/challenge.py",
+      "lean/impact.py",
+      "records/targets.py"
+    ],
+    "note": "Live downloaded judge is authoritative for these checks; the local worktree is not asserted identical to the deployed site."
   }
 }

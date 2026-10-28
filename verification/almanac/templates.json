@@ -1,9 +1,0 @@
-{
-  "source": "https://web-production-daed9.up.railway.app/lean/",
-  "retrieved_utc": "2026-10-27",
-  "sha256": {
-    "AlmanacDefs": "ba6c46024977ada4b6a83d4961a1883fd48029460a04e20ea89dd473c76ffd2f",
-    "AlmanacChallenge": "6676b64886e1d0215aa2ef2350f3320d5725479f5db8d5ca77f84a851531f09f"
-  },
-  "statement": "Generated with statement_text from the publicly downloaded judge package; the site replaces it."
-}

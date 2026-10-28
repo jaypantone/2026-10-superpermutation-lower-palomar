@@ -1,6 +1,6 @@
 # Lower bounds for superpermutations
 
-The Almanac entry point is `almanac_claim` in [AlmanacSolution.lean](AlmanacSolution.lean). It proves the general lower bounds, asymptotic comparisons, and finite bounds at 10, 12, and 14 symbols. See [BUILD.md](docs/BUILD.md) for build commands and verification.
+The Almanac batch entry point is [AlmanacSolution.lean](AlmanacSolution.lean), with one result per theorem in `AlmanacSubmission`. See [the Almanac submission guide](docs/ALMANAC.md) for the selected results, template coverage, validation, and submission steps. The original Palomar configuration and proof development are retained separately below.
 
 The research presented here, the Lean formalization, and this document were
 generated entirely by AI systems under Jay Pantone's direction. The inherited
@@ -9,7 +9,7 @@ review is not human peer review.
 
 This repository presents general lower bounds for superpermutations, their
 asymptotics, and the finite improvements at ten and fourteen symbols in one
-Palomar submission. It is derived from the frozen results repository at commit
+original Palomar comparison package. It is derived from the frozen results repository at commit
 `c9ccb6a0d9ddd1007fdce6efab50807ec47464b9`. The mathematical statements are unchanged.
 
 Let S(n) be the shortest length of a word containing every permutation of n
@@ -39,7 +39,7 @@ distinguishes the general comparison from the finite bounds announced in
 October 2026. The companion [upper-bound repository](https://github.com/jaypantone/2026-10-superpermutation-upper-palomar)
 contains the construction results.
 
-## The statements to inspect
+## Original Palomar statements
 
 All seventeen selected claims are in one self-contained
 [Challenge](Submissions/Challenge.lean), which imports only Mathlib. It contains

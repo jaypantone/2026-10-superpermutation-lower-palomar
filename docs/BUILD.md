@@ -27,26 +27,33 @@ Lean directly, enforces the project lock, and keeps all outputs outside Dropbox.
 A plain Lake invocation does not inherit those local resource controls.
 
 
-## Almanac interface
+## Almanac batch interface
 
-`AlmanacSolution.lean` provides the theorem `almanac_claim`.
-`AlmanacAdapter.lean` connects the proof library's word predicate to
-`Almanac.IsSuperpermutation`. The public judge supplies `AlmanacDefs.lean`,
-`AlmanacStatement.lean`, and `AlmanacChallenge.lean`; the local copies allow
-the interface to be built and checked before submission.
+`AlmanacSolution.lean` states the batch's results as separate theorems in
+`AlmanacSubmission`. `AlmanacAdapter.lean` proves the linking lemmas against
+the site's word predicate. `AlmanacDefs.lean`, `AlmanacStatement.lean`, and
+`AlmanacChallenge.lean` are unchanged copies from the current public scaffold.
+The latter two are placeholders; the solution imports neither. The judge
+replaces all three files and generates its comparison statements from the batch.
 
-The default Lake targets build the solution and its axiom report. With the
-existing shared Lean setup, the equivalent local source checks are:
+With the existing shared Lean setup, build the solution and inspect every
+submitted theorem's axioms with:
 
 ```sh
-python3 -B tools/check.py AlmanacAxioms --receipt almanac-preparation.json
-python3 -B tools/check.py AlmanacChallenge --receipt almanac-challenge.json
+python3 -B tools/check.py AlmanacAxioms --receipt almanac-batch-20261028.json
 ```
 
-The technical receipts under `verification/almanac/` record source hashes,
-repository-rule checks, statement comparison, and the axiom audit. They do
-not replace the site's kernel replays. The older Palomar verification is
-recorded separately below.
+This checks the recursive source closure, reusing only objects whose source,
+dependency, compiler, runtime, and object hashes match. All compilation and
+build receipts stay outside Dropbox, under the project-specific build lock.
+The repository keeps a small receipt and the axiom output in
+`verification/almanac/`.
+
+Download the current judge source from the site and run its batch validator,
+then the complete static preflight described in [ALMANAC.md](ALMANAC.md).
+These checks do not constitute the site's hosted verification or a new
+independent-kernel replay. The retained Palomar records below concern their
+recorded source snapshots, not automatic verification of the new batch.
 
 ## Verification
 

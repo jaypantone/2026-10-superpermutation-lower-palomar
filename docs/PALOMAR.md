@@ -1,5 +1,8 @@
 # Palomar submission
 
+This guide describes the original Palomar workflow. For this branch’s
+Superpermutation Almanac batch, use [ALMANAC.md](ALMANAC.md).
+
 This repository contains the statements, proofs, metadata, and pinned build
 inputs for a single submission. It has not yet been registered with
 Palomar. The [official submission guide](https://palomar-registry.org/how-to-submit)

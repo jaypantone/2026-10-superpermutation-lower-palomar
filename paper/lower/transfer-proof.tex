@@ -1,0 +1,27 @@
+\subsection{From the chain estimate to word length}
+
+\begin{proof}[Proof of Proposition~\ref{prop:transfer}]
+Set
+\[
+ \lambda=(n-2)t-2,\qquad
+ \delta=\frac{2t}{\lambda},\qquad
+ \beta=\frac{2t(n-1)+4p}{\lambda}.
+\]
+Lemma~\ref{lem:scalar} gives
+$D\ge\delta r-\beta$ for the total deficit $D$ of every segment with
+$r$ runs. The same estimate holds on its consecutive run factors.
+The parameter assumptions give $0<\delta<1$ and $1<\beta<n-\delta$.
+For the latter inequality, use $4p\le t(n-4)-6$ and
+$t(n-4)\ge6$ to obtain
+\[
+ n(n-4)t-4p-2n\ge (n-1)(n-4)t+6-2n\ge4n>0.
+\]
+Theorem~\ref{thm:forest}
+therefore gives
+\begin{equation}\label{eq:forest}
+ S(K)\ge K+(K+1)n!-3+
+ \ceil{\frac{n!-\beta}{n-\delta}}.
+\end{equation}
+Substitution and removal of the integer $(n-1)!$ from the ceiling give
+\eqref{eq:bound}.
+\end{proof}

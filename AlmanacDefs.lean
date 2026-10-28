@@ -77,3 +77,30 @@ def AsymptoticLower (c : Rat) : Prop :=
     ∀ w : Word n, IsSuperpermutation n w → asymptoticForm n (c - ε) ≤ (w.length : Rat)
 
 end Almanac
+
+/-!
+## Factorial-scale asymptotic shapes
+
+Added for batch submissions (Oct 27, 2026); everything above is unchanged. `asymptoticFormAt 3`
+is `asymptoticForm`, so `AsymptoticUpperAt 3 c` and `AsymptoticLowerAt 3 c` are
+`AsymptoticUpper c` and `AsymptoticLower c` by definition.
+-/
+namespace Almanac
+
+/-- `n! + (n-1)! + (n-2)! + c (n-k)!`, the form of the factorial-scale asymptotic shapes. -/
+def asymptoticFormAt (k n : Nat) (c : Rat) : Rat :=
+  (fact n : Rat) + (fact (n - 1) : Rat) + (fact (n - 2) : Rat) + c * (fact (n - k) : Rat)
+
+/-- Shape 3 at the scale `(n-k)!`: for every `ε > 0`, for all large `n`, some superpermutation on
+`n` symbols has length at most `n! + (n-1)! + (n-2)! + (c + ε) (n-k)!`. -/
+def AsymptoticUpperAt (k : Nat) (c : Rat) : Prop :=
+  ∀ ε : Rat, 0 < ε → ∃ N : Nat, ∀ n : Nat, N ≤ n →
+    ∃ w : Word n, IsSuperpermutation n w ∧ (w.length : Rat) ≤ asymptoticFormAt k n (c + ε)
+
+/-- Shape 3 at the scale `(n-k)!`: for every `ε > 0`, for all large `n`, every superpermutation on
+`n` symbols has length at least `n! + (n-1)! + (n-2)! + (c - ε) (n-k)!`. -/
+def AsymptoticLowerAt (k : Nat) (c : Rat) : Prop :=
+  ∀ ε : Rat, 0 < ε → ∃ N : Nat, ∀ n : Nat, N ≤ n →
+    ∀ w : Word n, IsSuperpermutation n w → asymptoticFormAt k n (c - ε) ≤ (w.length : Rat)
+
+end Almanac
