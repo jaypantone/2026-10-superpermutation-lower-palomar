@@ -16,13 +16,15 @@ Write F₃(n) = n! + (n−1)! + (n−2)!.
 |---|---|---|
 | `general_lower` | Custom: `AlmanacAdapter.ExactWordBound` | The exact-order general lower formula, for every n ≥ 8 and every covering word. |
 | `lower10` | `Almanac.LowerBoundAt 10 4033379` | S(10) ≥ 4,033,379. |
+| `lower12` | `Almanac.LowerBoundAt 12 522622380` | S(12) ≥ 522,622,380. |
 | `lower14` | `Almanac.LowerBoundAt 14 93891141150` | S(14) ≥ 93,891,141,150. |
 | `asymptotic_lower_four` | `Almanac.AsymptoticLowerAt 4 2` | Eventually, S(n) ≥ F₃(n) + (2−ε)(n−4)! for every positive rational ε. |
 
 The three finite consequences improving the public records read on October 28,
 2026 are n=10 (+1), n=12 (+2), and n=14 (+142). The general theorem supplies
 n=12; the separate Lean lemma `AlmanacAdapter.lower12` proves that consequence
-in the site's vocabulary. It is not another batch entry. The general theorem
+in the site's vocabulary, and the `lower12` batch entry exposes it for automatic
+recognition and inclusion in the preview's points estimate. The general theorem
 also gives 93,891,141,149 at n=14; the separate refinement is one stronger.
 The hosted preview and custom review must recheck eligibility at submission time.
 
@@ -50,7 +52,8 @@ superpermutation length is at least the exact-order formula in the paper,
 with no hypothesis on the word other than coverage. At n=12 it yields
 522,622,380. Its proof is checked by the site's kernels; its mathematical
 interpretation still requires the site's custom-review process. The preview
-cannot automatically include its finite consequences in the points estimate.
+cannot automatically include consequences of the custom statement in the points
+estimate; the separate `lower12` template entry makes that consequence explicit.
 
 The coefficient-2 entry is an epsilon lower bound, not an assertion that the
 optimal coefficient is exactly 2. No novelty claim is made here for that

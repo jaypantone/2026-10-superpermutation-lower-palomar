@@ -1,4 +1,5 @@
 'AlmanacSubmission.general_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlmanacSubmission.lower10' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlmanacSubmission.lower12' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlmanacSubmission.lower14' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlmanacSubmission.asymptotic_lower_four' depends on axioms: [propext, Classical.choice, Quot.sound]

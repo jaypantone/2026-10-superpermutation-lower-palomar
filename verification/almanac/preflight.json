@@ -5,7 +5,7 @@
     "parser_version": "1.0.0",
     "registry_version": "1.0.0",
     "definitions_sha256": "3e869f896a193e67da97c4fa535ddccec2e2f3d3152d2cbf552373159e138b0f",
-    "entry_sha256": "193fbc075c4510dcbd66c5dc33c947d800233df42f24fae033b282dc39747569",
+    "entry_sha256": "39f832c03387d18a1979b22159b9aa8ae52adcb9854b55786b556d1c0aece0e9",
     "wrappers": [
       {
         "ordinal": 1,
@@ -33,8 +33,20 @@
       },
       {
         "ordinal": 3,
-        "name": "lower14",
+        "name": "lower12",
         "line": 16,
+        "classification": "template",
+        "source_mode": "explicit",
+        "template": "lower_at",
+        "lean_type": "Almanac.LowerBoundAt 12 522622380",
+        "summary": "S(12) \u2265 522,622,380",
+        "claim_sha256": "4f2580b86ed5622ffaa23d268c3ac57c092be29067029837230f77cd2e2bc825",
+        "reference": "AlmanacAdapter.lower12"
+      },
+      {
+        "ordinal": 4,
+        "name": "lower14",
+        "line": 19,
         "classification": "template",
         "source_mode": "explicit",
         "template": "lower_at",
@@ -44,9 +56,9 @@
         "reference": "AlmanacAdapter.lower14"
       },
       {
-        "ordinal": 4,
+        "ordinal": 5,
         "name": "asymptotic_lower_four",
-        "line": 19,
+        "line": 22,
         "classification": "template",
         "source_mode": "explicit",
         "template": "asymptotic_lower_at",
@@ -222,9 +234,9 @@
       "ignored": [],
       "ignored_count": 0
     },
-    "catalogue_sha256": "a5d1875bab1308ee0417ae6893cab6d0f276d2c5958819fd86eb1298a71e4608"
+    "catalogue_sha256": "ca416dd3d741614e18d2f7756eab086b3487ced00628aa303c21920115aad5f2"
   },
-  "recorded_utc": "2026-10-28T22:42:40.215605+00:00",
+  "recorded_utc": "2026-10-29T03:02:21.425348+00:00",
   "scope": "Official batch parser, layout, manifest, source and paper checks; no hosted preview, submission, Lean replay, or NanoDa replay.",
   "judge_source_url": "https://web-production-daed9.up.railway.app/lean/judge-source.tar.gz",
   "judge_source_sha256": {
@@ -240,9 +252,9 @@
   "exact_mathlib_urls_and_revisions": "PASS",
   "upstream_mathlib_manifest_sha256": "6fcb8417bf0d6056cebf3c9f9bacd4569f21f3b9c571c60649150b9118b55147",
   "files": 367,
-  "bytes": 39831310,
+  "bytes": 39832623,
   "lean_files": 283,
-  "lean_lines": 126142,
+  "lean_lines": 126146,
   "layout_dir": ".",
   "packages": [
     {
@@ -298,10 +310,10 @@
   "source_scan_note": "Native-track restrictions are diagnostic here; these claims use only the three standard axioms. Independent Challenge placeholders are not imported by AlmanacSolution.",
   "input_sha256": {
     "AlmanacAdapter.lean": "083c788e351737e7978f5c976309577a581e16dcce14f4f7df885c67f5a2f867",
-    "AlmanacAxioms.lean": "65582baf4f86d8b2fd148fa6e12792bee14b86755605c7fd31aeef09dc1471b4",
+    "AlmanacAxioms.lean": "86cd4d16a37bdaf0ecd6155e9fa8d88d83a6ed31a4d54c855b39492ba89784dd",
     "AlmanacChallenge.lean": "6676b64886e1d0215aa2ef2350f3320d5725479f5db8d5ca77f84a851531f09f",
     "AlmanacDefs.lean": "3e869f896a193e67da97c4fa535ddccec2e2f3d3152d2cbf552373159e138b0f",
-    "AlmanacSolution.lean": "193fbc075c4510dcbd66c5dc33c947d800233df42f24fae033b282dc39747569",
+    "AlmanacSolution.lean": "39f832c03387d18a1979b22159b9aa8ae52adcb9854b55786b556d1c0aece0e9",
     "AlmanacStatement.lean": "c048c75c545218b82e86826ac7cdb2083ceea86583cc8db5bb0b0d36fc598800",
     "AxiomCheck.lean": "00d1c9b8c7108f2c814fce7e08cd348a26ed977162fa86afc3c5e5db4a5e234a",
     "Submissions/Asymptotics/Solution.lean": "cb6fb7da3e06a8efae917ca0c3420f206da5f354cc430ff9e29ad857aa874d81",

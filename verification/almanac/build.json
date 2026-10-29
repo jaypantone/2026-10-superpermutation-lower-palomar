@@ -1,8 +1,8 @@
 {
   "status": "PASS_LOCAL_BUILD_AND_AXIOMS",
   "scope": "Compiled the current source closure with the pinned shared Lean/Mathlib setup; reused hash-verified supporting objects. No new export replay, NanoDa replay or hosted verification.",
-  "started_utc": "2026-10-28T21:03:03.708667+00:00",
-  "finished_utc": "2026-10-28T21:03:31.543933+00:00",
+  "started_utc": "2026-10-29T03:02:08.369654+00:00",
+  "finished_utc": "2026-10-29T03:02:36.643337+00:00",
   "targets": [
     "AlmanacAxioms"
   ],
@@ -16,8 +16,8 @@
   },
   "module_count": 279,
   "module_status_counts": {
-    "REUSED_VERIFIED": 276,
-    "PASSED": 3
+    "REUSED_VERIFIED": 277,
+    "PASSED": 2
   },
   "resource_policy": "Project lock; one compiler; -j1 -M4096; existing watchdog and disk limits. No dependency installation or shared-cache mutation.",
   "source_sha256": {
@@ -298,33 +298,20 @@
     "Submissions.Fourteen.Solution": "b85f2bf9f20257014712ebe2dc643526c77784741e57c6a9ce2430023327ad62",
     "Submissions.Solution": "a83a036ab0d8b5a20e85980e455107ca57e70d33b5e5e01f9ec3730cc3e652e1",
     "AlmanacAdapter": "083c788e351737e7978f5c976309577a581e16dcce14f4f7df885c67f5a2f867",
-    "AlmanacSolution": "193fbc075c4510dcbd66c5dc33c947d800233df42f24fae033b282dc39747569",
-    "AlmanacAxioms": "65582baf4f86d8b2fd148fa6e12792bee14b86755605c7fd31aeef09dc1471b4"
+    "AlmanacSolution": "39f832c03387d18a1979b22159b9aa8ae52adcb9854b55786b556d1c0aece0e9",
+    "AlmanacAxioms": "86cd4d16a37bdaf0ecd6155e9fa8d88d83a6ed31a4d54c855b39492ba89784dd"
   },
   "configuration_sha256": {
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
-    "lakefile.toml": "a7eb9f09ab187a51495283a31a129cb3a891934ff2ce9bcf24f3b398ea00ce7a",
-    "lake-manifest.json": "f5a52c8f1309f20cdd53c6bfb2a2702882fdb7fe94ebc647b02d0c53a2b8e50f"
+    "lakefile.toml": "cbb59e929ec46c9552cc3f96b8ed8051592dae1d1a263b590ec1c82ac22f73ac",
+    "lake-manifest.json": "308f50a8e75d8d822bca9a0ef245fb180cff97caaa94309b0f1e47623d8300c1"
   },
-  "full_external_build_receipt_sha256": "e4d64fb664f114732b729632cb5721c38430db2f7979274485908e41420f8b6b",
-  "axioms_sha256": "da0747a0295d2cd68d2c18b3fbc488200a57427ce6e386a631f98d481d7ec3ec",
-  "submitted_theorems": 4,
+  "full_external_build_receipt_sha256": "6ee4efab273c6f81eac5547090fd567a32ea8c6616e2aa060949dce73d2e0e0d",
+  "axioms_sha256": "c57024c71f06ac73b5870c4f21ef34c3f23a11155482df6c4d761c82364a1f3c",
+  "submitted_theorems": 5,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
     "Quot.sound"
-  ],
-  "post_build_configuration_update": {
-    "reason": "Use the judge\u2019s literal Mathlib URL without .git; no Lean source, compiler, package revision, or compiled dependency changed. No new Lean build was necessary.",
-    "current_configuration_sha256": {
-      "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
-      "lakefile.toml": "cbb59e929ec46c9552cc3f96b8ed8051592dae1d1a263b590ec1c82ac22f73ac",
-      "lake-manifest.json": "308f50a8e75d8d822bca9a0ef245fb180cff97caaa94309b0f1e47623d8300c1"
-    },
-    "checks": [
-      "Exact ecosystem URLs and commits in manifest and direct Lake requirements",
-      "Shared cache identity and all non-URL manifest fields unchanged",
-      "Changed dependency revision still rejected by local cache validation"
-    ]
-  }
+  ]
 }
